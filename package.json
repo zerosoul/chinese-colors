@@ -1,0 +1,80 @@
+{
+  "name": "react-starter",
+  "version": "1.1.0",
+  "description": "React webapp starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development node scripts/start.js",
+    "build": "NODE_ENV=production node scripts/build.js",
+    "deploy": "npm run build && gh-pages -d build",
+    "changelog": "auto-changelog -p --release-summary -l false --template changelog.template.hbs && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerosoul/react-starter.git"
+  },
+  "keywords": [
+    "css3",
+    "template",
+    "react",
+    "frontend",
+    "tool",
+    "amazing"
+  ],
+  "author": "tristan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zerosoul/react-starter/issues"
+  },
+  "homepage": "https://zerosoul.github.io/react-starter",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2",
+    "styled-reset": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "auto-changelog": "^1.15.0",
+    "autodll-webpack-plugin": "^0.4.2",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "file-loader": "^4.2.0",
+    "gh-pages": "^2.1.1",
+    "happypack": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.4",
+    "installed-check-core": "^3.0.0",
+    "interpolate-html-plugin": "^3.0.0",
+    "lint-staged": "^9.2.3",
+    "mini-css-extract-plugin": "^0.8.0",
+    "prettier": "^1.17.1",
+    "react-dev-utils": "^9.0.3",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.2",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.2.1"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}

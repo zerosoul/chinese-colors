@@ -1,0 +1,5 @@
+/scripts
+/node_modules
+/build
+/.vscode
+/public
