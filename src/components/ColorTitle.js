@@ -10,7 +10,7 @@ const Wrapper = styled.hgroup`
   align-self: center;
   box-shadow: 0 0 8px black;
   border-radius: 6px;
-  padding: 0.6rem 0.3rem;
+  padding: 0.6rem 0.4rem;
   padding-top: 1rem;
   position: relative;
   transition: transform 0.4s ease-in;

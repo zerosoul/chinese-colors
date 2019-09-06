@@ -6,6 +6,7 @@ import InfoModal from './components/InfoModal';
 import Header from './components/Header';
 import styled from 'styled-components';
 import colors from './assets/colors.json';
+import allColors from './assets/colors.full.json';
 const Wrapper = styled.section`
   height: 100vh;
   display: flex;
@@ -31,13 +32,14 @@ const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null
   name: '\u6de1\u85cf\u82b1\u7ea2',
   pinyin: 'dancanghuahong'
 };
+const TheColors = process.env.production ? allColors : colors;
 const App = () => {
   const [currColor, setCurrColor] = useState(SelectedColor);
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
   const handleColorClick = hex => {
-    let clickedColor = colors.find(c => {
+    let clickedColor = TheColors.find(c => {
       return c.hex === hex;
     });
     setCurrColor(clickedColor);
@@ -48,7 +50,7 @@ const App = () => {
       <Wrapper>
         <nav>
           <ul className="colors">
-            {colors.map(color => {
+            {TheColors.map(color => {
               return (
                 <Color
                   isCurr={currColor.name == color.name}
