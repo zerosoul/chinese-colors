@@ -10,7 +10,7 @@ const Wrapper = styled.hgroup`
   align-self: center;
   box-shadow: 0 0 8px black;
   border-radius: 6px;
-  padding: 0.6rem 0.4rem;
+  padding: 0.6rem 0.8rem;
   padding-top: 1rem;
   position: relative;
   transition: transform 0.4s ease-in;
@@ -32,17 +32,19 @@ const Wrapper = styled.hgroup`
   }
   > h1 {
     font-size: 3.2rem;
-    letter-spacing: 0.8rem;
+    letter-spacing: 0.4rem;
     font-weight: 800;
     writing-mode: vertical-lr;
     font-family: 'JingDianWeiBeiJian';
   }
   > h2 {
-    font-size: 1.5rem;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     writing-mode: vertical-lr;
-    margin-top: -4rem;
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.4rem;
+    color: rgba(255, 255, 255, 0.66);
   }
 `;
 

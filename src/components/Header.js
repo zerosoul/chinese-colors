@@ -7,11 +7,11 @@ const Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   .logo {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
     margin-bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 0.4rem;
+    padding: 0.5rem;
     border-radius: 50%;
   }
   > h1 {
