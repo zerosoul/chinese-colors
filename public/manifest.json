@@ -1,10 +1,20 @@
 {
-  "short_name": "Memory Game",
-  "name": "Frontend Logo Memory Game",
+  "short_name": "Chinese Color",
+  "name": "Chinese Color Cheatsheet Online",
   "icons": [
     {
       "src": "apple-touch-icon.png",
       "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],

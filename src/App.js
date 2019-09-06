@@ -2,31 +2,37 @@ import React, { useState, useEffect } from 'react';
 import ColorTitle from './components/ColorTitle';
 import Color from './components/Color';
 import ColorParam from './components/ColorParam';
-import Footer from './components/Footer';
+import InfoModal from './components/InfoModal';
+import Header from './components/Header';
 import styled from 'styled-components';
 import colors from './assets/colors.json';
 const Wrapper = styled.section`
   height: 100vh;
   display: flex;
-  justify-content: space-between;
+  padding: 1rem 0.5rem;
+  justify-content: space-evenly;
+  .params {
+    margin-right: 1rem;
+  }
   .colors {
     display: flex;
     flex-wrap: wrap;
-    width: 20rem;
+    min-width: 3rem;
+    max-width: 20rem;
     height: 100vh;
     overflow-y: scroll;
   }
 `;
 console.log('colors', colors);
-
+const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null') || {
+  CMYK: [0, 43, 43, 0],
+  RGB: [246, 173, 143],
+  hex: '#f6ad8f',
+  name: '\u6de1\u85cf\u82b1\u7ea2',
+  pinyin: 'dancanghuahong'
+};
 const App = () => {
-  const [currColor, setCurrColor] = useState({
-    CMYK: [4, 5, 18, 0],
-    RGB: [249, 244, 220],
-    hex: '#f9f4dc',
-    name: '\u4e73\u767d',
-    pinyin: 'rubai'
-  });
+  const [currColor, setCurrColor] = useState(SelectedColor);
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
@@ -35,6 +41,7 @@ const App = () => {
       return c.hex === hex;
     });
     setCurrColor(clickedColor);
+    localStorage.setItem('SELECTED_COLOR', JSON.stringify(clickedColor));
   };
   return (
     <>
@@ -53,10 +60,11 @@ const App = () => {
             })}
           </ul>
         </nav>
-        <ColorParam {...currColor} />
+        <ColorParam className="params" {...currColor} />
         <ColorTitle {...currColor}></ColorTitle>
+        <Header />
       </Wrapper>
-      <Footer />
+      <InfoModal />
     </>
   );
 };

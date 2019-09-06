@@ -5,6 +5,8 @@ const merge = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
 const paths = require('./paths');
 const TerserPlugin = require('terser-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
+
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 // 以下是生产环境的配置项，目标是为了打包出体积更小、更合理的资源文件
@@ -54,6 +56,21 @@ module.exports = merge(commonConfig, {
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
     }),
+    new GenerateSW({
+      clientsClaim: true,
+      exclude: [/\.map$/, /asset-manifest\.json$/],
+      importWorkboxFrom: 'local',
+      navigateFallback: 'index.html',
+      navigateFallbackBlacklist: [
+        // Exclude URLs starting with /_, as they're likely an API call
+        new RegExp('^/_'),
+        // Exclude any URLs whose last part seems to be a file extension
+        // as they're likely a resource and not a SPA route.
+        // URLs containing a "?" character won't be blacklisted as they're likely
+        // a route with query params (e.g. auth callbacks).
+        new RegExp('/[^/?]+\\.[^/]+$')
+      ]
+    }),
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
       analyzerMode: 'static'
@@ -62,8 +79,6 @@ module.exports = merge(commonConfig, {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        parallel: true,
-        cache: true,
         terserOptions: {
           mangle: true,
           ecma: 8,

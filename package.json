@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development node scripts/start.js",
-    "build": "NODE_ENV=production node scripts/build.js",
-    "deploy": "npm run build && gh-pages -d build",
-    "changelog": "auto-changelog -p --release-summary -l false --template changelog.template.hbs && git add CHANGELOG.md"
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +30,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "styled-components": "^4.3.2",
-    "styled-reset": "^3.0.2"
+    "styled-reset": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -64,14 +62,15 @@
     "prettier": "^1.17.1",
     "react-dev-utils": "^9.0.3",
     "style-loader": "^1.0.0",
-    "terser-webpack-plugin": "^1.4.1",
+    "terser-webpack-plugin": "^2.0.0",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",
     "webpack-manifest-plugin": "^2.0.4",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "engines": {
     "node": ">=10.0.0",

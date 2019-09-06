@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Circle from './CircleProgress';
 const Wrapper = styled.section`
@@ -7,28 +7,51 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-self: center;
   .item {
-    border-top: 1px solid #fff;
-    padding: 1.4rem 0.2rem 0.8rem 0.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 1rem 0.2rem 0.6rem 0.2rem;
     position: relative;
     &.rgb {
       color: #fff;
+      text-align: right;
     }
     &:before {
       content: attr(data-id);
       text-transform: uppercase;
       position: absolute;
-      font-size: 0.6rem;
-      top: 0;
+      font-size: 0.5rem;
+      top: 0.4rem;
       left: 0;
     }
   }
 `;
-
-const ColorParam = ({ CMYK, RGB }) => {
+let interVal = 0;
+const ColorParam = ({ CMYK, RGB = [0, 0, 0], ...rest }) => {
   const [C, M, Y, K] = CMYK;
-  const [R, G, B] = RGB;
+  const [rgbArr, setRgbArr] = useState([...RGB]);
+
+  const [R, G, B] = rgbArr;
+  useEffect(() => {
+    let [newR, newG, newB] = RGB;
+    // let [oldR, oldG, oldB] = rgbArr;
+    interVal = setInterval(() => {
+      let [currR, currG, currB] = rgbArr;
+      if (currR == newR || currB == newB || currG == newG) {
+        clearInterval(interVal);
+      }
+      setRgbArr(prev => {
+        const [prevR, prevG, prevB] = prev;
+        const nextR = prevR > newR ? prevR - 1 : prevR < newR ? prevR + 1 : prevR;
+        const nextG = prevG > newG ? prevG - 1 : prevG < newG ? prevG + 1 : prevG;
+        const nextB = prevB > newB ? prevB - 1 : prevB < newB ? prevB + 1 : prevB;
+        return [nextR, nextG, nextB];
+      });
+    }, 10);
+    return () => {
+      clearInterval(interVal);
+    };
+  }, [RGB, rgbArr]);
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <div className="item c" data-id="c">
         <Circle progress={C} color={'#0093D3'} />
       </div>

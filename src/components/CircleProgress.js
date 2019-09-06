@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import React from 'react';
 const Wrapper = styled.div`
-  font-size: 20px;
-  margin: 20px;
+  font-size: 0.6rem;
   position: relative; /* so that children can be absolutely positioned */
   padding: 0;
   width: 5em;
   height: 5em;
-  background-color: #f2e9e1;
+  background-color: rgba(242, 233, 225, 0.6);
   border-radius: 50%;
   line-height: 5em;
 
@@ -21,15 +20,16 @@ const Wrapper = styled.div`
     border-radius: 50%;
     width: 4.3em;
     height: 4.3em;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     content: ' ';
   }
   /* Text inside the control */
-  span {
+  > span {
     position: absolute;
     line-height: 5em;
     width: 5em;
     text-align: center;
+    font-weight: 800;
     display: block;
     color: ${({ color }) => color};
     z-index: 2;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import CirclePercent from './CirclePercent';
 const Wrapper = styled.li.attrs(({ color }) => ({
   style: { borderTopColor: color }
 }))`
@@ -25,9 +25,14 @@ const Wrapper = styled.li.attrs(({ color }) => ({
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 0.6rem;
+    min-height: 6.4rem;
     .name {
       color: ${({ color }) => color};
       writing-mode: vertical-lr;
+    }
+    .cmyk {
+      display: flex;
+      justify-content: space-between;
     }
   }
   .line2 {
@@ -35,7 +40,7 @@ const Wrapper = styled.li.attrs(({ color }) => ({
     flex-direction: column;
     justify-content: space-between;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: bold;
     color: #fff;
     .hex {
@@ -92,21 +97,29 @@ const Color = ({ setCurrColor, isCurr, hex, name, pinyin, CMYK, RGB }) => {
       color={hex}
     >
       <div className="line1">
-        <p className="cmyk">
-          <i className="circle c">{c}</i>
-          <i className="circle m">{m}</i>
-          <i className="circle y">{y}</i>
-          <i className="circle k">{k}</i>
-        </p>
+        <div className="cmyk">
+          <i className="circle c">
+            <CirclePercent progress={c} />
+          </i>
+          <i className="circle m">
+            <CirclePercent progress={m} />
+          </i>
+          <i className="circle y">
+            <CirclePercent progress={y} />
+          </i>
+          <i className="circle k">
+            <CirclePercent progress={k} />
+          </i>
+        </div>
         <h2 className="name">{name}</h2>
       </div>
       <div className="line2">
         <p className="hex">{hex}</p>
-        <p className="rgb">
+        <div className="rgb">
           <i className="line r" percent={r}></i>
           <i className="line g" percent={g}></i>
           <i className="line b" percent={b}></i>
-        </p>
+        </div>
         <p className="pinyin">{pinyin}</p>
       </div>
     </Wrapper>
