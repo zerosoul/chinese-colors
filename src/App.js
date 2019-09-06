@@ -32,7 +32,7 @@ const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null
   name: '\u6de1\u85cf\u82b1\u7ea2',
   pinyin: 'dancanghuahong'
 };
-const TheColors = process.env.production ? allColors : colors;
+const TheColors = process.env.NODE_ENV === 'production' ? allColors : colors;
 const App = () => {
   const [currColor, setCurrColor] = useState(SelectedColor);
   useEffect(() => {
