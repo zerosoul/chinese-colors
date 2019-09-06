@@ -1,0 +1,101 @@
+[
+  {
+    "CMYK": [4, 5, 18, 0],
+    "RGB": [249, 244, 220],
+    "hex": "#f9f4dc",
+    "name": "\u4e73\u767d",
+    "pinyin": "rubai"
+  },
+
+  {
+    "CMYK": [41, 76, 64, 65],
+    "RGB": [175, 46, 43],
+    "hex": "#4b2e2b",
+    "name": "\u73ab\u7470\u7070",
+    "pinyin": "meiguihui"
+  },
+  {
+    "CMYK": [41, 84, 71, 67],
+    "RGB": [72, 37, 34],
+    "hex": "#482522",
+    "name": "\u706b\u5c71\u68d5",
+    "pinyin": "huoshanzong"
+  },
+  {
+    "CMYK": [40, 92, 78, 66],
+    "RGB": [72, 30, 28],
+    "hex": "#481e1c",
+    "name": "\u8c46\u6c99",
+    "pinyin": "dousha"
+  },
+  {
+    "CMYK": [0, 9, 12, 0],
+    "RGB": [251, 238, 226],
+    "hex": "#fbeee2",
+    "name": "\u6de1\u7c73\u7c89",
+    "pinyin": "danmifen"
+  },
+  {
+    "CMYK": [0, 19, 19, 0],
+    "RGB": [246, 220, 206],
+    "hex": "#f6dcce",
+    "name": "\u521d\u6843\u7c89\u7ea2",
+    "pinyin": "chutaofenhong"
+  },
+  {
+    "CMYK": [0, 27, 27, 0],
+    "RGB": [247, 207, 186],
+    "hex": "#f7cfba",
+    "name": "\u4ecb\u58f3\u6de1\u7c89\u7ea2",
+    "pinyin": "jieqiaodanfenhong"
+  },
+  {
+    "CMYK": [0, 43, 43, 0],
+    "RGB": [246, 173, 143],
+    "hex": "#f6ad8f",
+    "name": "\u6de1\u85cf\u82b1\u7ea2",
+    "pinyin": "dancanghuahong"
+  },
+  {
+    "CMYK": [0, 58, 61, 0],
+    "RGB": [246, 140, 96],
+    "hex": "#f68c60",
+    "name": "\u74dc\u74e4\u7ea2",
+    "pinyin": "guaranghong"
+  },
+  {
+    "CMYK": [0, 67, 74, 0],
+    "RGB": [249, 114, 61],
+    "hex": "#f9723d",
+    "name": "\u8299\u84c9\u7ea2",
+    "pinyin": "furonghong"
+  },
+  {
+    "CMYK": [0, 74, 85, 0],
+    "RGB": [250, 93, 25],
+    "hex": "#fa5d19",
+    "name": "\u8393\u9171\u7ea2",
+    "pinyin": "meijianghong"
+  },
+  {
+    "CMYK": [0, 62, 66, 0],
+    "RGB": [238, 128, 85],
+    "hex": "#ee8055",
+    "name": "\u6cd5\u87ba\u7ea2",
+    "pinyin": "faluohong"
+  },
+  {
+    "CMYK": [4, 82, 99, 0],
+    "RGB": [207, 72, 19],
+    "hex": "#cf4813",
+    "name": "\u843d\u971e\u7ea2",
+    "pinyin": "luoxiahong"
+  },
+  {
+    "CMYK": [21, 43, 43, 9],
+    "RGB": [184, 148, 133],
+    "hex": "#b89485",
+    "name": "\u6de1\u73ab\u7470\u7070",
+    "pinyin": "danmeiguihui"
+  }
+]

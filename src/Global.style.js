@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-
+import BodyBg from './assets/img/bg.texture.png';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{
@@ -22,10 +22,12 @@ const GlobalStyle = createGlobalStyle`
     margin:0 auto;
     min-height:100vh;
     position: relative;
+    background-image: url(${BodyBg});
+    transition:background-color .8s ease-in;
+
   }
   #root{
     min-height:100vh;
-    background-image:linear-gradient(135deg, rgb(96, 108, 136) 0%, rgb(63, 76, 107) 100%);
   }
 
   @media screen and (min-width: 320px){
