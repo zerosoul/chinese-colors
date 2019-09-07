@@ -28,7 +28,7 @@ const Wrapper = styled.section`
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     padding: 0.8rem 1rem;
-    width: 80vw;
+    width: 20rem;
     box-shadow: 0 0 9px black;
     border-radius: 8px;
     text-shadow: 0 0 8px black;
@@ -53,9 +53,10 @@ const Wrapper = styled.section`
       &.btns {
         margin-top: 2rem;
         flex-direction: row;
-        justify-content: space-between;
-        width: 44%;
         text-shadow: none;
+        > span:not(:first-child) {
+          padding-left: 0.4rem;
+        }
       }
     }
   }
@@ -79,16 +80,18 @@ export default function InfoModal({ visible, closeModal, bgColor }) {
               http://zhongguose.com
             </a>
           </span>
+        </p>
+        <p>
+          <span>参看: 色谱 中科院科技情报编委会名词室.科学出版社,1957.</span>
+          <span>Adobe RGB / CMYK FORGA39, Dot Gain 15% Screenshot</span>
+        </p>
+        <p>
           <span>
             Copyright © 2019 by
             <a href="//yangerxiao.com" target="_blank">
               Tristan
             </a>
           </span>
-        </p>
-        <p>
-          <span>参看: 色谱 中科院科技情报编委会名词室.科学出版社,1957.</span>
-          <span>Adobe RGB / CMYK FORGA39, Dot Gain 15% Screenshot</span>
         </p>
         <p className="btns">
           <GitHubButton

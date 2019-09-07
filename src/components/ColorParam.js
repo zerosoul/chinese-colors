@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Circle from './CircleProgress';
 const Wrapper = styled.section`
@@ -33,32 +33,10 @@ const Wrapper = styled.section`
     }
   }
 `;
-let interVal = 0;
 const ColorParam = ({ CMYK, RGB = [0, 0, 0], ...rest }) => {
   const [C, M, Y, K] = CMYK;
-  const [rgbArr, setRgbArr] = useState([...RGB]);
 
-  const [R, G, B] = rgbArr;
-  useEffect(() => {
-    let [newR, newG, newB] = RGB;
-    // let [oldR, oldG, oldB] = rgbArr;
-    interVal = setInterval(() => {
-      let [currR, currG, currB] = rgbArr;
-      if (currR == newR || currB == newB || currG == newG) {
-        clearInterval(interVal);
-      }
-      setRgbArr(prev => {
-        const [prevR, prevG, prevB] = prev;
-        const nextR = prevR > newR ? prevR - 1 : prevR < newR ? prevR + 1 : prevR;
-        const nextG = prevG > newG ? prevG - 1 : prevG < newG ? prevG + 1 : prevG;
-        const nextB = prevB > newB ? prevB - 1 : prevB < newB ? prevB + 1 : prevB;
-        return [nextR, nextG, nextB];
-      });
-    }, 10);
-    return () => {
-      clearInterval(interVal);
-    };
-  }, [RGB, rgbArr]);
+  const [R, G, B] = RGB;
   return (
     <Wrapper {...rest}>
       <div className="item c" data-id="c">
