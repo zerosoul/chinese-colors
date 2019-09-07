@@ -2201,6 +2201,11 @@ compression@^1.7.4:
     safe-buffer "5.1.2"
     vary "~1.1.2"
 
+compute-scroll-into-view@1.0.11:
+  version "1.0.11"
+  resolved "https://registry.npm.taobao.org/compute-scroll-into-view/download/compute-scroll-into-view-1.0.11.tgz#7ff0a57f9aeda6314132d8994cce7aeca794fecf"
+  integrity sha1-f/Clf5rtpjFBMtiZTM567KeU/s8=
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.npm.taobao.org/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -3673,6 +3678,11 @@ git-raw-commits@^1.3.0:
     meow "^4.0.0"
     split2 "^2.0.0"
     through2 "^2.0.0"
+
+github-buttons@^2.2.10:
+  version "2.2.10"
+  resolved "https://registry.npm.taobao.org/github-buttons/download/github-buttons-2.2.10.tgz#7ddf66679b4c23e4c4558fedbba6d8aa48241cd6"
+  integrity sha1-fd9mZ5tMI+TEVY/tu6bYqkgkHNY=
 
 glob-parent@^3.1.0:
   version "3.1.0"
@@ -6492,6 +6502,13 @@ react-error-overlay@^6.0.1:
   resolved "https://registry.npm.taobao.org/react-error-overlay/download/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
   integrity sha1-uNPPm7mRwCiDIlxIBEyz7iBBPg8=
 
+react-github-btn@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npm.taobao.org/react-github-btn/download/react-github-btn-1.0.6.tgz#4b5d2de86b2ca791ae113ab424321149966895d8"
+  integrity sha1-S10t6Gssp5GuETq0JDIRSZZoldg=
+  dependencies:
+    github-buttons "^2.2.10"
+
 react-is@^16.6.0, react-is@^16.8.1:
   version "16.9.0"
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
@@ -6947,6 +6964,13 @@ schema-utils@^2.0.0, schema-utils@^2.0.1, schema-utils@^2.2.0:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
 
+scroll-into-view-if-needed@2.2.20:
+  version "2.2.20"
+  resolved "https://registry.npm.taobao.org/scroll-into-view-if-needed/download/scroll-into-view-if-needed-2.2.20.tgz#3a46847a72233a3af9770e55df450f2a7f2e2a0e"
+  integrity sha1-OkaEenIjOjr5dw5V30UPKn8uKg4=
+  dependencies:
+    compute-scroll-into-view "1.0.11"
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/select-hose/download/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -7134,6 +7158,13 @@ slide@~1.1.3:
   version "1.1.6"
   resolved "https://registry.npm.taobao.org/slide/download/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
   integrity sha1-VusCfWW00tzmyy4tMsTUr8nh1wc=
+
+smooth-scroll-into-view-if-needed@^1.1.23:
+  version "1.1.23"
+  resolved "https://registry.npm.taobao.org/smooth-scroll-into-view-if-needed/download/smooth-scroll-into-view-if-needed-1.1.23.tgz#e2a3073e5f90deab0aca23f9316beb41230371a4"
+  integrity sha1-4qMHPl+Q3qsKyiP5MWvrQSMDcaQ=
+  dependencies:
+    scroll-into-view-if-needed "2.2.20"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

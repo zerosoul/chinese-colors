@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import scrollIntoView from 'scroll-into-view-if-needed';
+
 import CirclePercent from './CirclePercent';
 const Wrapper = styled.li.attrs(({ color }) => ({
   style: { borderTopColor: color }
@@ -13,11 +15,11 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   margin: 0.4rem;
   cursor: pointer;
   transition: all 0.5s;
-  &:hover,
-  &.curr {
-    box-shadow: 0 0 4px black;
+  &:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
   }
   &.curr {
+    box-shadow: 0 0 4px black;
     text-shadow: 0 0 10px black;
   }
   .line1 {
@@ -29,6 +31,16 @@ const Wrapper = styled.li.attrs(({ color }) => ({
     .name {
       color: ${({ color }) => color};
       writing-mode: vertical-lr;
+      align-self: flex-end;
+      font-size: 0.8rem;
+      margin-left: 0.2rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      .seq {
+        opacity: 0.5;
+      }
     }
     .cmyk {
       display: flex;
@@ -86,16 +98,19 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   }
 `;
 
-const Color = ({ setCurrColor, isCurr, hex, name, pinyin, CMYK, RGB }) => {
+const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB }) => {
   const [r, g, b] = RGB;
   const [c, m, y, k] = CMYK;
+  const handleColorClick = ({ target }) => {
+    scrollIntoView(target, {
+      behavior: 'smooth',
+      block: 'center',
+      scrollMode: 'if-needed'
+    });
+    setCurrColor(hex);
+  };
   return (
-    <Wrapper
-      rgb={RGB}
-      className={isCurr && 'curr'}
-      onClick={setCurrColor.bind(null, hex)}
-      color={hex}
-    >
+    <Wrapper rgb={RGB} className={isCurr && 'curr'} onClick={handleColorClick} color={hex}>
       <div className="line1">
         <div className="cmyk">
           <i className="circle c">
@@ -111,7 +126,10 @@ const Color = ({ setCurrColor, isCurr, hex, name, pinyin, CMYK, RGB }) => {
             <CirclePercent progress={k} />
           </i>
         </div>
-        <h2 className="name">{name}</h2>
+        <h2 className="name">
+          <span className="seq">{seq}</span>
+          <span className="txt">{name}</span>
+        </h2>
       </div>
       <div className="line2">
         <p className="hex">{hex}</p>

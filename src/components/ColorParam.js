@@ -13,6 +13,15 @@ const Wrapper = styled.section`
     &.rgb {
       color: #fff;
       text-align: right;
+      &.r {
+        color: rgb(255, 0, 0, 0.8);
+      }
+      &.g {
+        color: rgb(0, 255, 0, 0.8);
+      }
+      &.b {
+        color: rgb(0, 0, 255, 0.8);
+      }
     }
     &:before {
       content: attr(data-id);

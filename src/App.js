@@ -3,8 +3,10 @@ import ColorTitle from './components/ColorTitle';
 import Color from './components/Color';
 import ColorParam from './components/ColorParam';
 import InfoModal from './components/InfoModal';
+import IconInfo from './components/IconInfo';
 import Header from './components/Header';
 import styled from 'styled-components';
+import useModal from './hooks';
 import colors from './assets/colors.json';
 import allColors from './assets/colors.full.json';
 const Wrapper = styled.section`
@@ -34,6 +36,7 @@ const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null
 };
 const TheColors = process.env.NODE_ENV === 'production' ? allColors : colors;
 const App = () => {
+  const { visible: modalVisible, showModal, closeModal } = useModal();
   const [currColor, setCurrColor] = useState(SelectedColor);
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
@@ -50,9 +53,10 @@ const App = () => {
       <Wrapper>
         <nav>
           <ul className="colors">
-            {TheColors.map(color => {
+            {TheColors.map((color, idx) => {
               return (
                 <Color
+                  seq={idx + 1}
                   isCurr={currColor.name == color.name}
                   setCurrColor={handleColorClick}
                   {...color}
@@ -66,7 +70,8 @@ const App = () => {
         <ColorTitle {...currColor}></ColorTitle>
         <Header />
       </Wrapper>
-      <InfoModal />
+      <IconInfo showInfoModal={showModal} />
+      <InfoModal visible={modalVisible} bgColor={currColor.hex} closeModal={closeModal} />
     </>
   );
 };

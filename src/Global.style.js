@@ -27,17 +27,13 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     -webkit-overflow-scrolling: touch;
-    overflow:scroll;
+    overflow:hidden;
     margin:0 auto;
-    min-height:100vh;
-    position: relative;
     background-image: url(${BodyBg});
-    transition:background-color .8s ease-in;
+    transition:background-color 1.6s;
 
   }
-  #root{
-    min-height:100vh;
-  }
+
 
   @media screen and (min-width: 320px){
       html {
