@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import BodyBg from './assets/img/bg.texture.png';
-import JingDianWeiBeiJian from './assets/JingDianWeiBeiJian.ttf';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{
@@ -16,10 +15,6 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family:"Fangzheng ZY", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
-  }
-  @font-face {
-    font-family: 'JingDianWeiBeiJian';
-    src: url(${JingDianWeiBeiJian}) format('ttf');
   }
   *::-webkit-scrollbar {
     width: 0px;

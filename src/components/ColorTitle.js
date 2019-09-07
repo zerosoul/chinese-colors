@@ -35,7 +35,7 @@ const Wrapper = styled.hgroup`
     letter-spacing: 0.4rem;
     font-weight: 800;
     writing-mode: vertical-lr;
-    font-family: 'JingDianWeiBeiJian';
+    font-family: 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi', 'Microsoft YaHei';
   }
   > h2 {
     text-transform: uppercase;
