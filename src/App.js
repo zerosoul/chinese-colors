@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import scrollIntoView from 'scroll-into-view-if-needed';
+import React, { useState, useEffect } from 'react';
 
 import ColorTitle from './components/ColorTitle';
 import Color from './components/Color';
@@ -38,17 +37,8 @@ const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null
 };
 const TheColors = process.env.NODE_ENV === 'production' ? allColors : colors;
 const App = () => {
-  const colorContainer = useRef(null);
   const { visible: modalVisible, showModal, closeModal } = useModal();
   const [currColor, setCurrColor] = useState(SelectedColor);
-  useEffect(() => {
-    const target = colorContainer.current.querySelector('.curr');
-    scrollIntoView(target, {
-      behavior: 'smooth',
-      block: 'center',
-      scrollMode: 'if-needed'
-    });
-  }, []);
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
@@ -63,7 +53,7 @@ const App = () => {
     <>
       <Wrapper>
         <nav>
-          <ul ref={colorContainer} className="colors">
+          <ul className="colors">
             {TheColors.map((color, idx) => {
               return (
                 <Color

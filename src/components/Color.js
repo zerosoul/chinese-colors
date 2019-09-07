@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
@@ -103,16 +103,24 @@ const Wrapper = styled.li.attrs(({ color }) => ({
 const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB }) => {
   const [r, g, b] = RGB;
   const [c, m, y, k] = CMYK;
-  const handleColorClick = ({ target }) => {
-    scrollIntoView(target, {
-      behavior: 'smooth',
-      block: 'center',
-      scrollMode: 'if-needed'
-    });
-    setCurrColor(hex);
-  };
+  const colorEle = useRef(null);
+  useEffect(() => {
+    if (isCurr) {
+      scrollIntoView(colorEle.current, {
+        behavior: 'smooth',
+        block: 'center',
+        scrollMode: 'if-needed'
+      });
+    }
+  }, [isCurr]);
   return (
-    <Wrapper rgb={RGB} className={isCurr && 'curr'} onClick={handleColorClick} color={hex}>
+    <Wrapper
+      ref={colorEle}
+      rgb={RGB}
+      className={isCurr && 'curr'}
+      onClick={setCurrColor.bind(null, hex)}
+      color={hex}
+    >
       <div className="line1">
         <div className="cmyk">
           <i className="circle c">
