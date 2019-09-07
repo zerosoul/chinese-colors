@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     color:#ffffeb;
+    touch-action: manipulation
   }
   html{
     -webkit-font-smoothing: antialiased;
@@ -22,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     -webkit-overflow-scrolling: touch;
-    overflow:hidden;
     margin:0 auto;
     background-image: url(${BodyBg});
     transition:background-color 1.6s;
