@@ -14,6 +14,8 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   padding: 0.5rem 0.2rem 0.4rem 0.2rem;
   margin: 0.4rem;
   cursor: pointer;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
   transition: all 0.5s;
   &:hover {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);

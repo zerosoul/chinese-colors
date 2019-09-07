@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import scrollIntoView from 'scroll-into-view-if-needed';
+
 import ColorTitle from './components/ColorTitle';
 import Color from './components/Color';
 import ColorParam from './components/ColorParam';
@@ -36,8 +38,17 @@ const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null
 };
 const TheColors = process.env.NODE_ENV === 'production' ? allColors : colors;
 const App = () => {
+  const colorContainer = useRef(null);
   const { visible: modalVisible, showModal, closeModal } = useModal();
   const [currColor, setCurrColor] = useState(SelectedColor);
+  useEffect(() => {
+    const target = colorContainer.current.querySelector('.curr');
+    scrollIntoView(target, {
+      behavior: 'smooth',
+      block: 'center',
+      scrollMode: 'if-needed'
+    });
+  }, []);
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
@@ -52,7 +63,7 @@ const App = () => {
     <>
       <Wrapper>
         <nav>
-          <ul className="colors">
+          <ul ref={colorContainer} className="colors">
             {TheColors.map((color, idx) => {
               return (
                 <Color
@@ -70,7 +81,7 @@ const App = () => {
         <ColorTitle {...currColor}></ColorTitle>
         <Header />
       </Wrapper>
-      <IconInfo showInfoModal={showModal} />
+      {!modalVisible && <IconInfo showInfoModal={showModal} />}
       <InfoModal visible={modalVisible} bgColor={currColor.hex} closeModal={closeModal} />
     </>
   );
