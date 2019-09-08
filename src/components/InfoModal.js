@@ -93,22 +93,24 @@ export default function InfoModal({ visible, closeModal, bgColor }) {
             </a>
           </span>
         </p>
-        <p className="btns">
-          <GitHubButton
-            href="https://github.com/zerosoul/chinese-colors"
-            data-show-count="true"
-            aria-label="Star zerosoul/chinese-colors on GitHub"
-          >
-            Star
-          </GitHubButton>
-          <GitHubButton
-            href="https://github.com/zerosoul/chinese-colors/fork"
-            data-show-count="true"
-            aria-label="Fork zerosoul/chinese-colors on GitHub"
-          >
-            Fork
-          </GitHubButton>
-        </p>
+        {process.env.NODE_ENV === 'production' && (
+          <p className="btns">
+            <GitHubButton
+              href="https://github.com/zerosoul/chinese-colors"
+              data-show-count="true"
+              aria-label="Star zerosoul/chinese-colors on GitHub"
+            >
+              Star
+            </GitHubButton>
+            <GitHubButton
+              href="https://github.com/zerosoul/chinese-colors/fork"
+              data-show-count="true"
+              aria-label="Fork zerosoul/chinese-colors on GitHub"
+            >
+              Fork
+            </GitHubButton>
+          </p>
+        )}
       </div>
     </Wrapper>
   );
