@@ -8,12 +8,8 @@ const Wrapper = styled.section`
   left: 0;
   right: 0;
   bottom: 0;
-  display: none;
   z-index: 999;
 
-  &.visible {
-    display: block;
-  }
   .mask {
     position: absolute;
     top: 0;
@@ -61,11 +57,11 @@ const Wrapper = styled.section`
     }
   }
 `;
-export default function InfoModal({ visible, closeModal, bgColor }) {
+export default function InfoModal({ closeModal, bgColor }) {
   console.log('bgcolor', bgColor);
 
   return (
-    <Wrapper bgColor={bgColor} className={visible && 'visible'}>
+    <Wrapper bgColor={bgColor}>
       <div className="mask" onClick={closeModal}></div>
       <div className="info">
         <h2>chinese colors</h2>

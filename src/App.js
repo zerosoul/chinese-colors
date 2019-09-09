@@ -119,7 +119,7 @@ const App = () => {
         <Header />
       </Wrapper>
       {!modalVisible && <IconInfo showInfoModal={showModal} />}
-      <InfoModal visible={modalVisible} bgColor={currColor.hex} closeModal={closeModal} />
+      {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
     </>
   );
 };

@@ -7,21 +7,22 @@ const Wrapper = styled.li`
   padding: 0.8rem 0.4rem;
   padding-top: 0.2rem;
   font-size: 1.5rem;
-  border-top-right-radius: 0.6rem;
-  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
   margin-right: 0.4rem;
-  transition: all 0.8s;
+  transition: all 0.6s;
   min-height: 8rem;
   transform: translateY(50%);
   text-align: center;
   writing-mode: vertical-lr;
   font-weight: 800;
   box-shadow: 0 0 0.8rem black;
+  text-shadow: 0 0 6px #999;
   &:last-child {
     margin-right: 0;
   }
   &.selected {
-    transform: translateY(-0.6rem) scale(1.2);
+    transform: translateY(0) scale(1.1);
   }
 `;
 
@@ -34,7 +35,7 @@ const ColorSet = ({ name, rgb, hex, currSet, setCurrSet }) => {
   return (
     <Wrapper
       onClick={handleSetClick}
-      style={{ color: hex, background: `rgba(${rgb.join(',')},.4)` }}
+      style={{ color: hex, background: `rgba(${rgb.join(',')})` }}
       className={name == currSet ? 'selected' : ''}
     >
       {name}

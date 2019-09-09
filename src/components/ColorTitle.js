@@ -14,6 +14,7 @@ const Wrapper = styled.hgroup`
   padding-top: 1rem;
   position: relative;
   transition: transform 0.4s ease-in;
+  width: 4.6rem;
   cursor: pointer;
 
   &:hover {

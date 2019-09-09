@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.aside`
   position: fixed;
-  bottom: 1rem;
+  top: 1rem;
   right: 1rem;
   cursor: pointer;
   border-radius: 50%;
