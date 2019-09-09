@@ -58,7 +58,7 @@ module.exports = merge(commonConfig, {
     }),
     new GenerateSW({
       clientsClaim: true,
-      exclude: [/\.map$/, /asset-manifest\.json$/],
+      exclude: [/\.map$/, /asset-manifest\.json$/, /index\.html$/],
       importWorkboxFrom: 'local',
       navigateFallback: 'index.html',
       navigateFallbackBlacklist: [
