@@ -43,12 +43,11 @@ const Wrapper = styled.section`
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 999;
     padding: 0 1rem;
+    z-index: 999;
     .sets {
       display: flex;
       align-items: flex-start;
-      width: 84vw;
     }
   }
   nav {
@@ -57,6 +56,7 @@ const Wrapper = styled.section`
     .colors {
       display: flex;
       flex-wrap: wrap;
+      align-content: flex-start;
       min-width: 3rem;
       max-width: 20rem;
       height: 100vh;
