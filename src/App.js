@@ -1,15 +1,36 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import pinyin from 'pinyin';
+import convert from 'color-convert';
 import ColorTitle from './components/ColorTitle';
 import Color from './components/Color';
 import ColorParam from './components/ColorParam';
 import InfoModal from './components/InfoModal';
 import IconInfo from './components/IconInfo';
 import Header from './components/Header';
-import styled from 'styled-components';
-import useModal from './hooks';
+import ColorSet from './components/ColorSet';
+import { useModal, useColor } from './hooks';
 import colors from './assets/colors.json';
-import allColors from './assets/colors.full.json';
+
+const Colors = colors.map(set => {
+  set.RGB = convert.hex.rgb(set.hex);
+  set.colors = set.colors.map(c => {
+    return {
+      ...c,
+      RGB: convert.hex.rgb(c.hex),
+      CMYK: convert.hex.cmyk(c.hex),
+      pinyin: pinyin(c.name).join(' ')
+    };
+  });
+  return set;
+});
+
+console.log('colors:', Colors);
+const SelectedColorSet =
+  JSON.parse(localStorage.getItem('SELECTED_COLOR_SET') || 'null') || Colors[0];
+const SelectedColor =
+  JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null') || SelectedColorSet.colors[2];
+
 const Wrapper = styled.section`
   height: 100vh;
   display: flex;
@@ -18,48 +39,74 @@ const Wrapper = styled.section`
   .params {
     margin-right: 1rem;
   }
-  .colors {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 3rem;
-    max-width: 20rem;
+  aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    padding: 0 1rem;
+    .sets {
+      display: flex;
+      align-items: flex-start;
+      width: 84vw;
+    }
+  }
+  nav {
+    position: relative;
     height: 100vh;
-    overflow-y: scroll;
+    .colors {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: 3rem;
+      max-width: 20rem;
+      height: 100vh;
+      overflow-y: scroll;
+    }
   }
 `;
 console.log('colors', colors);
-const SelectedColor = JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null') || {
-  CMYK: [0, 43, 43, 0],
-  RGB: [246, 173, 143],
-  hex: '#f6ad8f',
-  name: '\u6de1\u85cf\u82b1\u7ea2',
-  pinyin: 'dancanghuahong'
-};
-const TheColors = process.env.NODE_ENV === 'production' ? allColors : colors;
 const App = () => {
   const { visible: modalVisible, showModal, closeModal } = useModal();
-  const [currColor, setCurrColor] = useState(SelectedColor);
+  const { sets, currSet, currColor, updateCurrColor, updateCurrSet } = useColor({
+    sets: Colors.map(set => {
+      const newSet = { ...set };
+      // delete newSet.colors;
+      return newSet;
+    }),
+    currColor: SelectedColor,
+    currSet: SelectedColorSet
+  });
+
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
-  const handleColorClick = hex => {
-    let clickedColor = TheColors.find(c => {
-      return c.hex === hex;
-    });
-    setCurrColor(clickedColor);
-    localStorage.setItem('SELECTED_COLOR', JSON.stringify(clickedColor));
-  };
   return (
     <>
       <Wrapper>
+        <aside>
+          <ul className="sets">
+            {sets.map(set => {
+              return (
+                <ColorSet
+                  currSet={currSet.name}
+                  setCurrSet={updateCurrSet}
+                  hex={set.hex}
+                  rgb={set.RGB}
+                  name={set.name}
+                  key={set.name}
+                ></ColorSet>
+              );
+            })}
+          </ul>
+        </aside>
         <nav>
           <ul className="colors">
-            {TheColors.map((color, idx) => {
+            {currSet.colors.map((color, idx) => {
               return (
                 <Color
                   seq={idx + 1}
                   isCurr={currColor.name == color.name}
-                  setCurrColor={handleColorClick}
+                  setCurrColor={updateCurrColor}
                   {...color}
                   key={color.name}
                 />

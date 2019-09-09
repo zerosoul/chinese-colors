@@ -118,7 +118,7 @@ const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB }) 
       ref={colorEle}
       rgb={RGB}
       className={isCurr && 'curr'}
-      onClick={setCurrColor.bind(null, hex)}
+      onClick={setCurrColor.bind(null, name)}
       color={hex}
     >
       <div className="line1">

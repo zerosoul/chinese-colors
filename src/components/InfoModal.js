@@ -27,7 +27,7 @@ const Wrapper = styled.section`
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    padding: 0.8rem 1rem;
+    padding: 1.4rem 1rem;
     width: 20rem;
     box-shadow: 0 0 9px black;
     border-radius: 8px;
@@ -82,8 +82,12 @@ export default function InfoModal({ visible, closeModal, bgColor }) {
           </span>
         </p>
         <p>
-          <span>参看: 色谱 中科院科技情报编委会名词室.科学出版社,1957.</span>
-          <span>Adobe RGB / CMYK FORGA39, Dot Gain 15% Screenshot</span>
+          <span>
+            数据来源：
+            <a href="http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html" target="_blank">
+              新浪博客：中国传统颜色卡
+            </a>
+          </span>
         </p>
         <p>
           <span>
