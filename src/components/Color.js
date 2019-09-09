@@ -9,6 +9,7 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   color: #fff;
   border-top: 0.4rem solid;
   display: flex;
+  align-self: flex-start;
   flex-direction: row;
   writing-mode: vertical-lr;
   padding: 0.5rem 0.2rem 0.4rem 0.2rem;
