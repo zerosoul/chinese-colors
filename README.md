@@ -1,7 +1,5 @@
 # <img src="demo/logo.png" alt="Logo" width="80"> 中国传统颜色在线手册 
 
-## 访问地址
-
 [Chinese Color Cheatsheet](https://works.yangerxiao.com/chinese-colors/)
 
 <img src="demo/pc.png" alt="PC UI" width="600">
