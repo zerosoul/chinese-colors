@@ -10,8 +10,8 @@ const Wrapper = styled.div`
       transition: all 0.6s;
       cursor: pointer;
       box-shadow: 0 0 0.8rem black;
-      width: 2rem;
-      height: 2rem;
+      width: 2.6rem;
+      height: 2.6rem;
       border-radius: 50%;
 
       display: flex;
@@ -49,7 +49,8 @@ const Wrapper = styled.div`
     cursor: pointer;
     position: absolute;
     right: -4rem;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 2rem;
     height: 2rem;
     background: #333;
