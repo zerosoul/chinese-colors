@@ -1,19 +1,22 @@
 # 中国传统颜色在线手册
-
-![Logo](demo/logo.png)
+<img src="demo/logo.png" alt="Logo" width="100">
 
 ## 访问地址
 
 [Chinese Color Cheatsheet](https://works.yangerxiao.com/chinese-colors/)
 
-![PC UI](demo/pc.png)
+<img src="demo/pc.png" alt="PC UI" width="600">
+
 
 ## 特性
 
 - 使用React构建
 - 支持 PWA
+<img src="demo/pwa.jpg" alt="PWA Logo" width="300">
+
 - Mobile First
-  ![Mobile UI](demo/m.png)
+<img src="demo/m.png" alt="Mobile UI" width="300">
+
 - 颜色选中高亮
 - 颜色分类
 - 可复制RGB **(TO DO)**
