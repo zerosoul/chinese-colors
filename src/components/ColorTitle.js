@@ -16,6 +16,7 @@ const Wrapper = styled.hgroup`
   transition: transform 0.4s ease-in;
   width: 4.6rem;
   cursor: pointer;
+  margin-top: -6rem;
 
   &:hover {
     transform: rotate(3deg) scale(1.1);

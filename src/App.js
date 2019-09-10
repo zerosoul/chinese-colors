@@ -41,14 +41,10 @@ const Wrapper = styled.section`
   }
   aside {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 2rem;
+    right: 5rem;
     padding: 0 1rem;
     z-index: 999;
-    .sets {
-      display: flex;
-      align-items: flex-start;
-    }
   }
   nav {
     position: relative;
@@ -76,7 +72,6 @@ const App = () => {
     currColor: SelectedColor,
     currSet: SelectedColorSet
   });
-
   useEffect(() => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
@@ -84,20 +79,7 @@ const App = () => {
     <>
       <Wrapper>
         <aside>
-          <ul className="sets">
-            {sets.map(set => {
-              return (
-                <ColorSet
-                  currSet={currSet.name}
-                  setCurrSet={updateCurrSet}
-                  hex={set.hex}
-                  rgb={set.RGB}
-                  name={set.name}
-                  key={set.name}
-                ></ColorSet>
-              );
-            })}
-          </ul>
+          <ColorSet sets={sets} currSetName={currSet.name} setCurrSet={updateCurrSet} />
         </aside>
         <nav>
           <ul className="colors">
