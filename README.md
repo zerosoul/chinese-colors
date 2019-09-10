@@ -1,4 +1,4 @@
-# 中国传统颜色在线手册 <img src="demo/logo.png" alt="Logo" width="80">
+# <img src="demo/logo.png" alt="Logo" width="80"> 中国传统颜色在线手册 
 
 ## 访问地址
 
