@@ -58,9 +58,72 @@ module.exports = merge(commonConfig, {
     }),
     new GenerateSW({
       clientsClaim: true,
-      exclude: [/\.map$/, /asset-manifest\.json$/, /index\.html$/, /chinese-colors\/$/],
+      exclude: [/\.map$/, /asset-manifest\.json$/, /\.(?:png|jpg|jpeg|svg)$/, /\.js$/],
       importWorkboxFrom: 'local',
       navigateFallback: 'index.html',
+      //定义运行时缓存（可接受多个json对象）
+      runtimeCaching: [
+        {
+          urlPattern: /\.html$/,
+          // 在缓存时使用 StaleWhileRevalidate 策略.
+          handler: 'StaleWhileRevalidate',
+          options: {
+            // 定义缓存这些图片的 cache名称
+            cacheName: 'my-html-cache',
+
+            //配置 expiration
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60
+            },
+
+            //配置哪些响应被认为是可缓存的
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        },
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+          // 在缓存时使用 StaleWhileRevalidate 策略.
+          handler: 'StaleWhileRevalidate',
+          options: {
+            // 定义缓存这些图片的 cache名称
+            cacheName: 'my-images-cache',
+
+            //配置 expiration
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60
+            },
+
+            //配置哪些响应被认为是可缓存的
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        },
+        {
+          urlPattern: /\.js$/,
+          // 在缓存时使用 StaleWhileRevalidate 策略.
+          handler: 'StaleWhileRevalidate',
+          options: {
+            // 定义缓存这些图片的 cache名称
+            cacheName: 'my-js-cache',
+
+            //配置 expiration
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60
+            },
+
+            //配置哪些响应被认为是可缓存的
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        }
+      ],
       navigateFallbackBlacklist: [
         // Exclude URLs starting with /_, as they're likely an API call
         new RegExp('^/_'),
