@@ -1,5 +1,4 @@
-# 中国传统颜色在线手册
-<img src="demo/logo.png" alt="Logo" width="100">
+# 中国传统颜色在线手册 <img src="demo/logo.png" alt="Logo" width="80">
 
 ## 访问地址
 
@@ -7,14 +6,17 @@
 
 <img src="demo/pc.png" alt="PC UI" width="600">
 
-
 ## 特性
 
 - 使用React构建
 - 支持 PWA
+
+
 <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
 - Mobile First
+
+
 <img src="demo/m.png" alt="Mobile UI" width="300">
 
 - 颜色选中高亮
