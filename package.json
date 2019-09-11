@@ -30,6 +30,7 @@
     "color-convert": "^2.0.1",
     "pinyin": "^2.9.0",
     "react": "^16.9.0",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.9.0",
     "react-github-btn": "^1.0.6",
     "react-redux": "^7.1.1",

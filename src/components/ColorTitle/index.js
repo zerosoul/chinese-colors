@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import IconFav from './IconFav';
+import IconCopy from './IconCopy';
 
 const Wrapper = styled.hgroup`
   color: #333;
@@ -10,31 +12,22 @@ const Wrapper = styled.hgroup`
   align-self: center;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   border-radius: 6px;
-  padding: 0.6rem 0.8rem;
-  padding-top: 1rem;
+  padding: 1rem 0.8rem;
   position: relative;
-  transition: transform 0.4s ease-in;
   width: 4.6rem;
   cursor: pointer;
   margin-top: -6rem;
 
-  &:hover {
-    transform: rotate(3deg) scale(1.1);
+  &:hover > h1 {
+    transform: scale(1.1);
   }
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
-    width: 0.6rem;
-    height: 0.6rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 200, 0.4);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-  }
+
   > h1 {
     font-size: 3.2rem;
+    letter-spacing: -0.8rem;
     writing-mode: vertical-lr;
+    transition: transform 0.4s ease-in;
+
     font-family: 'TChinese', 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi',
       'Microsoft YaHei';
   }
@@ -47,13 +40,24 @@ const Wrapper = styled.hgroup`
     bottom: 0.4rem;
     color: rgba(255, 255, 255, 0.66);
   }
+  > h3 {
+    width: 100%;
+    position: absolute;
+    left: -0.4rem;
+    bottom: -2.8rem;
+    display: flex;
+  }
 `;
 
-const ColorTitle = ({ name, pinyin }) => {
+const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
   return (
     <Wrapper>
       <h1>{name}</h1>
+      <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
       <h2>{pinyin}</h2>
+      <h3>
+        <IconCopy currColorHex={hex} />
+      </h3>
     </Wrapper>
   );
 };

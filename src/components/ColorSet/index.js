@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
-
+import IconCollection from './IconCollection';
 const Wrapper = styled.div`
   ul {
     display: flex;
@@ -19,7 +19,9 @@ const Wrapper = styled.div`
       align-items: center;
       font-size: 0.8rem;
       font-weight: 800;
-      margin-right: -1rem;
+      &:not(:first-child) {
+        margin-right: -1rem;
+      }
       &.selected {
         transform: translateY(-1.6rem);
       }
@@ -83,19 +85,27 @@ const ColorSet = ({ currSetName, setCurrSet, sets }) => {
   return (
     <Wrapper className={`sets ${isHover ? 'expand' : ''}`}>
       <ul>
+        <IconCollection
+          className={'' == currSetName ? 'selected' : ''}
+          showCollection={handleSetClick.bind(null, '')}
+        />
+
         {sets.map(({ name, RGB }) => {
-          return (
-            <li
-              onClick={handleSetClick.bind(null, name)}
-              key={name}
-              style={{
-                background: `rgba(${RGB.join(',')})`
-              }}
-              className={name == currSetName ? 'selected' : ''}
-            >
-              {name}
-            </li>
-          );
+          if (name) {
+            return (
+              <li
+                onClick={handleSetClick.bind(null, name)}
+                key={name}
+                style={{
+                  background: `rgba(${RGB.join(',')})`
+                }}
+                className={name == currSetName ? 'selected' : ''}
+              >
+                {name}
+              </li>
+            );
+          }
+          return null;
         })}
       </ul>
       <i className="divider">|</i>

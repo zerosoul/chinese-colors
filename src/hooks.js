@@ -25,7 +25,9 @@ const useColor = initialValue => {
       case 'UPDATE_COLOR_SET': {
         let cs = sets.find(cs => cs.name === payload.name);
         localStorage.setItem('SELECTED_COLOR_SET', JSON.stringify(cs));
-
+        if (payload.name == '') {
+          cs.colors = JSON.parse(localStorage.getItem('FAV_COLORS') || '[]');
+        }
         return { ...state, currSet: cs };
       }
       default:

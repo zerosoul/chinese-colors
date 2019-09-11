@@ -12,8 +12,10 @@ import ColorSet from './components/ColorSet';
 import { useModal, useColor } from './hooks';
 import colors from './assets/colors.json';
 
-window.wtf = colors;
-
+colors.push({
+  name: '',
+  colors: JSON.parse(localStorage.getItem('FAV_COLORS') || '[]')
+});
 const Colors = colors.map(set => {
   set.RGB = convert.hex.rgb(set.hex);
   set.colors = set.colors.map(c => {
