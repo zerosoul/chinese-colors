@@ -51,12 +51,11 @@ const Wrapper = styled.section`
   nav {
     position: relative;
     height: 100vh;
+    width: 16rem;
     .colors {
       display: flex;
       flex-wrap: wrap;
       align-content: flex-start;
-      min-width: 3rem;
-      max-width: 20rem;
       height: 100vh;
       overflow-y: scroll;
     }
