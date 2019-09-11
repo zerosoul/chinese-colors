@@ -15,7 +15,7 @@ const Wrapper = styled.hgroup`
   padding: 1rem 0.8rem;
   position: relative;
   width: 4.6rem;
-  cursor: pointer;
+  cursor: default;
   margin-top: -6rem;
 
   &:hover > h1 {
@@ -24,7 +24,7 @@ const Wrapper = styled.hgroup`
 
   > h1 {
     font-size: 3.2rem;
-    letter-spacing: -0.8rem;
+    letter-spacing: -0.5rem;
     writing-mode: vertical-lr;
     transition: transform 0.4s ease-in;
 

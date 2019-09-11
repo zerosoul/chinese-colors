@@ -23,11 +23,14 @@ const Wrapper = styled.section`
         color: rgb(0, 0, 255, 0.8);
       }
     }
+
     &:before {
       content: attr(data-id);
       text-transform: uppercase;
       position: absolute;
       font-size: 0.5rem;
+      font-weight: 800;
+      color: #fff;
       top: 0.4rem;
       left: 0;
     }
