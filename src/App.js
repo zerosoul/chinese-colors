@@ -12,6 +12,8 @@ import ColorSet from './components/ColorSet';
 import { useModal, useColor } from './hooks';
 import colors from './assets/colors.json';
 
+window.wtf = colors;
+
 const Colors = colors.map(set => {
   set.RGB = convert.hex.rgb(set.hex);
   set.colors = set.colors.map(c => {

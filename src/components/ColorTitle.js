@@ -34,10 +34,9 @@ const Wrapper = styled.hgroup`
   }
   > h1 {
     font-size: 3.2rem;
-    letter-spacing: 0.4rem;
-    font-weight: 800;
     writing-mode: vertical-lr;
-    font-family: 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi', 'Microsoft YaHei';
+    font-family: 'TChinese', 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi',
+      'Microsoft YaHei';
   }
   > h2 {
     text-transform: uppercase;
