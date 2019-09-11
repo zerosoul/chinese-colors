@@ -3,14 +3,18 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 0.2rem;
+  top: 4px;
   right: 0.2rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  .icon path {
-    transition: all 0.5s ease-in;
+
+  .icon {
+    width: 1.4rem;
+    path {
+      transition: all 0.5s ease-in;
+    }
   }
 `;
 const FavStoreKey = 'FAV_COLORS';

@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  .icon {
+    width: 1.4rem;
+  }
   > .hex {
     font-size: 0.6rem;
     padding: 0.2rem;

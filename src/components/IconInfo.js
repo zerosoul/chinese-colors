@@ -11,6 +11,10 @@ const Wrapper = styled.aside`
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.62);
+  .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 `;
 
 const IconInfo = ({ showInfoModal }) => {
