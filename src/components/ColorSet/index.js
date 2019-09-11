@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     }
   }
   &.expand ul li:not(:last-child) {
-    margin-right: 0;
+    margin-right: 0.4rem;
   }
   .divider {
     position: absolute;

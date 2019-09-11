@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.li`
@@ -7,20 +7,43 @@ const Wrapper = styled.li`
   justify-content: center;
   align-items: center;
   background: #ef7a82;
+  position: relative;
   .icon {
     width: 1.4rem;
     path {
       transition: all 0.5s ease-in;
     }
   }
+  .favTip {
+    position: absolute;
+    top: -2rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    width: 4rem;
+    font-size: 0.7rem;
+    text-align: center;
+  }
 `;
-const IconCollection = ({ currColorHex, showCollection, ...rest }) => {
-  const handleCollectClick = () => {
-    console.log('collect t');
-    showCollection();
+const IconCollection = ({ showCollection, ...rest }) => {
+  const [showTip, setShowTip] = useState(false);
+  const handleClick = () => {
+    if (showTip) return;
+    const favs = JSON.parse(localStorage.getItem('FAV_COLORS') || '[]');
+    if (favs.length) {
+      showCollection();
+    } else {
+      setShowTip(true);
+      setTimeout(() => {
+        setShowTip(false);
+      }, 2000);
+    }
   };
   return (
-    <Wrapper {...rest} onClick={handleCollectClick}>
+    <Wrapper onClick={handleClick} {...rest}>
+      {showTip && <p className="favTip">暂无收藏</p>}
+
       <svg
         t="1568178514471"
         className="icon"
