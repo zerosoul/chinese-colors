@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <Wrapper>
       <img className="logo" src={Logo} alt="logo" />
-      <h1>chinese colors</h1>
+      <h1>chinese color</h1>
     </Wrapper>
   );
 }

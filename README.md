@@ -1,4 +1,4 @@
-# <img src="demo/logo.png" alt="Logo" width="80"> 中国传统颜色在线手册 
+# <img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册 
 
 [Chinese Color Cheatsheet](https://works.yangerxiao.com/chinese-colors/)
 
@@ -9,17 +9,16 @@
 - 使用React构建
 - 支持 PWA
 
-
 <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
-- Mobile First
-
+- 适配移动端展现 (Mobile First)
 
 <img src="demo/m.png" alt="Mobile UI" width="300">
 
 - 颜色选中高亮
 - 颜色分类
-- 可复制RGB **(TO DO)**
+- 可复制HEX
+- 可收藏喜欢的颜色
 
 
 ## 参考
