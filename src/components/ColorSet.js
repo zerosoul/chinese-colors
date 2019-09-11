@@ -64,7 +64,7 @@ const Wrapper = styled.div`
     box-shadow: 1px -1px 6px black;
   }
   &.expand .btn {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotateZ(180deg);
   }
 `;
 

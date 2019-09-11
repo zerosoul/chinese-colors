@@ -8,7 +8,7 @@ const Wrapper = styled.hgroup`
   justify-content: space-around;
   align-items: center;
   align-self: center;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   border-radius: 6px;
   padding: 0.6rem 0.8rem;
   padding-top: 1rem;
