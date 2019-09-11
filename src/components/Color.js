@@ -102,7 +102,7 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   }
 `;
 
-const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB }) => {
+const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB, intro }) => {
   const [r, g, b] = RGB;
   const [c, m, y, k] = CMYK;
   const colorEle = useRef(null);
@@ -122,6 +122,7 @@ const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB }) 
       className={isCurr && 'curr'}
       onClick={setCurrColor.bind(null, name)}
       color={hex}
+      title={intro ? intro : null}
     >
       <div className="line1">
         <div className="cmyk">
