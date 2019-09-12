@@ -11,8 +11,8 @@ const Wrapper = styled.aside`
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   .icon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.7rem;
+    height: 1.7rem;
   }
 `;
 

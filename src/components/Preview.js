@@ -33,6 +33,8 @@ const Wrapper = styled.section`
       font-size: 6rem;
       width: 6rem;
       opacity: 0.6;
+      padding-top: 0.4rem;
+
       border-top: 0.6rem solid ${({ bgColor }) => bgColor};
     }
     > h2 {
