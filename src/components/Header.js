@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useMobile } from '../hooks';
 import Logo from '../assets/img/logo.png';
 const Wrapper = styled.header`
   display: flex;
@@ -23,7 +24,8 @@ const Wrapper = styled.header`
   }
 `;
 export default function Header() {
-  return (
+  const { isMobile } = useMobile();
+  return isMobile ? null : (
     <Wrapper>
       <img className="logo" src={Logo} alt="logo" />
       <h1>chinese color</h1>
