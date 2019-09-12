@@ -71,10 +71,6 @@ export default function InfoModal({ closeModal, bgColor }) {
             <a href="http://nipponcolors.com" target="_blank">
               Nipponcolors
             </a>
-            &
-            <a href="http://zhongguose.com" target="_blank">
-              http://zhongguose.com
-            </a>
           </span>
         </p>
         <p>
