@@ -10,7 +10,7 @@ const Wrapper = styled.hgroup`
   justify-content: space-around;
   align-items: center;
   align-self: center;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   padding: 1rem 0.8rem;
   position: relative;
@@ -32,7 +32,7 @@ const Wrapper = styled.hgroup`
       'Microsoft YaHei';
   }
   > h2 {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 0.6rem;
     writing-mode: vertical-lr;
     position: absolute;

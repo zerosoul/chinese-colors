@@ -62,6 +62,9 @@ const Wrapper = styled.li.attrs(({ color }) => ({
     .hex {
       font-size: 0.6rem;
     }
+    .pinyin {
+      text-transform: capitalize;
+    }
     .rgb {
       display: flex;
       flex-direction: column;
