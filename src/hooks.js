@@ -1,4 +1,37 @@
-import { useState, useReducer } from 'react';
+import { useState, useReducer, useEffect } from 'react';
+
+const useMobile = (width = 411) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= width);
+
+  console.log('mmmmmm');
+  useEffect(() => {
+    const checkMobile = () => {
+      console.log('rrrr');
+
+      if (window.innerWidth <= width) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    window.addEventListener('resize', checkMobile);
+    return () => {
+      window.removeEventListener('resize', checkMobile, true);
+    };
+  }, [width]);
+  return { isMobile };
+};
+
+const usePreview = () => {
+  const [preview, setPreview] = useState(false);
+  const closePreview = () => {
+    setPreview(false);
+  };
+  const showPreview = () => {
+    setPreview(true);
+  };
+  return { preview, closePreview, showPreview };
+};
 
 const useModal = () => {
   const [visible, setVisible] = useState(false);
@@ -47,5 +80,5 @@ const useColor = initialValue => {
   return { ...state, updateCurrColor, updateCurrSet };
 };
 
-export { useModal, useColor };
+export { useModal, usePreview, useColor, useMobile };
 export default useColor;

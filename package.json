@@ -28,6 +28,7 @@
   "homepage": "https://works.yangerxiao.com/chinese-colors/",
   "dependencies": {
     "color-convert": "^2.0.1",
+    "html2canvas": "^1.0.0-rc.3",
     "pinyin": "^2.9.0",
     "react": "^16.9.0",
     "react-copy-to-clipboard": "^5.0.1",

@@ -4,12 +4,14 @@ import pinyin from 'pinyin';
 import convert from 'color-convert';
 import ColorTitle from './components/ColorTitle';
 import Color from './components/Color';
+import Preview from './components/Preview';
 import ColorParam from './components/ColorParam';
 import InfoModal from './components/InfoModal';
 import IconInfo from './components/IconInfo';
+import IconScreenshoot from './components/IconScreenshoot';
 import Header from './components/Header';
 import ColorSet from './components/ColorSet';
-import { useModal, useColor } from './hooks';
+import { useModal, useColor, usePreview } from './hooks';
 import colors from './assets/colors.json';
 
 colors.push({
@@ -40,13 +42,14 @@ const Wrapper = styled.section`
   display: flex;
   padding: 1rem 0.5rem;
   justify-content: space-evenly;
+  transition: all 0.9s;
   .params {
     margin-right: 1rem;
   }
   aside {
     position: fixed;
     bottom: 2rem;
-    right: 5rem;
+    right: 3rem;
     padding: 0 1rem;
     z-index: 999;
   }
@@ -66,6 +69,7 @@ const Wrapper = styled.section`
 console.log('colors', colors);
 const App = () => {
   const { visible: modalVisible, showModal, closeModal } = useModal();
+  const { preview, showPreview, closePreview } = usePreview();
   const { sets, currSet, currColor, updateCurrColor, updateCurrSet } = useColor({
     sets: Colors.map(set => {
       const newSet = { ...set };
@@ -103,6 +107,15 @@ const App = () => {
         <ColorTitle {...currColor}></ColorTitle>
         <Header />
       </Wrapper>
+      {preview && (
+        <Preview
+          closePreview={closePreview}
+          name={currColor.name}
+          pinyin={currColor.pinyin}
+          color={currColor.hex}
+        />
+      )}
+      <IconScreenshoot showPreview={showPreview} />
       {!modalVisible && <IconInfo showInfoModal={showModal} />}
       {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
     </>

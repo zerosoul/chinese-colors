@@ -10,7 +10,7 @@ const Wrapper = styled.aside`
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.62);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   .icon {
     width: 1.8rem;
     height: 1.8rem;
