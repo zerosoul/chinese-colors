@@ -20,27 +20,21 @@ const Wrapper = styled.div`
       font-size: 0.8rem;
       font-weight: 800;
       &:not(:first-child) {
-        margin-right: -1rem;
+        margin-right: -1.4rem;
       }
       &.selected {
         transform: translateY(-1.6rem);
       }
     }
   }
-  &.expand ul li:not(:last-child) {
-    margin-right: 0.4rem;
+  &.expand ul li {
+    margin-right: 0.2rem;
   }
-  .divider {
-    position: absolute;
-    right: -1.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa;
-  }
+
   .tip {
     position: absolute;
-    right: -4.3rem;
-    top: 110%;
+    right: -1.4rem;
+    top: 116%;
     padding: 0.3rem 0.5rem;
     border-radius: 0.3rem;
     font-size: 0.8rem;
@@ -50,11 +44,11 @@ const Wrapper = styled.div`
   .btn {
     cursor: pointer;
     position: absolute;
-    right: -4rem;
+    right: -1.6rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     background: #333;
     border: none;
     border-radius: 50%;
@@ -108,7 +102,6 @@ const ColorSet = ({ currSetName, setCurrSet, sets }) => {
           return null;
         })}
       </ul>
-      <i className="divider">|</i>
       <button onClick={handleSetHover} className="btn">
         巜
       </button>
