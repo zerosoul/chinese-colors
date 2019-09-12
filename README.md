@@ -19,7 +19,9 @@
 - 颜色分类
 - 可复制HEX
 - 可收藏喜欢的颜色
+- 可生成壁纸，屏幕多大，截图就有多大。
 
+<img src="demo/screenshot.png" alt="screen shot" width="300">
 
 ## 参考
 
