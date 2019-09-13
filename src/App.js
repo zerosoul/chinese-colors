@@ -57,6 +57,7 @@ const Wrapper = styled.section`
     position: relative;
     height: 100vh;
     width: 16rem;
+    margin-right: 1.5rem;
     .colors {
       display: flex;
       flex-wrap: wrap;
@@ -113,6 +114,7 @@ const App = () => {
           name={currColor.name}
           pinyin={currColor.pinyin}
           color={currColor.hex}
+          figure={currColor.figure}
         />
       )}
       <IconScreenshoot showPreview={showPreview} />
