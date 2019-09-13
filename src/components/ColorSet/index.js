@@ -31,16 +31,6 @@ const Wrapper = styled.div`
     margin-right: 0.2rem;
   }
 
-  .tip {
-    position: absolute;
-    right: -1.4rem;
-    top: 116%;
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.3rem;
-    font-size: 0.8rem;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.49);
-  }
   .btn {
     cursor: pointer;
     position: absolute;
@@ -105,7 +95,6 @@ const ColorSet = ({ currSetName, setCurrSet, sets }) => {
       <button onClick={handleSetHover} className="btn">
         巜
       </button>
-      <span className="tip">色系</span>
     </Wrapper>
   );
 };
