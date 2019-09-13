@@ -49,6 +49,9 @@ const Wrapper = styled.li.attrs(({ color }) => ({
     .cmyk {
       display: flex;
       justify-content: space-between;
+      .circle:not(:last-child) {
+        margin-bottom: 0.2rem;
+      }
     }
   }
   .line2 {

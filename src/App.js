@@ -8,7 +8,7 @@ import Preview from './components/Preview';
 import ColorParam from './components/ColorParam';
 import InfoModal from './components/InfoModal';
 import IconInfo from './components/IconInfo';
-import IconScreenshoot from './components/IconScreenshoot';
+import IconScreenshot from './components/IconScreenshot';
 import Header from './components/Header';
 import ColorSet from './components/ColorSet';
 import { useModal, useColor, usePreview } from './hooks';
@@ -117,7 +117,7 @@ const App = () => {
           figure={currColor.figure}
         />
       )}
-      <IconScreenshoot showPreview={showPreview} />
+      <IconScreenshot showPreview={showPreview} />
       {!modalVisible && <IconInfo showInfoModal={showModal} />}
       {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
     </>

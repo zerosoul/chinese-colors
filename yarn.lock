@@ -1008,6 +1008,11 @@
   resolved "https://registry.npm.taobao.org/@types/semver/download/@types/semver-6.0.2.tgz?cache=0&sync_timestamp=1567707471864&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fsemver%2Fdownload%2F%40types%2Fsemver-6.0.2.tgz#5e8b09f0e4af53034b1d0fb9977a277847836205"
   integrity sha1-XosJ8OSvUwNLHQ+5l3oneEeDYgU=
 
+"@ungap/url-search-params@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.npm.taobao.org/@ungap/url-search-params/download/@ungap/url-search-params-0.1.2.tgz#8ba8c0527543fe675d1c29ae0a2daca842e8ee4f"
+  integrity sha1-i6jAUnVD/mddHCmuCi2sqELo7k8=
+
 "@voxpelli/semver-set@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/@voxpelli/semver-set/download/@voxpelli/semver-set-1.0.1.tgz#2b74dd95e1b0f5a5b1f10d0d9d6efe4143496b5f"

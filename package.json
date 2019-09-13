@@ -27,6 +27,7 @@
   },
   "homepage": "https://works.yangerxiao.com/chinese-colors/",
   "dependencies": {
+    "@ungap/url-search-params": "^0.1.2",
     "color-convert": "^2.0.1",
     "html2canvas": "^1.0.0-rc.3",
     "pinyin": "^2.9.0",

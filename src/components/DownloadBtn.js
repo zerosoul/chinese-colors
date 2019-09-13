@@ -1,16 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 
-import styled, { keyframes } from 'styled-components';
-const Float = keyframes`
-0%,40%,80%{
-  transform:translateX(-50%) translateY(0%);
-}
-20%,60%,100%{
-  transform:translateX(-50%) translateY(2%);
-}
-
-`;
+import styled from 'styled-components';
 
 function saveAs(uri, filename) {
   var link = document.createElement('a');
@@ -36,7 +27,7 @@ const Wrapper = styled.button`
   position: absolute;
   bottom: 10vh;
   left: 50%;
-  /* transform: translateX(-50%); */
+  transform: translateX(-50%);
   border: none;
   border-radius: 0.3rem;
   padding: 0.6rem 0.8rem;
@@ -44,32 +35,64 @@ const Wrapper = styled.button`
   color: #eee;
   background: #1f2f2d;
   box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
-  animation: ${Float} 3s infinite forwards;
+  &.tip {
+    visibility: hidden;
+    &:after {
+      content: '长按图片保存';
+      display: block;
+      position: absolute;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.2rem;
+      font-size: 0.8rem;
+      top: -120%;
+      left: 50%;
+      visibility: visible;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  }
 `;
+const generateImage = (ele, name, isWeixin = false) => {
+  html2canvas(ele, {
+    onclone: document => {
+      let tmp = document.querySelector('#PREVIEW');
+      tmp.classList.add('starting');
 
-const Download = ({ name }) => {
+      tmp.style.height = window.innerHeight + 'px';
+    }
+  }).then(function(canvas) {
+    console.log(canvas);
+    if (isWeixin) {
+      console.log('weixin');
+      let img = document.createElement('img');
+      img.classList.add('downloadImg');
+      img.src = canvas.toDataURL('image/png');
+      ele.classList.add('img');
+      ele.appendChild(img);
+    } else {
+      saveAs(canvas.toDataURL(), `${name}-${new Date().getTime()}.png`);
+    }
+    ele.classList.remove('starting');
+  });
+};
+const Download = ({ name, isWeixin = false, ...rest }) => {
+  const btn = useRef(null);
   const handleDownloadClick = () => {
     // startScreenshoot();
     let ele = document.querySelector('#PREVIEW');
-    ele.classList.add('starting');
-    ele.style.height = window.innerHeight + 'px';
-    html2canvas(ele, {
-      // width: window.screen.availWidth,
-      // height: window.screen.availHeight,
-      // width: window.innerWidth,
-      // height: window.screen.availHeight
-      // onclone: cloned => {
-      //   cloned.querySelector('aside').remove();
-      //   cloned.querySelector('button').remove();
-      //   return cloned;
-      // }
-    }).then(function(canvas) {
-      console.log(canvas);
-      saveAs(canvas.toDataURL(), `${name}-${new Date().getTime()}.png`);
-      ele.classList.remove('starting');
-    });
+
+    generateImage(ele, name, isWeixin);
+    if (isWeixin) {
+      btn.current.classList.add('tip');
+    }
   };
-  return <Wrapper onClick={handleDownloadClick}>保存</Wrapper>;
+  return (
+    <Wrapper ref={btn} onClick={handleDownloadClick} {...rest}>
+      生成壁纸
+    </Wrapper>
+  );
 };
 
 export default Download;

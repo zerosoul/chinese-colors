@@ -3,7 +3,12 @@
     "name": "红",
     "hex": "#ffb3a7",
     "colors": [
-      { "hex": "#ffb3a7", "name": "粉红", "intro": "即浅红色。别称：妃色、杨妃色、湘妃色、妃红色" },
+      {
+        "hex": "#ffb3a7",
+        "name": "粉红",
+        "intro": "即浅红色。别称：妃色、杨妃色、湘妃色、妃红色",
+        "figure": "flower.moon.png?o=0.8"
+      },
       {
         "hex": "#ed5736",
         "name": "妃色",
@@ -22,7 +27,8 @@
       {
         "hex": "#db5a6b",
         "name": "海棠红",
-        "intro": "淡紫红色、较桃红色深一些，是非常妩媚娇艳的颜色。"
+        "intro": "淡紫红色、较桃红色深一些，是非常妩媚娇艳的颜色。",
+        "figure": "flower.moon.png?o=0.6"
       },
       { "hex": "#f20c00", "name": "石榴红", "intro": "石榴花的颜色，高色度和纯度的红色。" },
       { "hex": "#c93756", "name": "樱桃色", "intro": "鲜红色" },
@@ -53,7 +59,7 @@
       { "hex": "#cb3a56", "name": "茜色", "intro": "茜草染的色彩，呈深红色" },
       { "hex": "#ff2d51", "name": "火红", "intro": "火焰的红色，赤色" },
       { "hex": "#c91f37", "name": "赫赤", "intro": "深红，火红。泛指赤色、火红色。" },
-      { "hex": "#ef7a82", "name": "嫣红", "intro": "鲜艳的红色" },
+      { "hex": "#ef7a82", "name": "嫣红", "intro": "鲜艳的红色", "figure": "jinyu.png?o=0.8" },
       {
         "hex": "#ff0097",
         "name": "洋红",
@@ -209,9 +215,15 @@
       {
         "hex": "#177cb0",
         "name": "靛青",
-        "intro": "也叫\"蓝靛\"。用蓼蓝叶泡水调和与石灰沉淀所得的蓝色染料。呈深蓝绿色（靛，发音dian四声，有些地方将蓝墨水称为\"靛水\"或者\"兰靛水\"）"
+        "intro": "也叫\"蓝靛\"。用蓼蓝叶泡水调和与石灰沉淀所得的蓝色染料。呈深蓝绿色（靛，发音dian四声，有些地方将蓝墨水称为\"靛水\"或者\"兰靛水\"）",
+        "figure": "hehua.caise.png"
       },
-      { "hex": "#065279", "name": "靛蓝", "intro": "由植物(例如靛蓝或菘蓝属植物)得到的蓝色染料" },
+      {
+        "hex": "#065279",
+        "name": "靛蓝",
+        "intro": "由植物(例如靛蓝或菘蓝属植物)得到的蓝色染料",
+        "figure": "moon.png"
+      },
       { "hex": "#3eede7", "name": "碧蓝", "intro": "青蓝色" },
       { "hex": "#70f3ff", "name": "蔚蓝", "intro": "类似晴朗天空的颜色的一种蓝色" },
       {
@@ -243,19 +255,34 @@
       { "hex": "#b0a4e3", "name": "雪青", "intro": "浅蓝紫色" },
       { "hex": "#cca4e3", "name": "丁香色", "intro": "紫丁香的颜色，浅浅的紫色，很娇柔淡雅的色彩" },
       { "hex": "#edd1d8", "name": "藕色", "intro": "浅灰而略带红的颜色" },
-      { "hex": "#e4c6d0", "name": "藕荷色", "intro": "浅紫而略带红的颜色" }
+      {
+        "hex": "#e4c6d0",
+        "name": "藕荷色",
+        "intro": "浅紫而略带红的颜色",
+        "figure": "jinyu.png?o=0.8"
+      }
     ]
   },
   {
     "name": "苍",
     "hex": "#75878a",
     "colors": [
-      { "hex": "#75878a", "name": "苍色", "intro": "即各种颜色掺入黑色后的颜色，如" },
+      {
+        "hex": "#75878a",
+        "name": "苍色",
+        "intro": "即各种颜色掺入黑色后的颜色",
+        "figure": "qunshan.png?width=100%"
+      },
       { "hex": "#519a73", "name": "苍翠", "intro": "" },
-      { "hex": "#a29b7c", "name": "苍黄", "intro": "" },
+      { "hex": "#a29b7c", "name": "苍黄", "intro": "", "figure": "guilinshanshui.png" },
       { "hex": "#7397ab", "name": "苍青", "intro": "" },
       { "hex": "#395260", "name": "苍黑", "intro": "" },
-      { "hex": "#d1d9e0", "name": "苍白", "intro": "准确的说是掺入不同灰度级别的灰色" }
+      {
+        "hex": "#d1d9e0",
+        "name": "苍白",
+        "intro": "准确的说是掺入不同灰度级别的灰色",
+        "figure": "fanchuan.png"
+      }
     ]
   },
   {
@@ -267,11 +294,12 @@
       { "hex": "#d4f2e7", "name": "水绿", "intro": "" },
       { "hex": "#d2f0f4", "name": "水蓝", "intro": "" },
       { "hex": "#d3e0f3", "name": "淡青", "intro": "" },
-      { "hex": "#30dff3", "name": "湖蓝", "intro": "" },
+      { "hex": "#30dff3", "name": "湖蓝", "intro": "", "figure": "moon.png" },
       {
         "hex": "#25f8cb",
         "name": "湖绿",
-        "intro": "皆是浅色。深色淡色，颜色深的或浅的，不再一一列出。"
+        "intro": "皆是浅色。深色淡色，颜色深的或浅的，不再一一列出。",
+        "figure": "hehua.caise.png"
       }
     ]
   },
@@ -279,15 +307,40 @@
     "name": "灰白",
     "hex": "#f0f0f4",
     "colors": [
-      { "hex": "#ffffff", "name": "精白", "intro": "纯白，洁白，净白，粉白。" },
-      { "hex": "#fffbf0", "name": "象牙白", "intro": "乳白色" },
-      { "hex": "#f2fdff", "name": "雪白", "intro": "如雪般洁白" },
+      {
+        "hex": "#ffffff",
+        "name": "精白",
+        "intro": "纯白，洁白，净白，粉白。",
+        "figure": "meihua.shuimo.png"
+      },
+      { "hex": "#fffbf0", "name": "象牙白", "intro": "乳白色", "figure": "pomo.png" },
+      { "hex": "#f2fdff", "name": "雪白", "intro": "如雪般洁白", "figure": "meihua.pink.png" },
       { "hex": "#d6ecf0", "name": "月白", "intro": "淡蓝色" },
-      { "hex": "#f2ecde", "name": "缟", "intro": "白色" },
-      { "hex": "#e0f0e9", "name": "素", "intro": "白色，无色" },
-      { "hex": "#f3f9f1", "name": "荼白", "intro": "如荼之白色" },
-      { "hex": "#e9f1f6", "name": "霜色", "intro": "白霜的颜色。" },
-      { "hex": "#c2ccd0", "name": "花白", "intro": "白色和黑色混杂的。斑白的夹杂有灰色的白" },
+      { "hex": "#f2ecde", "name": "缟", "intro": "白色", "figure": "meihua.pink.png" },
+      {
+        "hex": "#e0f0e9",
+        "name": "素",
+        "intro": "白色，无色",
+        "figure": "qunshan.png?width=100%"
+      },
+      {
+        "hex": "#f3f9f1",
+        "name": "荼白",
+        "intro": "如荼之白色",
+        "figure": "qunshan2.png?width=100%"
+      },
+      {
+        "hex": "#e9f1f6",
+        "name": "霜色",
+        "intro": "白霜的颜色。",
+        "figure": "qunshan2.png?width=100%"
+      },
+      {
+        "hex": "#c2ccd0",
+        "name": "花白",
+        "intro": "白色和黑色混杂的。斑白的夹杂有灰色的白",
+        "figure": "flower.moon.png"
+      },
       {
         "hex": "#fcefe8",
         "name": "鱼肚白",
@@ -310,14 +363,15 @@
       { "hex": "#622a1d", "name": "玄色", "intro": "赤黑色，黑中带红的颜色，又泛指黑色" },
       { "hex": "#3d3b4f", "name": "玄青", "intro": "深黑色" },
       { "hex": "#725e82", "name": "乌色", "intro": "暗而呈黑的颜色" },
-      { "hex": "#392f41", "name": "乌黑", "intro": "深黑；漆黑" },
-      { "hex": "#161823", "name": "漆黑", "intro": "非常黑的" },
+      { "hex": "#392f41", "name": "乌黑", "intro": "深黑；漆黑", "figure": "moon.png" },
+      { "hex": "#161823", "name": "漆黑", "intro": "非常黑的", "figure": "flower.moon.png?o=0.6" },
       { "hex": "#50616d", "name": "墨色", "intro": "即黑色" },
       { "hex": "#758a99", "name": "墨灰", "intro": "即黑灰" },
       {
         "hex": "#000000",
         "name": "黑色",
-        "intro": "亮度最低的非彩色的或消色差的物体的颜色；最暗的灰色；与白色截然不同的消色差的颜色；被认为特别属于那些既不能反射、又不能透过能使人感觉到的微小入射光的物体,任何亮度很低的物体颜色。"
+        "intro": "亮度最低的非彩色的或消色差的物体的颜色；最暗的灰色；与白色截然不同的消色差的颜色；被认为特别属于那些既不能反射、又不能透过能使人感觉到的微小入射光的物体,任何亮度很低的物体颜色。",
+        "figure": "moon.png"
       },
       { "hex": "#493131", "name": "缁色", "intro": "帛黑色" },
       { "hex": "#312520", "name": "煤黑", "intro": "别称：象牙黑。都是黑，不过有冷暖之分。" },

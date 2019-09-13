@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import GitHubButton from 'react-github-btn';
+import Logo from '../assets/img/logo.png';
+
 const Wrapper = styled.section`
   position: fixed;
   top: 0;
@@ -31,6 +33,14 @@ const Wrapper = styled.section`
     background-color: ${({ bgColor }) => {
       return bgColor;
     }};
+    text-align: center;
+
+    > h1 {
+      margin-bottom: 1rem;
+      img {
+        width: 4rem;
+      }
+    }
     > h2 {
       text-transform: uppercase;
       font-size: 1.4rem;
@@ -64,6 +74,9 @@ export default function InfoModal({ closeModal, bgColor }) {
     <Wrapper bgColor={bgColor}>
       <div className="mask" onClick={closeModal}></div>
       <div className="info">
+        <h1>
+          <img className="logo" src={Logo} alt="logo" />
+        </h1>
         <h2>chinese colors</h2>
         <p>
           <span>

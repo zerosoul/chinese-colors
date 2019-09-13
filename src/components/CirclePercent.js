@@ -4,11 +4,11 @@ const Wrapper = styled.div`
   font-size: 0.2rem;
   position: relative; /* so that children can be absolutely positioned */
   padding: 0;
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
   background-color: rgba(242, 233, 225, 0.6);
   border-radius: 50%;
-  line-height: 5em;
+  line-height: 4em;
 
   &:after {
     border: none;
@@ -25,8 +25,8 @@ const Wrapper = styled.div`
   }
   > span {
     position: absolute;
-    line-height: 5em;
-    width: 5em;
+    line-height: 4em;
+    width: 4em;
     text-align: center;
     font-weight: 800;
     display: block;
@@ -36,10 +36,10 @@ const Wrapper = styled.div`
   .left-half-clipper {
     /* a round circle */
     border-radius: 50%;
-    width: 5em;
-    height: 5em;
+    width: 4em;
+    height: 4em;
     position: absolute; /* needed for clipping */
-    clip: rect(0, 5em, 5em, 2.5em); /* clips the whole left half*/
+    clip: rect(0, 4em, 4em, 2em); /* clips the whole left half*/
   }
   /* when p>50, don't clip left half*/
   &.over50 .left-half-clipper {
@@ -51,9 +51,9 @@ const Wrapper = styled.div`
    to escape the outer clipping path.*/
     transition: all 0.5s;
     position: absolute; /*needed for clipping*/
-    clip: rect(0, 2.5em, 5em, 0);
-    width: 5em;
-    height: 5em;
+    clip: rect(0, 2em, 4em, 0);
+    width: 4em;
+    height: 4em;
     border-radius: 50%;
     border: 1.5em solid ${({ color }) => color}; /*The border is 0.35 but making it larger removes visual artifacts */
     box-sizing: border-box;
@@ -62,11 +62,11 @@ const Wrapper = styled.div`
   &.over50 .first50-bar {
     /*Progress bar for the first 50%, filling the whole right half*/
     position: absolute; /*needed for clipping*/
-    clip: rect(0, 5em, 5em, 2.5em);
+    clip: rect(0, 4em, 4em, 2em);
     background-color: ${({ color }) => color};
     border-radius: 50%;
-    width: 5em;
-    height: 5em;
+    width: 4em;
+    height: 4em;
   }
   &:not(.over50) .first50-bar {
     display: none;

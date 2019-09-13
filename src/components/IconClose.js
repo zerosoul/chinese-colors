@@ -11,15 +11,16 @@ const Wrapper = styled.aside`
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 999;
   .icon {
     width: 1.8rem;
     height: 1.8rem;
   }
 `;
 
-const IconClose = ({ closePreview }) => {
+const IconClose = ({ closePreview, ...rest }) => {
   return (
-    <Wrapper onClick={closePreview}>
+    <Wrapper onClick={closePreview} {...rest}>
       <svg
         t="1568280236953"
         className="icon"
