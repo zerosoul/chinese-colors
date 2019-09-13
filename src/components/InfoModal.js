@@ -59,6 +59,7 @@ const Wrapper = styled.section`
       &.btns {
         margin-top: 2rem;
         flex-direction: row;
+        justify-content: center;
         text-shadow: none;
         > span:not(:first-child) {
           padding-left: 0.4rem;

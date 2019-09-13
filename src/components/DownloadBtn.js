@@ -3,25 +3,6 @@ import html2canvas from 'html2canvas';
 
 import styled from 'styled-components';
 
-function saveAs(uri, filename) {
-  var link = document.createElement('a');
-
-  if (typeof link.download === 'string') {
-    link.href = uri;
-    link.download = filename;
-
-    //Firefox requires the link to be in the body
-    document.body.appendChild(link);
-
-    //simulate click
-    link.click();
-
-    //remove the link when done
-    document.body.removeChild(link);
-  } else {
-    window.open(uri);
-  }
-}
 const Wrapper = styled.button`
   cursor: pointer;
   position: absolute;
@@ -61,18 +42,40 @@ const generateImage = (ele, name, isWeixin = false) => {
       tmp.classList.add('starting');
 
       tmp.style.height = window.innerHeight + 'px';
-    }
+    },
+    scale: window.devicePixelRatio * 4
   }).then(function(canvas) {
     console.log(canvas);
     if (isWeixin) {
       console.log('weixin');
       let img = document.createElement('img');
       img.classList.add('downloadImg');
-      img.src = canvas.toDataURL('image/png');
+      canvas.toBlob(blob => {
+        const {
+          URL: { createObjectURL }
+        } = window;
+        img.src = createObjectURL(blob);
+      });
       ele.classList.add('img');
       ele.appendChild(img);
     } else {
-      saveAs(canvas.toDataURL(), `${name}-${new Date().getTime()}.png`);
+      canvas.toBlob(blob => {
+        const {
+          URL: { createObjectURL, revokeObjectURL },
+          setTimeout
+        } = window;
+        const url = createObjectURL(blob);
+
+        const anchor = document.createElement('a');
+        anchor.setAttribute('href', url);
+        anchor.setAttribute('download', `${name}-${new Date().getTime()}.png`);
+        anchor.click();
+
+        setTimeout(() => {
+          revokeObjectURL(url);
+        }, 100);
+      });
+      // saveAs(canvas.toDataURL(), `${name}-${new Date().getTime()}.png`);
     }
     ele.classList.remove('starting');
   });
