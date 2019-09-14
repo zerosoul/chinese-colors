@@ -1,8 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
+import { saveAs } from 'file-saver';
+import styled, { keyframes } from 'styled-components';
 
-import styled from 'styled-components';
+const Bling = keyframes`
+from{
+box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
+}
+to{
+box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
 
+`;
 const Wrapper = styled.button`
   cursor: pointer;
   position: absolute;
@@ -16,6 +25,10 @@ const Wrapper = styled.button`
   color: #eee;
   background: #1f2f2d;
   box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
+  &:disabled {
+    animation: ${Bling} 1s infinite;
+    animation-direction: alternate;
+  }
   &.tip {
     visibility: hidden;
     &:after {
@@ -35,65 +48,69 @@ const Wrapper = styled.button`
     }
   }
 `;
-const generateImage = (ele, name, isWeixin = false) => {
-  html2canvas(ele, {
-    onclone: document => {
-      let tmp = document.querySelector('#PREVIEW');
-      tmp.classList.add('starting');
-
-      tmp.style.height = window.innerHeight + 'px';
-    },
-    scale: window.devicePixelRatio * 4
-  }).then(function(canvas) {
-    console.log(canvas);
-    if (isWeixin) {
-      console.log('weixin');
-      let img = document.createElement('img');
-      img.classList.add('downloadImg');
-      canvas.toBlob(blob => {
-        const {
-          URL: { createObjectURL }
-        } = window;
-        img.src = createObjectURL(blob);
-      });
-      ele.classList.add('img');
-      ele.appendChild(img);
-    } else {
-      canvas.toBlob(blob => {
-        const {
-          URL: { createObjectURL, revokeObjectURL },
-          setTimeout
-        } = window;
-        const url = createObjectURL(blob);
-
-        const anchor = document.createElement('a');
-        anchor.setAttribute('href', url);
-        anchor.setAttribute('download', `${name}-${new Date().getTime()}.png`);
-        anchor.click();
-
-        setTimeout(() => {
-          revokeObjectURL(url);
-        }, 100);
-      });
-      // saveAs(canvas.toDataURL(), `${name}-${new Date().getTime()}.png`);
-    }
-    ele.classList.remove('starting');
+const sleep = async (dur = 2) => {
+  const misDur = dur * 1000;
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, misDur);
   });
 };
-const Download = ({ name, isWeixin = false, ...rest }) => {
+const Download = ({ name, isWebview = false, ...rest }) => {
+  const [generating, setGenerating] = useState(false);
+
   const btn = useRef(null);
-  const handleDownloadClick = () => {
+  const generateImage = async (ele, name, isWebview = false) => {
+    setGenerating(true);
+    await sleep(3);
+    html2canvas(ele, {
+      onclone: document => {
+        let tmp = document.querySelector('#PREVIEW');
+        tmp.classList.add('starting');
+        if (isWebview) {
+          tmp.style.boxShadow = 'none';
+        }
+        tmp.style.height = window.innerHeight + 'px';
+      },
+      scale: window.devicePixelRatio * (isWebview ? 2 : 1)
+    }).then(function(canvas) {
+      console.log(canvas);
+      if (isWebview) {
+        console.log('weixin');
+        let img = document.createElement('img');
+
+        canvas.toBlob(blob => {
+          const {
+            URL: { createObjectURL }
+          } = window;
+          img.src = createObjectURL(blob);
+          img.classList.add('downloadImg');
+        });
+        ele.classList.add('img');
+        ele.appendChild(img);
+        setGenerating(false);
+      } else {
+        canvas.toBlob(blob => {
+          saveAs(blob, `${name}-${new Date().getTime()}.png`);
+          setGenerating(false);
+        }, 'image/png');
+        // saveAs(canvas.toDataURL(), `${name}-${new Date().getTime()}.png`);
+      }
+      ele.classList.remove('starting');
+    });
+  };
+  const handleDownloadClick = async () => {
     // startScreenshoot();
     let ele = document.querySelector('#PREVIEW');
 
-    generateImage(ele, name, isWeixin);
-    if (isWeixin) {
+    await generateImage(ele, name, isWebview);
+    if (isWebview) {
       btn.current.classList.add('tip');
     }
   };
   return (
-    <Wrapper ref={btn} onClick={handleDownloadClick} {...rest}>
-      生成壁纸
+    <Wrapper disabled={generating} ref={btn} onClick={handleDownloadClick} {...rest}>
+      {generating ? `生成中...` : `生成壁纸`}
     </Wrapper>
   );
 };

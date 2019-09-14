@@ -17,6 +17,7 @@ const Wrapper = styled.hgroup`
   width: 4.6rem;
   cursor: default;
   margin-top: -6rem;
+  margin-right: 0.5rem;
 
   &:hover > h1 {
     transform: scale(1.1);

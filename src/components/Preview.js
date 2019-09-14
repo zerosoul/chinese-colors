@@ -18,7 +18,9 @@ const FadeIn = keyframes`
     transform: scale(0.96) translate3d(0, 0, 0);
   }
 `;
-const isWeixin = navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1;
+const ua = navigator.userAgent;
+const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
+const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
 const Wrapper = styled.section`
   position: fixed;
   left: 0;
@@ -30,7 +32,7 @@ const Wrapper = styled.section`
   background-image: url(${BodyBg});
   width: 100%;
   height: 100%;
-  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   animation: ${FadeIn} 1s;
   animation-fill-mode: both;
   &.starting {
@@ -47,13 +49,13 @@ const Wrapper = styled.section`
       display: none;
     }
   }
-  hgroup {
+  .name {
     position: absolute;
     left: 0;
     top: 0;
     z-index: 99;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    margin-left: 1.8rem;
+    margin-top: 1.8rem;
     display: flex;
     align-items: flex-end;
     > h1 {
@@ -93,7 +95,7 @@ const Preview = ({ name, pinyin, color, figure = '', closePreview }) => {
   return (
     <Wrapper id="PREVIEW" bgColor={color}>
       <IconClose closePreview={closePreview} data-html2canvas-ignore />
-      <hgroup>
+      <hgroup className="name">
         <h1>{name}</h1>
         <h2>{pinyin}</h2>
       </hgroup>
@@ -105,7 +107,7 @@ const Preview = ({ name, pinyin, color, figure = '', closePreview }) => {
           alt="figure"
         />
       )}
-      <Download name={name} isWeixin={isWeixin} data-html2canvas-ignore />
+      <Download name={name} isWebview={isWebview} data-html2canvas-ignore />
     </Wrapper>
   );
 };
