@@ -357,7 +357,12 @@
         "name": "鱼肚白",
         "intro": "似鱼腹部的颜色，多指黎明时东方的天色颜色（M5Y5）"
       },
-      { "hex": "#e3f9fd", "name": "莹白", "intro": "晶莹洁白" },
+      {
+        "hex": "#e3f9fd",
+        "name": "莹白",
+        "intro": "晶莹洁白",
+        "figure": "meinv.png?width=18rem"
+      },
       { "hex": "#808080", "name": "灰色", "intro": "黑色和白色混和成的一种颜色" },
       { "hex": "#eedeb0", "name": "牙色", "intro": "与象牙相似的淡黄色（暖白）" },
       {
