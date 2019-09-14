@@ -303,7 +303,7 @@
       { "hex": "#88ada6", "name": "水色", "intro": "" },
       { "hex": "#f3d3e7", "name": "水红", "intro": "" },
       { "hex": "#d4f2e7", "name": "水绿", "intro": "" },
-      { "hex": "#d2f0f4", "name": "水蓝", "intro": "" },
+      { "hex": "#d2f0f4", "name": "水蓝", "intro": "", "figure": "yu.png?width=17rem" },
       { "hex": "#d3e0f3", "name": "淡青", "intro": "" },
       { "hex": "#30dff3", "name": "湖蓝", "intro": "", "figure": "moon.png" },
       {

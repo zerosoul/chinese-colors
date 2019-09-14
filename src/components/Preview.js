@@ -5,16 +5,40 @@ import Download from './DownloadBtn';
 import IconClose from './IconClose';
 import BodyBg from '../assets/img/bg.texture.png';
 
-const FadeIn = keyframes`
- from {
+const BounceInDown = keyframes`
+from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
     opacity: 0;
-    -webkit-transform:  translate3d(0, -100%, 0);
-    transform:  translate3d(0, -100%, 0);
+    -webkit-transform: scale(0.96) translate3d(0, -3000px, 0);
+    transform: scale(0.96)  translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.96) translate3d(0, 25px, 0);
+    transform: scale(0.96)  translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: scale(0.96) translate3d(0, -10px, 0);
+    transform: scale(0.96)  translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: scale(0.96) translate3d(0, 5px, 0);
+    transform: scale(0.96)  translate3d(0, 5px, 0);
   }
 
   to {
-    opacity: 1;
-    -webkit-transform: scale(0.96) translate3d(0, 0, 0);
+    -webkit-transform: scale(0.96)  translate3d(0, 0, 0);
     transform: scale(0.96) translate3d(0, 0, 0);
   }
 `;
@@ -34,7 +58,7 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  animation: ${FadeIn} 1s;
+  animation: ${BounceInDown} 1s;
   animation-fill-mode: both;
   &.starting {
     animation: none;
@@ -86,7 +110,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Preview = ({ name, pinyin, color, figure = '', closePreview }) => {
+const Preview = ({ name, pinyin, color, figure = 'default.png?width=8rem', closePreview }) => {
   console.log('ffff', figure);
   const params = new URLSearchParams(figure.split('?')[1] || '');
   const figureW = params.get('width') || '23rem';
