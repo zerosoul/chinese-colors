@@ -22,6 +22,7 @@ const ua = navigator.userAgent;
 const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
 const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
 const Wrapper = styled.section`
+  font-variant: normal;
   position: fixed;
   left: 0;
   right: 0;
@@ -54,8 +55,8 @@ const Wrapper = styled.section`
     left: 0;
     top: 0;
     z-index: 99;
-    margin-left: 1.8rem;
-    margin-top: 1.8rem;
+    margin-left: 1.2rem;
+    margin-top: 1.4rem;
     display: flex;
     align-items: flex-end;
     > h1 {
@@ -63,10 +64,8 @@ const Wrapper = styled.section`
         'Microsoft YaHei';
       font-size: 6rem;
       width: 6rem;
-      opacity: 0.7;
+      opacity: 0.8;
       padding-top: 0.4rem;
-
-      border-top: 0.6rem solid ${({ bgColor }) => bgColor};
     }
     > h2 {
       font-size: 2.4rem;

@@ -28,6 +28,7 @@ const Wrapper = styled.button`
   &:disabled {
     animation: ${Bling} 1s infinite;
     animation-direction: alternate;
+    background: #666;
   }
   &.tip {
     visibility: hidden;
@@ -62,7 +63,7 @@ const Download = ({ name, isWebview = false, ...rest }) => {
   const btn = useRef(null);
   const generateImage = async (ele, name, isWebview = false) => {
     setGenerating(true);
-    await sleep(3);
+    await sleep(4);
     html2canvas(ele, {
       onclone: document => {
         let tmp = document.querySelector('#PREVIEW');
