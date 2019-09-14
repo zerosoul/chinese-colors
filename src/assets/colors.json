@@ -72,7 +72,12 @@
       { "hex": "#b36d61", "name": "檀", "intro": "浅红色，浅绛色。" },
       { "hex": "#be002f", "name": "殷红", "intro": "发黑的红色。" },
       { "hex": "#dc3023", "name": "酡红", "intro": "像饮酒后脸上泛现的红色，泛指脸红" },
-      { "hex": "#f9906f", "name": "酡颜", "intro": "饮酒脸红的样子。亦泛指脸红色" }
+      {
+        "hex": "#f9906f",
+        "name": "酡颜",
+        "intro": "饮酒脸红的样子。亦泛指脸红色",
+        "figure": "meinv.png?o=0.9&width=18rem"
+      }
     ]
   },
   {
@@ -225,7 +230,12 @@
         "figure": "moon.png"
       },
       { "hex": "#3eede7", "name": "碧蓝", "intro": "青蓝色" },
-      { "hex": "#70f3ff", "name": "蔚蓝", "intro": "类似晴朗天空的颜色的一种蓝色" },
+      {
+        "hex": "#70f3ff",
+        "name": "蔚蓝",
+        "intro": "类似晴朗天空的颜色的一种蓝色",
+        "figure": "he.png"
+      },
       {
         "hex": "#4b5cc4",
         "name": "宝蓝",
@@ -273,6 +283,7 @@
         "intro": "即各种颜色掺入黑色后的颜色",
         "figure": "qunshan.png?width=100%"
       },
+
       { "hex": "#519a73", "name": "苍翠", "intro": "" },
       { "hex": "#a29b7c", "name": "苍黄", "intro": "", "figure": "guilinshanshui.png" },
       { "hex": "#7397ab", "name": "苍青", "intro": "" },
