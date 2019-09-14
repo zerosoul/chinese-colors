@@ -287,7 +287,7 @@
       { "hex": "#519a73", "name": "苍翠", "intro": "" },
       { "hex": "#a29b7c", "name": "苍黄", "intro": "", "figure": "guilinshanshui.png" },
       { "hex": "#7397ab", "name": "苍青", "intro": "" },
-      { "hex": "#395260", "name": "苍黑", "intro": "" },
+      { "hex": "#395260", "name": "苍黑", "intro": "", "figure": "sundown.png" },
       {
         "hex": "#d1d9e0",
         "name": "苍白",
