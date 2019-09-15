@@ -51,8 +51,10 @@ const useColor = initialValue => {
     switch (type) {
       case 'UPDATE_COLOR': {
         let c = currSet.colors.find(c => c.name === payload.name);
-        localStorage.setItem('SELECTED_COLOR', JSON.stringify(c));
 
+        localStorage.setItem('SELECTED_COLOR', JSON.stringify(c));
+        var metaThemeColor = document.querySelector('meta[name=theme-color]');
+        metaThemeColor.setAttribute('content', c.hex);
         return { ...state, currColor: c };
       }
       case 'UPDATE_COLOR_SET': {
