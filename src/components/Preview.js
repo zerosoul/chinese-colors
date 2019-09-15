@@ -1,47 +1,10 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import URLSearchParams from '@ungap/url-search-params';
 import Download from './DownloadBtn';
 import IconClose from './IconClose';
 import BodyBg from '../assets/img/bg.texture.png';
-
-const BounceInDown = keyframes`
-from,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0.96) translate3d(0, -3000px, 0);
-    transform: scale(0.96)  translate3d(0, -3000px, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale(0.96) translate3d(0, 25px, 0);
-    transform: scale(0.96)  translate3d(0, 25px, 0);
-  }
-
-  75% {
-    -webkit-transform: scale(0.96) translate3d(0, -10px, 0);
-    transform: scale(0.96)  translate3d(0, -10px, 0);
-  }
-
-  90% {
-    -webkit-transform: scale(0.96) translate3d(0, 5px, 0);
-    transform: scale(0.96)  translate3d(0, 5px, 0);
-  }
-
-  to {
-    -webkit-transform: scale(0.96)  translate3d(0, 0, 0);
-    transform: scale(0.96) translate3d(0, 0, 0);
-  }
-`;
+import BounceInDown from './animates/BounceInDown';
 const ua = navigator.userAgent;
 const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
 const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
@@ -57,7 +20,7 @@ const Wrapper = styled.section`
   background-image: url(${BodyBg});
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); */
   animation: ${BounceInDown} 1s;
   animation-fill-mode: both;
   &.starting {

@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHubButton from 'react-github-btn';
 import Logo from '../assets/img/logo.png';
+import BounceInDown from './animates/BounceInDown';
 
 const Wrapper = styled.section`
   position: fixed;
@@ -11,7 +12,9 @@ const Wrapper = styled.section`
   right: 0;
   bottom: 0;
   z-index: 999;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .mask {
     position: absolute;
     top: 0;
@@ -21,12 +24,9 @@ const Wrapper = styled.section`
     background: rgba(0, 0, 0, 0.4);
   }
   .info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    z-index: 9;
     padding: 1.4rem 1rem;
-    width: 20rem;
+    width: 22rem;
     box-shadow: 0 0 9px black;
     border-radius: 8px;
     text-shadow: 0 0 8px black;
@@ -34,6 +34,8 @@ const Wrapper = styled.section`
       return bgColor;
     }};
     text-align: center;
+    transition: all 0.5s;
+    animation: ${BounceInDown} 1s;
 
     > h1 {
       margin-bottom: 1rem;
