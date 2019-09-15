@@ -49,6 +49,14 @@ const Wrapper = styled.section`
       margin-bottom: 1rem;
       font-weight: 800;
     }
+    .producthunt {
+      margin: 1rem 0;
+      display: block;
+      img {
+        width: 10rem;
+        height: 2.2rem;
+      }
+    }
     > p {
       font-size: 0.6rem;
       line-height: 1.4;
@@ -106,22 +114,34 @@ export default function InfoModal({ closeModal, bgColor }) {
           </span>
         </p>
         {process.env.NODE_ENV === 'production' && (
-          <p className="btns">
-            <GitHubButton
-              href="https://github.com/zerosoul/chinese-colors"
-              data-show-count="true"
-              aria-label="Star zerosoul/chinese-colors on GitHub"
+          <>
+            <a
+              className="producthunt"
+              href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color"
+              target="_blank"
             >
-              Star
-            </GitHubButton>
-            <GitHubButton
-              href="https://github.com/zerosoul/chinese-colors/fork"
-              data-show-count="true"
-              aria-label="Fork zerosoul/chinese-colors on GitHub"
-            >
-              Fork
-            </GitHubButton>
-          </p>
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark"
+                alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! "
+              />
+            </a>
+            <p className="btns">
+              <GitHubButton
+                href="https://github.com/zerosoul/chinese-colors"
+                data-show-count="true"
+                aria-label="Star zerosoul/chinese-colors on GitHub"
+              >
+                Star
+              </GitHubButton>
+              <GitHubButton
+                href="https://github.com/zerosoul/chinese-colors/fork"
+                data-show-count="true"
+                aria-label="Fork zerosoul/chinese-colors on GitHub"
+              >
+                Fork
+              </GitHubButton>
+            </p>
+          </>
         )}
       </div>
     </Wrapper>
