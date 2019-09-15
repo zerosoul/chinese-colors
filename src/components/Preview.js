@@ -2,12 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import URLSearchParams from '@ungap/url-search-params';
 import Download from './DownloadBtn';
+import Tip from './Tip';
 import IconClose from './IconClose';
 import BodyBg from '../assets/img/bg.texture.png';
 import BounceInDown from './animates/BounceInDown';
 const ua = navigator.userAgent;
 const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
 const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
+
 const Wrapper = styled.section`
   font-variant: normal;
   position: fixed;
@@ -94,6 +96,7 @@ const Preview = ({ name, pinyin, color, figure = 'default.png?width=8rem', close
         />
       )}
       <Download name={name} isWebview={isWebview} data-html2canvas-ignore />
+      {isWebview && <Tip>APP内打开，壁纸生成功能可能受限，建议在浏览器内打开</Tip>}
     </Wrapper>
   );
 };
