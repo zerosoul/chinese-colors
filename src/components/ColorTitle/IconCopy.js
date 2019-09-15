@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
+import FadeInUp from '../animates/FadeInUp';
 const Wrapper = styled.div`
   cursor: pointer;
   display: flex;
@@ -26,6 +26,8 @@ const Wrapper = styled.div`
     padding: 0.3rem 0.4rem;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 0.2rem;
+    animation: ${FadeInUp} 1s;
+    animation-fill-mode: both;
   }
 `;
 const IconFav = ({ currColorHex }) => {
