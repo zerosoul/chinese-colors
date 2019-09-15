@@ -35,7 +35,7 @@ console.log('colors:', Colors);
 const SelectedColorSet =
   JSON.parse(localStorage.getItem('SELECTED_COLOR_SET') || 'null') || Colors[0];
 const SelectedColor =
-  JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null') || SelectedColorSet.colors[2];
+  JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null') || SelectedColorSet.colors[4];
 
 const Wrapper = styled.section`
   height: 100vh;
