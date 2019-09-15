@@ -53,7 +53,7 @@ const useColor = initialValue => {
         let c = currSet.colors.find(c => c.name === payload.name);
 
         localStorage.setItem('SELECTED_COLOR', JSON.stringify(c));
-        var metaThemeColor = document.querySelector('meta[name=theme-color]');
+        let metaThemeColor = document.querySelector('meta[name=theme-color]');
         metaThemeColor.setAttribute('content', c.hex);
         return { ...state, currColor: c };
       }
@@ -69,7 +69,11 @@ const useColor = initialValue => {
         throw new Error();
     }
   };
-
+  const {
+    currColor: { hex }
+  } = initialValue;
+  let metaThemeColor = document.querySelector('meta[name=theme-color]');
+  metaThemeColor.setAttribute('content', hex);
   const [state, dispatch] = useReducer(reducer, initialValue);
   const updateCurrColor = name => {
     dispatch({ type: 'UPDATE_COLOR', payload: { name } });
