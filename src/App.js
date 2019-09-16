@@ -39,10 +39,6 @@ const Colors = colors.map(set => {
 });
 
 console.log('colors:', Colors);
-const SelectedColorSet =
-  JSON.parse(localStorage.getItem('SELECTED_COLOR_SET') || 'null') || Colors[0];
-const SelectedColor =
-  JSON.parse(localStorage.getItem('SELECTED_COLOR') || 'null') || SelectedColorSet.colors[4];
 
 const Wrapper = styled.section`
   height: 100vh;
@@ -76,6 +72,11 @@ const Wrapper = styled.section`
 `;
 console.log('colors', colors);
 const App = () => {
+  console.log('run app');
+  const SelectedColorSet = JSON.parse(localStorage.getItem('SELECTED_COLOR_SET')) || Colors[0];
+  const SelectedColor =
+    JSON.parse(localStorage.getItem('SELECTED_COLOR')) || SelectedColorSet.colors[9];
+
   const { visible: modalVisible, showModal, closeModal } = useModal();
   const { preview, showPreview, closePreview } = usePreview();
   const { sets, currSet, currColor, updateCurrColor, updateCurrSet } = useColor({
