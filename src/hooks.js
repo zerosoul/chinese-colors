@@ -63,7 +63,7 @@ const useColor = initialValue => {
         if (payload.name == '') {
           cs.colors = JSON.parse(localStorage.getItem('FAV_COLORS') || '[]');
         }
-        return { ...state, currSet: cs };
+        return { ...state, currSet: cs, currColor: cs.colors[0] };
       }
       default:
         throw new Error();
