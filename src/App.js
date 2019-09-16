@@ -25,7 +25,14 @@ const Colors = colors.map(set => {
       ...c,
       RGB: convert.hex.rgb(c.hex),
       CMYK: convert.hex.cmyk(c.hex),
-      pinyin: pinyin(c.name).join(' ')
+      pinyin: pinyin(c.name, {
+        heteronym: true, // 启用多音字模式
+        segment: true // 启用分词，以解决多音字问题。
+      })
+        .map(item => {
+          return item.length > 1 ? item[item.length - 1] : item;
+        })
+        .join(' ')
     };
   });
   return set;
