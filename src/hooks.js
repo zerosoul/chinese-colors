@@ -45,16 +45,18 @@ const useModal = () => {
 };
 
 const useColor = initialValue => {
+  const execSideEffect = obj => {
+    localStorage.setItem('SELECTED_COLOR', JSON.stringify(obj));
+    let metaThemeColor = document.querySelector('meta[name=theme-color]');
+    metaThemeColor.setAttribute('content', obj.hex);
+  };
   const reducer = (state, action) => {
     const { type, payload } = action;
     const { currSet, sets } = state;
     switch (type) {
       case 'UPDATE_COLOR': {
         let c = currSet.colors.find(c => c.name === payload.name);
-
-        localStorage.setItem('SELECTED_COLOR', JSON.stringify(c));
-        let metaThemeColor = document.querySelector('meta[name=theme-color]');
-        metaThemeColor.setAttribute('content', c.hex);
+        execSideEffect(c);
         return { ...state, currColor: c };
       }
       case 'UPDATE_COLOR_SET': {
@@ -63,17 +65,15 @@ const useColor = initialValue => {
         if (payload.name == '') {
           cs.colors = JSON.parse(localStorage.getItem('FAV_COLORS') || '[]');
         }
+        execSideEffect(cs.colors[0]);
         return { ...state, currSet: cs, currColor: cs.colors[0] };
       }
       default:
         throw new Error();
     }
   };
-  const {
-    currColor: { hex }
-  } = initialValue;
-  let metaThemeColor = document.querySelector('meta[name=theme-color]');
-  metaThemeColor.setAttribute('content', hex);
+  const { currColor } = initialValue;
+  execSideEffect(currColor);
   const [state, dispatch] = useReducer(reducer, initialValue);
   const updateCurrColor = name => {
     dispatch({ type: 'UPDATE_COLOR', payload: { name } });
