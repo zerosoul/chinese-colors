@@ -19,7 +19,7 @@
 - 颜色分类
 - 可复制HEX
 - 可收藏喜欢的颜色
-- 可生成壁纸，屏幕多大，截图就有多大 (非微信环境有效)。
+- 可生成壁纸，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
 
 <img src="demo/screenshot.png" alt="screen shot" width="300">
 
