@@ -114,7 +114,7 @@ const App = () => {
         </nav>
         <ColorParam className="params" {...currColor} />
         <ColorTitle {...currColor}></ColorTitle>
-        <Header />
+        <Header rgb={currColor.RGB} />
       </Wrapper>
       {preview && (
         <Preview

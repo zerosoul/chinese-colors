@@ -11,9 +11,10 @@ const Wrapper = styled.header`
     width: 2.8rem;
     height: 2.8rem;
     margin-bottom: 1rem;
-    background-color: rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
     border-radius: 50%;
+    transition: background-color 1s;
+    transition-delay: 1s;
   }
   > h1 {
     writing-mode: vertical-lr;
@@ -23,11 +24,16 @@ const Wrapper = styled.header`
     letter-spacing: 0.1rem;
   }
 `;
-export default function Header() {
+export default function Header({ rgb = [0, 0, 0] }) {
   const { isMobile } = useMobile();
   return isMobile ? null : (
     <Wrapper>
-      <img className="logo" src={Logo} alt="logo" />
+      <img
+        className="logo"
+        src={Logo}
+        alt="logo"
+        style={{ backgroundColor: `rgba(${rgb.join(',')},.5)` }}
+      />
       <h1>chinese color</h1>
     </Wrapper>
   );
