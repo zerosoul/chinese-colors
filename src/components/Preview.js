@@ -87,8 +87,8 @@ const Preview = ({ name, pinyin, color, figure = 'default.png?width=8rem', close
   const figureO = +(params.get('o') || 1);
   return (
     <Wrapper id="PREVIEW" bgColor={color}>
-      <div className="close">
-        <IconClose closePreview={closePreview} data-html2canvas-ignore />
+      <div className="close" data-html2canvas-ignore>
+        <IconClose closePreview={closePreview} />
       </div>
       <hgroup className="name">
         <h1>{name}</h1>
