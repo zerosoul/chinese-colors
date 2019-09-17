@@ -1,0 +1,20 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.aside`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+`;
+
+const Icon = ({ icon, handleClick }) => {
+  return <Wrapper onClick={handleClick}>{icon}</Wrapper>;
+};
+
+export default Icon;

@@ -49,14 +49,14 @@ const Wrapper = styled.section`
   .params {
     margin-right: 1rem;
   }
-  aside {
+  .colorSet {
     position: fixed;
     bottom: 2rem;
     right: 3rem;
     padding: 0 1rem;
     z-index: 999;
   }
-  nav {
+  .colorNav {
     position: relative;
     height: 100vh;
     width: 16rem;
@@ -68,6 +68,14 @@ const Wrapper = styled.section`
       height: 100vh;
       overflow-y: scroll;
     }
+  }
+  .btns {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 console.log('colors', colors);
@@ -94,10 +102,10 @@ const App = () => {
   return (
     <>
       <Wrapper>
-        <aside>
+        <aside className="colorSet">
           <ColorSet sets={sets} currSetName={currSet.name} setCurrSet={updateCurrSet} />
         </aside>
-        <nav>
+        <nav className="colorNav">
           <ul className="colors">
             {currSet.colors.map((color, idx) => {
               return (
@@ -115,6 +123,10 @@ const App = () => {
         <ColorParam className="params" {...currColor} />
         <ColorTitle {...currColor}></ColorTitle>
         <Header rgb={currColor.RGB} />
+        <section className="btns">
+          <IconInfo showInfoModal={showModal} />
+          <IconScreenshot showPreview={showPreview} />
+        </section>
       </Wrapper>
       {preview && (
         <Preview
@@ -125,8 +137,6 @@ const App = () => {
           figure={currColor.figure}
         />
       )}
-      <IconScreenshot showPreview={showPreview} />
-      {!modalVisible && <IconInfo showInfoModal={showModal} />}
       {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
     </>
   );

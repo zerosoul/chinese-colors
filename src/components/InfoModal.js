@@ -78,7 +78,7 @@ const Wrapper = styled.section`
       }
     }
     .reward {
-      width: 14rem;
+      width: 12rem;
       border-radius: 0.4rem;
       box-shadow: 0px 8px 10px 0px #7b7361;
     }

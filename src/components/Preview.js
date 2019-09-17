@@ -25,6 +25,11 @@ const Wrapper = styled.section`
   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); */
   animation: ${BounceInDown} 1s;
   animation-fill-mode: both;
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
   &.starting {
     animation: none;
     transform: initial;
@@ -82,7 +87,9 @@ const Preview = ({ name, pinyin, color, figure = 'default.png?width=8rem', close
   const figureO = +(params.get('o') || 1);
   return (
     <Wrapper id="PREVIEW" bgColor={color}>
-      <IconClose closePreview={closePreview} data-html2canvas-ignore />
+      <div className="close">
+        <IconClose closePreview={closePreview} data-html2canvas-ignore />
+      </div>
       <hgroup className="name">
         <h1>{name}</h1>
         <h2>{pinyin}</h2>
