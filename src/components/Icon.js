@@ -8,8 +8,8 @@ const Wrapper = styled.aside`
   align-items: center;
   margin-bottom: 0.8rem;
   .icon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 `;
 

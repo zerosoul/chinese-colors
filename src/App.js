@@ -1,17 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import styled from 'styled-components';
 import pinyin from 'pinyin';
 import convert from 'color-convert';
-import ColorTitle from './components/ColorTitle';
-import Color from './components/Color';
-import Preview from './components/Preview';
-import ColorParam from './components/ColorParam';
-import InfoModal from './components/InfoModal';
-import IconInfo from './components/IconInfo';
-import IconScreenshot from './components/IconScreenshot';
-import Header from './components/Header';
-import ColorSet from './components/ColorSet';
+import Loading from './components/Loading';
+const ColorTitle = lazy(() => import('./components/ColorTitle'));
+const Color = lazy(() => import('./components/Color'));
+const Preview = lazy(() => import('./components/Preview'));
+const ColorParam = lazy(() => import('./components/ColorParam'));
+const InfoModal = lazy(() => import('./components/InfoModal'));
+const IconInfo = lazy(() => import('./components/IconInfo'));
+const Header = lazy(() => import('./components/Header'));
+const IconScreenshot = lazy(() => import('./components/IconScreenshot'));
+const ColorSet = lazy(() => import('./components/ColorSet'));
+
+// import ColorTitle from './components/ColorTitle';
+// import Color from './components/Color';
+// import Preview from './components/Preview';
+// import ColorParam from './components/ColorParam';
+// import InfoModal from './components/InfoModal';
+// import IconInfo from './components/IconInfo';
+// import IconScreenshot from './components/IconScreenshot';
+// import Header from './components/Header';
+// import ColorSet from './components/ColorSet';
+
 import { useModal, useColor, usePreview } from './hooks';
+
 import colors from './assets/colors.json';
 
 colors.push({
@@ -100,7 +113,7 @@ const App = () => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
   return (
-    <>
+    <Suspense fallback={<Loading color="#000" size="4" sizeUnit="rem" />}>
       <Wrapper>
         <aside className="colorSet">
           <ColorSet sets={sets} currSetName={currSet.name} setCurrSet={updateCurrSet} />
@@ -138,7 +151,7 @@ const App = () => {
         />
       )}
       {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
-    </>
+    </Suspense>
   );
 };
 export default App;
