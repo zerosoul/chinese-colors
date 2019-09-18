@@ -46,6 +46,16 @@
 - [https://www.transparenttextures.com/](https://www.transparenttextures.com/): 非常好看的纹理背景图
 - 感谢伟大的互联网，感谢各种开源作品
 
+## 本地开发
+
+`git clone https://github.com/zerosoul/chinese-colors.git`
+
+`cd chinese-colors && npm install`
+
+`npm run start`
+
+浏览器: `http://localhost:8099/`
+
 ## 更新日志
 
 [更新日志](CHANGELOG.md)

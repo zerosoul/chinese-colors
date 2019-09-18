@@ -38,6 +38,16 @@
 - [https://www.transparenttextures.com/](https://www.transparenttextures.com/): awesome pattern images
 - Thanks the great Open Source
 
+## Local Development
+
+`git clone https://github.com/zerosoul/chinese-colors.git`
+
+`cd chinese-colors && npm install`
+
+`npm run start`
+
+enjoy: `http://localhost:8099/`
+
 ## Changelog
 
 [Changelog](CHANGELOG.md)
