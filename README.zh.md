@@ -32,15 +32,17 @@
 - 颜色数据来源：[中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
 - UI参考：[一个日本传统颜色网站](http://nipponcolors.com/)
 
-
 ## 技术栈
 
 - [create-react-app](https://github.com/facebook/create-react-app): 大家都在用的 react 项目构建架子
 - [react](https://reactjs.org): 最流行的前端 UI 构建语言
-- redux + react-redux: 最流行的 react 状态管理解决方案
 - [styled-components](https://styled-components.com): react 中 css 解决方案，CSS-IN-JS 最佳实践
 - eslint + prettier: 为了更好地编码
 - husky + commitlint: 为了更好地 GIT 提交
+- [html2canvas](http://html2canvas.hertzen.com/)
+- [pinyin](https://github.com/hotoo/pinyin): 汉字转拼音
+- [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): 开启复制功能
+- 感谢伟大的互联网，感谢各种开源作品
 
 ## 更新日志
 

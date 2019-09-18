@@ -1,6 +1,6 @@
 # <img src="demo/logo.png" alt="Logo" width="50"> Chinese Color
 
-> [中文 README.MD](README.zh.md)
+> [中文文档](README.zh.md)
 
 [Chinese Color Cheatsheet](https://works.yangerxiao.com/chinese-colors/)
 
@@ -10,16 +10,32 @@
 
 - Build with react.js
 - PWA supported
-  <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
+
+<img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
 - Responsive (Mobile First)
-  <img src="demo/m.png" alt="Mobile UI" width="300">
+  
+<img src="demo/m.png" alt="Mobile UI" width="300">
 
 - Highlight the selected color
 - Classify the colors
 - Copy HEX
 - Add to favorites
-- Wallpaper (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)).   <img src="demo/screenshot.png" alt="screen shot" width="300">
+- Wallpaper (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)).   
+<img src="demo/screenshot.png" alt="screen shot" width="300">
+
+## Technology Stack & Thanks
+
+- [create-react-app](https://github.com/facebook/create-react-app)
+- [react.js](https://reactjs.org)
+- [styled-components](https://styled-components.com): CSS-IN-JS Best Practice
+- eslint + prettier: for better code
+- husky + commitlint: for better git commit format
+- [html2canvas](http://html2canvas.hertzen.com/)
+- [pinyin](https://github.com/hotoo/pinyin): convert Han to pinyin
+- [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): enable copy
+- Thanks the great Open Source
+
 
 ## Changelog
 
