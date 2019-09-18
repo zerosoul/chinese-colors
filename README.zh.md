@@ -1,19 +1,37 @@
-# 项目名
+<img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册 
+
+# 中国传统颜色手册
 
 [English Version](README.md)
 
-[项目名](https://xxx.com/)
+[访问地址](https://works.yangerxiao.com/chinese-colors/)
+
+<img src="demo/pc.png" alt="PC UI" width="600">
 
 ## 特性
 
-### 功能
+- 使用React构建
+- 支持 PWA
 
-- [x] 已完成的
-- [ ] 未完成的
+<img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
-### 体验
+- 适配移动端展现 (Mobile First)
 
-- [x] 已具备的
+<img src="demo/m.png" alt="Mobile UI" width="300">
+
+- 颜色选中高亮
+- 颜色分类
+- 可复制HEX
+- 可收藏喜欢的颜色
+- 可生成壁纸，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
+
+<img src="demo/screenshot.png" alt="screen shot" width="300">
+
+## 参考
+
+- 颜色数据来源：[中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
+- UI参考：[一个日本传统颜色网站](http://nipponcolors.com/)
+
 
 ## 技术栈
 
