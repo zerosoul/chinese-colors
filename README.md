@@ -34,8 +34,9 @@
 - [html2canvas](http://html2canvas.hertzen.com/)
 - [pinyin](https://github.com/hotoo/pinyin): convert Han to pinyin
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): enable copy
+- [iconfont.cn](https://iconfont.cn): icons
+- [https://www.transparenttextures.com/](https://www.transparenttextures.com/): awesome pattern images
 - Thanks the great Open Source
-
 
 ## Changelog
 

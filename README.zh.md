@@ -42,6 +42,8 @@
 - [html2canvas](http://html2canvas.hertzen.com/)
 - [pinyin](https://github.com/hotoo/pinyin): 汉字转拼音
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): 开启复制功能
+- [iconfont.cn](https://iconfont.cn): 阿里系的图标库，很丰富，很方便
+- [https://www.transparenttextures.com/](https://www.transparenttextures.com/): 非常好看的纹理背景图
 - 感谢伟大的互联网，感谢各种开源作品
 
 ## 更新日志
