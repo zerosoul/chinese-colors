@@ -94,7 +94,7 @@ module.exports = merge(commonConfig, {
             //配置 expiration
             expiration: {
               maxEntries: 10,
-              maxAgeSeconds: 60
+              maxAgeSeconds: 3600
             },
 
             //配置哪些响应被认为是可缓存的
@@ -114,7 +114,7 @@ module.exports = merge(commonConfig, {
             //配置 expiration
             expiration: {
               maxEntries: 10,
-              maxAgeSeconds: 60
+              maxAgeSeconds: 3600
             },
 
             //配置哪些响应被认为是可缓存的
