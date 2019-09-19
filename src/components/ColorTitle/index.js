@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconFav from './IconFav';
 import IconCopy from './IconCopy';
+import { getCorrectTextColor } from '../../utils';
 
 const Wrapper = styled.hgroup`
   color: #333;
@@ -53,7 +54,7 @@ const Wrapper = styled.hgroup`
 const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
   return (
     <Wrapper>
-      <h1>{name}</h1>
+      <h1 style={{ color: getCorrectTextColor(RGB) }}>{name}</h1>
       <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
       <h2>{pinyin}</h2>
       <h3>
