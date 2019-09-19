@@ -47,8 +47,8 @@ const useModal = () => {
 const useColor = initialValue => {
   const execSideEffect = obj => {
     localStorage.setItem('SELECTED_COLOR', JSON.stringify(obj));
-    let arr = document.title.split('|');
-    document.title = arr.length > 1 ? `${obj.name}|${arr[1]}` : `${obj.name}|${arr[0]}`;
+    let arr = document.title.split(' - ');
+    document.title = arr.length > 1 ? `${obj.name} - ${arr[1]}` : `${obj.name} - ${arr[0]}`;
     let metaThemeColor = document.querySelector('meta[name=theme-color]');
     metaThemeColor.setAttribute('content', obj.hex);
   };
