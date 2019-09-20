@@ -56,3 +56,10 @@ enjoy: `http://localhost:8099/`
 
 - Color data source：[中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
 - UI：[nipponcolors.com](http://nipponcolors.com/)
+
+
+## Need support
+
+<a href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color" target="_blank">
+  <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark" alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! "/>
+</a>

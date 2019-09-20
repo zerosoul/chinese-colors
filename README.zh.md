@@ -59,3 +59,9 @@
 ## 更新日志
 
 [更新日志](CHANGELOG.md)
+
+## 支持
+
+<a href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color" target="_blank">
+  <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark" alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! "/>
+</a>
