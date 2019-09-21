@@ -230,7 +230,7 @@
         "intro": "由植物(例如靛蓝或菘蓝属植物)得到的蓝色染料",
         "figure": "moon.png"
       },
-      { "hex": "#3eede7", "name": "碧蓝", "intro": "青蓝色" },
+      { "hex": "#3eede7", "name": "碧蓝", "intro": "青蓝色", "figure": "wave.png?width=100%" },
       {
         "hex": "#70f3ff",
         "name": "蔚蓝",
@@ -287,7 +287,7 @@
         "figure": "qunshan.png?width=100%"
       },
 
-      { "hex": "#519a73", "name": "苍翠", "intro": "" },
+      { "hex": "#519a73", "name": "苍翠", "intro": "", "figure": "lvzhu.png?width=18rem" },
       { "hex": "#a29b7c", "name": "苍黄", "intro": "", "figure": "guilinshanshui.png" },
       { "hex": "#7397ab", "name": "苍青", "intro": "" },
       { "hex": "#395260", "name": "苍黑", "intro": "", "figure": "sundown.png" },
@@ -305,7 +305,7 @@
     "colors": [
       { "hex": "#88ada6", "name": "水色", "intro": "" },
       { "hex": "#f3d3e7", "name": "水红", "intro": "" },
-      { "hex": "#d4f2e7", "name": "水绿", "intro": "" },
+      { "hex": "#d4f2e7", "name": "水绿", "intro": "", "figure": "shuanghe.png" },
       { "hex": "#d2f0f4", "name": "水蓝", "intro": "", "figure": "yu.png?width=17rem" },
       { "hex": "#d3e0f3", "name": "淡青", "intro": "" },
       { "hex": "#30dff3", "name": "湖蓝", "intro": "", "figure": "moon.png" },
@@ -367,11 +367,17 @@
         "figure": "meinv.png?width=18rem"
       },
       { "hex": "#808080", "name": "灰色", "intro": "黑色和白色混和成的一种颜色" },
-      { "hex": "#eedeb0", "name": "牙色", "intro": "与象牙相似的淡黄色（暖白）" },
+      {
+        "hex": "#eedeb0",
+        "name": "牙色",
+        "intro": "与象牙相似的淡黄色（暖白）",
+        "figure": "zhuzi.png?width=14rem"
+      },
       {
         "hex": "#f0f0f4",
         "name": "铅白",
-        "intro": "铅粉的白色。铅粉，国画颜料，日久易氧化\"返铅\"变黑。铅粉在古时用以搽脸的化妆品。（冷白）"
+        "intro": "铅粉的白色。铅粉，国画颜料，日久易氧化\"返铅\"变黑。铅粉在古时用以搽脸的化妆品。（冷白）",
+        "figure": "baishan.png?width=100%"
       }
     ]
   },
