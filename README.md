@@ -21,6 +21,7 @@
 - Classify the colors
 - Copy HEX
 - Add to favorites
+- Poetry aside
 - Wallpaper (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)).
 
 <img src="demo/screenshot.png" alt="screen shot" width="300">
@@ -37,6 +38,7 @@
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): enable copy
 - [iconfont.cn](https://iconfont.cn): icons
 - [https://www.transparenttextures.com/](https://www.transparenttextures.com/): awesome pattern images
+- [今日诗词](https://www.jinrishici.com)
 - Thanks the great Open Source
 
 ## Local Development

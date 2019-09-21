@@ -23,6 +23,7 @@
 - 颜色分类
 - 可复制 HEX
 - 可收藏喜欢的颜色
+- 搭配显示诗词
 - 可生成壁纸，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
 
 <img src="demo/screenshot.png" alt="screen shot" width="300">
@@ -39,6 +40,7 @@
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): 开启复制功能
 - [iconfont.cn](https://iconfont.cn): 阿里系的图标库，很丰富，很方便
 - [https://www.transparenttextures.com/](https://www.transparenttextures.com/): 非常好看的纹理背景图
+- [今日诗词](https://www.jinrishici.com)
 - 感谢伟大的互联网，感谢各种开源作品
 
 ## 本地开发
