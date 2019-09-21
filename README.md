@@ -12,7 +12,7 @@
 - PWA supported
   <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
-- Responsive (Mobile First)
+- Responsive (Mobile First).
   <img src="demo/m.png" alt="Mobile UI" width="300">
 
 - Highlight the selected color
