@@ -12,20 +12,17 @@
 
 - 使用 React 构建
 - 支持 PWA
-
-<img src="demo/pwa.jpg" alt="PWA Logo" width="300">
+  <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
 - 适配移动端展现 (Mobile First)
-
-<img src="demo/m.png" alt="Mobile UI" width="300">
+  <img src="demo/m.png" alt="Mobile UI" width="300">
 
 - 颜色选中高亮
 - 颜色分类
 - 可复制 HEX
 - 可收藏喜欢的颜色
 - 可生成壁纸，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
-
-<img src="demo/screenshot.png" alt="screen shot" width="300">
+  <img src="demo/screenshot.png" alt="screen shot" width="300">
 
 ## 技术栈
 
