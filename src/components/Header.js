@@ -7,6 +7,7 @@ const Wrapper = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
   .logo {
     width: 2.8rem;
     height: 2.8rem;

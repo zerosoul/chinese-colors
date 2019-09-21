@@ -20,7 +20,7 @@ const Wrapper = styled.div`
       font-size: 0.8rem;
       font-weight: 800;
       &:not(:first-child) {
-        margin-right: -1.4rem;
+        margin-right: -1.8rem;
       }
       &.selected {
         transform: translateY(-1.6rem);

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import IconFav from './IconFav';
 import IconCopy from './IconCopy';
+import { useMobile } from '../../hooks';
+
 import { getCorrectTextColor } from '../../utils';
 
 const Wrapper = styled.hgroup`
@@ -10,16 +12,18 @@ const Wrapper = styled.hgroup`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  align-self: center;
+  /* align-self: center; */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   padding: 1rem 0.8rem;
   position: relative;
   width: 4.6rem;
   cursor: default;
-  margin-top: -6rem;
+  margin-top: 3rem;
   margin-right: 0.5rem;
-
+  &.mobile {
+    margin-top: 6rem;
+  }
   &:hover > h1 {
     transform: scale(1.1);
   }
@@ -52,8 +56,10 @@ const Wrapper = styled.hgroup`
 `;
 
 const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
+  const { isMobile } = useMobile();
+
   return (
-    <Wrapper>
+    <Wrapper className={isMobile ? 'mobile' : ''}>
       <h1 style={{ color: getCorrectTextColor(RGB) }}>{name}</h1>
       <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
       <h2>{pinyin}</h2>
