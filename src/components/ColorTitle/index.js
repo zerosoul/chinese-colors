@@ -89,7 +89,7 @@ const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
       <h1>{name}</h1>
       <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
       <h2>{pinyin}</h2>
-      {poetry && <Poetry {...poetry} color={getCorrectTextColor(RGB)} />}
+      {poetry && <Poetry {...poetry} />}
     </Wrapper>
   );
 };

@@ -26,11 +26,11 @@ const Wrapper = styled.div`
     font-weight: bold;
   }
 `;
-const Poetry = ({ content = '', author = '', title = '', color = '#fff' }) => {
+const Poetry = ({ content = '', author = '', title = '' }) => {
   const { isMobile } = useMobile();
 
   return (
-    <Wrapper className={isMobile ? 'mobile' : ''} style={{ color }}>
+    <Wrapper className={isMobile ? 'mobile' : ''}>
       <h2>
         {author} ·《 {title} 》
       </h2>
