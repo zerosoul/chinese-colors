@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   background: transparent;
 `;
 
-const CirclePercent = ({ progress = 10, color = 'rgba(50,50,50,.96)' }) => {
+const CirclePercent = ({ progress = 10, color = 'rgba(102, 87, 87, 0.96)' }) => {
   return (
     <Wrapper>
       <Circle progress={progress} color={color} type="percent" />

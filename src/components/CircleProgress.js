@@ -29,8 +29,11 @@ const Wrapper = styled.div`
   &.percent .circular-chart {
     min-width: unset;
     overflow: unset;
+    .circle-bg {
+      stroke: none;
+    }
     .circle {
-      stroke-width: 10;
+      stroke-width: 8;
       stroke-linecap: butt;
     }
   }
@@ -55,7 +58,7 @@ const Circle = ({ progress = 10, color = '#333', type = '' }) => {
           a 15.9155 15.9155 0 0 1 0 -31.831"
         />
         {type !== 'percent' && (
-          <text x="18" y="20.35" style={{ fill: color }} className="percentage">
+          <text x="18" y="22" style={{ fill: color }} className="percentage">
             {progress}
           </text>
         )}

@@ -107,7 +107,7 @@ const App = () => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
   return (
-    <Suspense fallback={<Loading color="#392f41" size="4" sizeUnit="rem" />}>
+    <Suspense fallback={<Loading color="rgba(57, 47, 65, 0.8)" size="4" sizeUnit="rem" />}>
       <Wrapper>
         <aside className="colorSet">
           <ColorSet sets={sets} currSetName={currSet.name} setCurrSet={updateCurrSet} />
