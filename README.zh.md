@@ -1,4 +1,4 @@
-<img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册 
+<img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册
 
 # 中国传统颜色手册
 
@@ -10,7 +10,7 @@
 
 ## 特性
 
-- 使用React构建
+- 使用 React 构建
 - 支持 PWA
 
 <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
@@ -21,16 +21,11 @@
 
 - 颜色选中高亮
 - 颜色分类
-- 可复制HEX
+- 可复制 HEX
 - 可收藏喜欢的颜色
 - 可生成壁纸，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
 
 <img src="demo/screenshot.png" alt="screen shot" width="300">
-
-## 参考
-
-- 颜色数据来源：[中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
-- UI参考：[一个日本传统颜色网站](http://nipponcolors.com/)
 
 ## 技术栈
 
@@ -48,14 +43,25 @@
 
 ## 本地开发
 
-`git clone https://github.com/zerosoul/chinese-colors.git`
+克隆到本地：`git clone https://github.com/zerosoul/chinese-colors.git`
 
-`cd chinese-colors && npm install`
+初始化：`cd chinese-colors && npm install`
 
-`npm run start`
+运行：`npm run start`
 
-浏览器: `http://localhost:8099/`
+访问: `http://localhost:8099/`
+
+## 支持
+
+<a href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color" target="_blank">
+  <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark" alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! " />
+</a>
 
 ## 更新日志
 
 [更新日志](CHANGELOG.md)
+
+## 参考
+
+- 颜色数据来源：[中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
+- UI 参考：[一个日本传统颜色网站](http://nipponcolors.com/)
