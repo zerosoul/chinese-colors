@@ -22,7 +22,6 @@ const Wrapper = styled.hgroup`
   cursor: default;
   margin-top: 2rem;
   margin-right: 0.5rem;
-  transition: all 0.6s;
   &.mobile {
     width: 5.8rem;
     margin-top: 6rem;
@@ -68,6 +67,7 @@ const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
   useEffect(() => {
     console.log('jrsc', jinrishici);
 
+    setPoetry(null);
     jinrishici.load(
       result => {
         let obj = {

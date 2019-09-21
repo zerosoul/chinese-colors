@@ -66,7 +66,7 @@ const Wrapper = styled.section`
       text-transform: capitalize;
       transform-origin: left;
       transform: rotate(90deg);
-      color: rgba(255, 255, 235, 0.4);
+      color: rgba(255, 255, 235, 0.3);
       margin-bottom: 2.6rem;
       margin-left: 1rem;
       font-weight: bold;
