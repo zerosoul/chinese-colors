@@ -1,6 +1,6 @@
-<img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册
+# <img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册
 
-# 中国传统颜色手册
+## 中国传统颜色手册
 
 [English Version](README.md)
 
