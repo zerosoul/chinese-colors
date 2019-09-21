@@ -35,8 +35,8 @@ export function getCorrectTextColor(rgb = [0, 0, 0]) {
 
   const cBrightness = (hRed * 299 + hGreen * 587 + hBlue * 114) / 1000;
   if (cBrightness > threshold) {
-    return '#333';
+    return '#50616d';
   } else {
-    return '#fff';
+    return '#e9f1f6';
   }
 }

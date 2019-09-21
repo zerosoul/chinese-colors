@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 
   .circular-chart {
     display: block;
-    min-width: 2.6rem;
+    max-width: 2.4rem;
     .circle-bg {
       fill: rgba(255, 255, 255, 0.8);
       stroke: #eee;

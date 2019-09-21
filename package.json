@@ -31,6 +31,7 @@
     "color-convert": "^2.0.1",
     "file-saver": "^2.0.2",
     "html2canvas": "^1.0.0-rc.3",
+    "jinrishici": "^1.0.6",
     "pinyin": "^2.9.0",
     "react": "^16.9.0",
     "react-copy-to-clipboard": "^5.0.1",

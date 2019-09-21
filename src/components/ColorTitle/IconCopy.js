@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import FadeInUp from '../animates/FadeInUp';
+// import FadeInDown from '../animates/FadeInDown';
 const Wrapper = styled.div`
   cursor: pointer;
   display: flex;
@@ -13,21 +13,20 @@ const Wrapper = styled.div`
   }
   > .hex {
     font-size: 0.6rem;
-    padding: 0.2rem;
+    padding: 0.3rem;
     background: rgba(51, 51, 51, 0.5);
     border-radius: 0.2rem;
     text-transform: uppercase;
   }
   .copyTip {
     position: absolute;
-    left: 0.3rem;
-    top: 2rem;
+    left: -3rem;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 0.6rem;
     padding: 0.3rem 0.4rem;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 0.2rem;
-    animation: ${FadeInUp} 1s;
-    animation-fill-mode: both;
   }
 `;
 const IconFav = ({ currColorHex }) => {

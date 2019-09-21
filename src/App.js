@@ -27,6 +27,7 @@ colors.push({
 const Colors = colors.map(set => {
   set.RGB = convert.hex.rgb(set.hex);
   set.colors = set.colors.map(c => {
+    let heteronymIdx = c.name.indexOf('藏') > -1 ? 1 : 0;
     return {
       ...c,
       RGB: convert.hex.rgb(c.hex),
@@ -36,7 +37,7 @@ const Colors = colors.map(set => {
         segment: true // 启用分词，以解决多音字问题。
       })
         .map(item => {
-          return item.length > 1 ? item[item.length - 1] : item;
+          return item.length > 1 ? item[heteronymIdx] : item;
         })
         .join(' ')
     };
