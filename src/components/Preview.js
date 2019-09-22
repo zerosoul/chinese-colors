@@ -77,6 +77,8 @@ const Wrapper = styled.section`
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: -1;
+    max-height: 100%;
   }
 `;
 
