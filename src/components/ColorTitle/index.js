@@ -13,7 +13,6 @@ const Wrapper = styled.hgroup`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* align-self: center; */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   padding: 1rem 0.8rem;
@@ -22,6 +21,7 @@ const Wrapper = styled.hgroup`
   cursor: default;
   margin-top: 2rem;
   margin-right: 0.5rem;
+  min-height: 18rem;
   &.mobile {
     width: 5.8rem;
     margin-top: 6rem;
