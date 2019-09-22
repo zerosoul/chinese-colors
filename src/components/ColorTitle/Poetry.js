@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useMobile } from '../../hooks';
+import FadeInDown from '../animates/FadeInDown';
 const Wrapper = styled.div`
   display: flex;
   font-size: 0.6rem;
@@ -9,6 +10,7 @@ const Wrapper = styled.div`
   margin-top: 1rem;
   /* background: rgba(33, 33, 33, 0.6); */
   text-shadow: 0 0 4px rgba(33, 33, 33, 0.6);
+  animation: ${FadeInDown} 1s forwards;
   &.mobile {
     font-size: 0.8rem;
   }
