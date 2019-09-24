@@ -38,6 +38,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.9.0",
     "react-github-btn": "^1.0.6",
+    "react-router-dom": "^5.0.1",
     "smooth-scroll-into-view-if-needed": "^1.1.23",
     "styled-components": "^4.3.2",
     "styled-reset": "^4.0.1"

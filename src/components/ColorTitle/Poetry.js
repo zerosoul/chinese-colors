@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   line-height: 1.4;
   padding: 0.4rem;
   margin-top: 1rem;
-  /* background: rgba(33, 33, 33, 0.6); */
   text-shadow: 0 0 4px rgba(33, 33, 33, 0.6);
   animation: ${FadeInDown} 1s forwards;
   &.mobile {

@@ -24,7 +24,7 @@ const Wrapper = styled.hgroup`
   min-height: 18rem;
   &.mobile {
     width: 5.8rem;
-    margin-top: 6rem;
+    margin-top: 8rem;
     > h1 {
       font-size: 3.6rem;
     }

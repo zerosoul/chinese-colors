@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ColorSet = ({ currSetName, setCurrSet, sets }) => {
+const ColorSet = ({ currSetName = '', setCurrSet, sets = [] }) => {
   const [isHover, setIsHover] = useState(false);
 
   const handleSetClick = name => {

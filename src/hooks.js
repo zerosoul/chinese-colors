@@ -1,4 +1,7 @@
 import { useState, useReducer, useEffect } from 'react';
+import pinyin from 'pinyin';
+import convert from 'color-convert';
+import colors from './assets/colors.json';
 
 const useMobile = (width = 750) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= width);
@@ -44,8 +47,73 @@ const useModal = () => {
   return { visible, closeModal, showModal };
 };
 
-const useColor = initialValue => {
+colors.push({
+  name: '',
+  colors: JSON.parse(localStorage.getItem('FAV_COLORS') || '[]')
+});
+// let tmp = colors.map((set, sIdx) => {
+//   set.RGB = convert.hex.rgb(set.hex);
+//   set.id = sIdx;
+//   set.colors = set.colors.map((c, cIdx) => {
+//     return {
+//       id: `${sIdx}-${cIdx}`,
+//       ...c
+//     };
+//   });
+//   return set;
+// });
+// console.log('tmp', JSON.stringify(tmp));
+
+const Colors = colors.map(set => {
+  set.RGB = convert.hex.rgb(set.hex);
+  set.colors = set.colors.map(c => {
+    let heteronymIdx = c.name.indexOf('藏') > -1 ? 1 : 0;
+    return {
+      ...c,
+      RGB: convert.hex.rgb(c.hex),
+      CMYK: convert.hex.cmyk(c.hex),
+      pinyin: pinyin(c.name, {
+        heteronym: true, // 启用多音字模式
+        segment: true // 启用分词，以解决多音字问题。
+      })
+        .map(item => {
+          return item.length > 1 ? item[heteronymIdx] : item;
+        })
+        .join(' ')
+    };
+  });
+  return set;
+});
+console.log('all', Colors);
+
+const useShareColor = (id = null) => {
+  let tmpSet = null;
+  let tmpColor = null;
+  if (id) {
+    let [setId] = id.split('-');
+    tmpSet = Colors.find(set => set.id == setId);
+    tmpColor = tmpSet.colors.find(c => c.id == id);
+  }
+  console.log('tmp color', tmpSet, tmpColor);
+
+  return { set: tmpSet, color: tmpColor };
+};
+const useColor = () => {
+  const SelectedColorSet = JSON.parse(localStorage.getItem('SELECTED_COLOR_SET')) || Colors[0];
+  const SelectedColor =
+    JSON.parse(localStorage.getItem('SELECTED_COLOR')) || SelectedColorSet.colors[9];
+  const initialValue = {
+    sets: Colors.map(set => {
+      const newSet = { ...set };
+      // delete newSet.colors;
+      return newSet;
+    }),
+    currColor: SelectedColor,
+    currSet: SelectedColorSet
+  };
   const execSideEffect = obj => {
+    console.log('dddd', obj);
+    document.body.style.backgroundColor = obj.hex;
     localStorage.setItem('SELECTED_COLOR', JSON.stringify(obj));
     let arr = document.title.split(' - ');
     document.title = arr.length > 1 ? `${obj.name} - ${arr[1]}` : `${obj.name} - ${arr[0]}`;
@@ -88,5 +156,5 @@ const useColor = initialValue => {
   return { ...state, updateCurrColor, updateCurrSet };
 };
 
-export { useModal, usePreview, useColor, useMobile };
+export { useModal, usePreview, useShareColor, useColor, useMobile };
 export default useColor;

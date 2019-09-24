@@ -13,7 +13,7 @@ const Wrapper = styled.aside`
   }
 `;
 
-const Icon = ({ icon, handleClick }) => {
+const Icon = ({ icon, handleClick = () => {} }) => {
   return <Wrapper onClick={handleClick}>{icon}</Wrapper>;
 };
 

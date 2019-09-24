@@ -18,11 +18,13 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   border-bottom-left-radius: 6px;
   transition: all 0.5s;
   align-self: flex-start;
-
+  opacity: 0.6;
   &:hover {
+    opacity: 0.9;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   }
   &.curr {
+    opacity: 1;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
     text-shadow: 0 0 10px black;
   }
