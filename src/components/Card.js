@@ -9,16 +9,15 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   box-shadow: -13px 18px 10px rgba(0, 0, 0, 0.2);
   margin-top: -4rem;
   .circle {
     position: relative;
-
-    width: 18rem;
-    height: 18rem;
-    border: none;
+    width: 18.4rem;
+    height: 18.4rem;
     border-radius: 50%;
+    border: 2px solid;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,15 +27,20 @@ const Wrapper = styled.div`
       opacity: 0.8;
     }
   }
-  .title {
+  .tip {
     position: absolute;
     right: 0.6rem;
     bottom: 0.6rem;
     font-size: 1.2rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: -0.3rem;
     writing-mode: vertical-lr;
-    font-weight: bold;
-    /* text-shadow: 0 0 2px rgba(0, 0, 0, 0.2); */
+    padding: 0.3rem;
+    /* background: rgba(0, 0, 0, 0.29); */
+    border-radius: 6px;
+    border-top-right-radius: unset;
+    border-bottom-left-radius: unset;
+    font-family: 'TChinese', 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi',
+      'Microsoft YaHei';
   }
   .btn {
     font-size: 1.4rem;
@@ -50,16 +54,23 @@ const Wrapper = styled.div`
 `;
 
 const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' }) => {
+  const theOtherColor = getCorrectTextColor(hex);
+  const titleBgColor = theOtherColor == '#e9f1f6' ? '#50616d' : '#e9f1f6';
   return (
     <Wrapper
       id={'SHARE_CARD'}
       style={{
-        background: getCorrectTextColor(hex)
+        background: theOtherColor
       }}
     >
-      <h2 className="title" style={{ color: `rgba(${RGB.join(',')},.8)` }}>
-        {setName}·{name}
-      </h2>
+      <h3
+        className="tip"
+        style={{ color: `rgba(${RGB.join(',')},.8)`, backgroundColor: titleBgColor }}
+      >
+        <span className="set">{setName}</span>
+        <span className="dot">·</span>
+        <span className="color"> {name}</span>
+      </h3>
       <div
         className="circle"
         style={{
@@ -69,7 +80,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
         <img className="img" src={`../figure/${figure}`}></img>
       </div>
 
-      <Download name={name} query="#SHARE_CARD" style={{ bottom: '-5rem' }} />
+      <Download full={false} name={name} query="#SHARE_CARD" style={{ bottom: '-5rem' }} />
     </Wrapper>
   );
 };

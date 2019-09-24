@@ -57,13 +57,19 @@ const sleep = async (dur = 2) => {
     }, misDur);
   });
 };
-const Download = ({ query = '#PREVIEW', name = 'default', isWebview = false, ...rest }) => {
+const Download = ({
+  query = '#PREVIEW',
+  full = true,
+  name = 'default',
+  isWebview = false,
+  ...rest
+}) => {
   const [generating, setGenerating] = useState(false);
 
   const btn = useRef(null);
   const generateImage = async (ele, name, isWebview = false) => {
     setGenerating(true);
-    await sleep(4);
+    await sleep(1);
     html2canvas(ele, {
       onclone: document => {
         let tmp = document.querySelector(query);
@@ -71,7 +77,10 @@ const Download = ({ query = '#PREVIEW', name = 'default', isWebview = false, ...
         if (isWebview) {
           tmp.style.boxShadow = 'none';
         }
-        tmp.style.height = window.innerHeight + 'px';
+        if (full) {
+          tmp.style.height = window.innerHeight + 'px';
+        }
+        console.log('dommmm', tmp.innerHTML);
       },
       scale: window.devicePixelRatio * (isWebview ? 2 : 2)
     }).then(function(canvas) {

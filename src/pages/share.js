@@ -3,11 +3,17 @@ import styled from 'styled-components';
 
 import { useShareColor } from '../hooks';
 import Card from '../components/Card';
+import IconBack from '../components/IconBack';
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  .icon {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
 `;
 const Share = ({ match }) => {
   const { id } = match.params;
@@ -17,6 +23,7 @@ const Share = ({ match }) => {
   console.log('idddd', id, color, set);
   return (
     <Wrapper>
+      <IconBack />
       <Card color={color} setName={set.name} />
     </Wrapper>
   );

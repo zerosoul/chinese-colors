@@ -14,7 +14,11 @@ const Wrapper = styled.aside`
 `;
 
 const Icon = ({ icon, handleClick = () => {} }) => {
-  return <Wrapper onClick={handleClick}>{icon}</Wrapper>;
+  return (
+    <Wrapper className="icon" onClick={handleClick}>
+      {icon}
+    </Wrapper>
+  );
 };
 
 export default Icon;

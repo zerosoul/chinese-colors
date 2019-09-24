@@ -52,13 +52,13 @@ const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: "TChinese";
-    src: url("font/chinese.font.eot"); /* IE9 */
-    src: url("font/chinese.font.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    src: url("/font/chinese.font.eot"); /* IE9 */
+    src: url("/font/chinese.font.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
 
-    url("font/chinese.font.woff") format("woff"), /* chrome、firefox */
-    url("font/chinese.font.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("/font/chinese.font.woff") format("woff"), /* chrome、firefox */
+    url("/font/chinese.font.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
 
-    url("font/chinese.font.svg#font/chinese.font") format("svg"); /* iOS 4.1- */
+    url("/font/chinese.font.svg#font/chinese.font") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
