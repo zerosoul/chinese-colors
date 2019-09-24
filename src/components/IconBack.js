@@ -9,6 +9,7 @@ const IconBack = () => {
       <Icon
         icon={
           <svg
+            style={{ width: '2rem', height: '2rem' }}
             t="1569329382185"
             className="icon"
             viewBox="0 0 1024 1024"

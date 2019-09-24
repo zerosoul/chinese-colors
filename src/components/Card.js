@@ -14,6 +14,14 @@ const Wrapper = styled.div`
   /* border: 1px solid #fff; */
   box-shadow: -13px 18px 10px rgba(0, 0, 0, 0.2);
   margin-top: -4rem;
+  &.starting {
+    margin: 0 auto;
+    margin-top: -4rem;
+    box-shadow: none;
+    .title {
+      padding-left: 0.3rem;
+    }
+  }
   &.img {
     width: 80vw;
     padding: 0;
@@ -26,7 +34,6 @@ const Wrapper = styled.div`
     }
   }
   .circle {
-    position: relative;
     width: 18.4rem;
     height: 18.4rem;
     border-radius: 50%;
@@ -55,15 +62,6 @@ const Wrapper = styled.div`
     border-bottom-left-radius: unset;
     font-family: 'TChinese', 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi',
       'Microsoft YaHei';
-  }
-  .btn {
-    font-size: 1.4rem;
-
-    position: absolute;
-    bottom: -6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.4rem 0.8rem;
   }
 `;
 const ua = navigator.userAgent;
@@ -99,7 +97,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
       <Download
         isWebview={isWebview}
         full={false}
-        name={name}
+        name={`卡片-${name}`}
         query="#SHARE_CARD"
         style={{ bottom: '-5rem' }}
       />
