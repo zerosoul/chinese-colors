@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   margin-top: -4rem;
   &.img {
     width: 80vw;
+    padding: 0;
     .circle,
     .title {
       display: none;
