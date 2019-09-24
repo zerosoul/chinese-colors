@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { getCorrectTextColor } from '../utils';
 import Download from './DownloadBtn';
+import Tip from './Tip';
+
 const Wrapper = styled.div`
   position: relative;
   padding: 2rem;
@@ -12,6 +14,16 @@ const Wrapper = styled.div`
   /* border: 1px solid #fff; */
   box-shadow: -13px 18px 10px rgba(0, 0, 0, 0.2);
   margin-top: -4rem;
+  &.img {
+    width: 80vw;
+    .circle,
+    .title {
+      display: none;
+    }
+    img {
+      width: 100%;
+    }
+  }
   .circle {
     position: relative;
     width: 18.4rem;
@@ -27,7 +39,7 @@ const Wrapper = styled.div`
       opacity: 0.8;
     }
   }
-  .tip {
+  .title {
     position: absolute;
     right: 0.6rem;
     bottom: 0.6rem;
@@ -35,6 +47,7 @@ const Wrapper = styled.div`
     letter-spacing: -0.3rem;
     writing-mode: vertical-lr;
     padding: 0.3rem;
+    padding-bottom: 0.6rem;
     /* background: rgba(0, 0, 0, 0.29); */
     border-radius: 6px;
     border-top-right-radius: unset;
@@ -52,7 +65,9 @@ const Wrapper = styled.div`
     padding: 0.4rem 0.8rem;
   }
 `;
-
+const ua = navigator.userAgent;
+const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
+const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
 const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' }) => {
   const theOtherColor = getCorrectTextColor(hex);
   const titleBgColor = theOtherColor == '#e9f1f6' ? '#50616d' : '#e9f1f6';
@@ -64,7 +79,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
       }}
     >
       <h3
-        className="tip"
+        className="title"
         style={{ color: `rgba(${RGB.join(',')},.8)`, backgroundColor: titleBgColor }}
       >
         <span className="set">{setName}</span>
@@ -80,7 +95,14 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
         <img className="img" src={`../figure/${figure}`}></img>
       </div>
 
-      <Download full={false} name={name} query="#SHARE_CARD" style={{ bottom: '-5rem' }} />
+      <Download
+        isWebview={isWebview}
+        full={false}
+        name={name}
+        query="#SHARE_CARD"
+        style={{ bottom: '-5rem' }}
+      />
+      {isWebview && <Tip>APP内打开，图片生成功能可能受限，建议在浏览器内打开</Tip>}
     </Wrapper>
   );
 };

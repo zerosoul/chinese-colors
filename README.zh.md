@@ -4,7 +4,7 @@
 
 [English Version](README.md)
 
-[访问地址](https://works.yangerxiao.com/chinese-colors/)
+[访问地址](https://colors.ichuantong.cn)
 
 <img src="demo/pc.png" alt="PC UI" width="600">
 

@@ -2,7 +2,7 @@
 
 > [中文文档](README.zh.md)
 
-[Chinese Color Cheatsheet](https://works.yangerxiao.com/chinese-colors/)
+[Chinese Color Cheatsheet](https://colors.ichuantong.cn)
 
 <img src="demo/pc.png" alt="PC UI" width="600">
 
@@ -65,7 +65,6 @@ enjoy: `http://localhost:8099/`
 
 - Color data source：[中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
 - UI：[nipponcolors.com](http://nipponcolors.com/)
-
 
 ## Need support
 

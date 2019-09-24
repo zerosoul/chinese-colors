@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Tip from '../components/Tip';
 
 import { useShareColor } from '../hooks';
 import Card from '../components/Card';
@@ -15,6 +16,10 @@ const Wrapper = styled.section`
     left: 1rem;
   }
 `;
+const ua = navigator.userAgent;
+const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
+const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
+
 const Share = ({ match }) => {
   const { id } = match.params;
   const { set, color } = useShareColor(id);
@@ -25,6 +30,7 @@ const Share = ({ match }) => {
     <Wrapper>
       <IconBack />
       <Card color={color} setName={set.name} />
+      {isWebview && <Tip>APP内打开，图片生成功能可能受限，建议在浏览器内打开</Tip>}
     </Wrapper>
   );
 };
