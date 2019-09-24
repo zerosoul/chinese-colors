@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHubButton from 'react-github-btn';
 import Logo from '../assets/img/logo.png';
-import RewardImage from '../assets/img/reward.jpg';
 import BounceInDown from './animates/BounceInDown';
 
 const Wrapper = styled.section`
@@ -77,11 +76,6 @@ const Wrapper = styled.section`
         }
       }
     }
-    .reward {
-      width: 12rem;
-      border-radius: 0.4rem;
-      box-shadow: 0px 8px 10px 0px #7b7361;
-    }
   }
 `;
 export default function InfoModal({ closeModal, bgColor }) {
@@ -111,8 +105,6 @@ export default function InfoModal({ closeModal, bgColor }) {
             </a>
           </span>
         </p>
-
-        <img className="reward" src={RewardImage} alt="reward image" />
 
         {process.env.NODE_ENV === 'production' && (
           <>

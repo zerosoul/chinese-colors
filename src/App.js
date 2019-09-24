@@ -5,23 +5,16 @@ import convert from 'color-convert';
 import Loading from './components/Loading';
 const ColorTitle = lazy(() => import('./components/ColorTitle'));
 const Color = lazy(() => import('./components/Color'));
-const Preview = lazy(() => import('./components/Preview'));
 const ColorParam = lazy(() => import('./components/ColorParam'));
-const InfoModal = lazy(() => import('./components/InfoModal'));
 const IconInfo = lazy(() => import('./components/IconInfo'));
 const Header = lazy(() => import('./components/Header'));
 const IconScreenshot = lazy(() => import('./components/IconScreenshot'));
 const ColorSet = lazy(() => import('./components/ColorSet'));
 
-// import ColorTitle from './components/ColorTitle';
-// import Color from './components/Color';
-// import Preview from './components/Preview';
-// import ColorParam from './components/ColorParam';
-// import InfoModal from './components/InfoModal';
-// import IconInfo from './components/IconInfo';
-// import IconScreenshot from './components/IconScreenshot';
-// import Header from './components/Header';
-// import ColorSet from './components/ColorSet';
+// const Preview = lazy(() => import('./components/Preview'));
+// const InfoModal = lazy(() => import('./components/InfoModal'));
+import Preview from './components/Preview';
+import InfoModal from './components/InfoModal';
 
 import { useModal, useColor, usePreview } from './hooks';
 
@@ -34,6 +27,7 @@ colors.push({
 const Colors = colors.map(set => {
   set.RGB = convert.hex.rgb(set.hex);
   set.colors = set.colors.map(c => {
+    let heteronymIdx = c.name.indexOf('藏') > -1 ? 1 : 0;
     return {
       ...c,
       RGB: convert.hex.rgb(c.hex),
@@ -43,7 +37,7 @@ const Colors = colors.map(set => {
         segment: true // 启用分词，以解决多音字问题。
       })
         .map(item => {
-          return item.length > 1 ? item[item.length - 1] : item;
+          return item.length > 1 ? item[heteronymIdx] : item;
         })
         .join(' ')
     };
@@ -56,6 +50,7 @@ console.log('colors:', Colors);
 const Wrapper = styled.section`
   height: 100vh;
   display: flex;
+  align-items: flex-start;
   padding: 1rem 0.5rem;
   justify-content: space-evenly;
   transition: all 0.9s;
@@ -64,7 +59,7 @@ const Wrapper = styled.section`
   }
   .colorSet {
     position: fixed;
-    bottom: 2rem;
+    bottom: 1rem;
     right: 3rem;
     padding: 0 1rem;
     z-index: 999;
@@ -72,7 +67,7 @@ const Wrapper = styled.section`
   .colorNav {
     position: relative;
     height: 100vh;
-    width: 16rem;
+    width: 11.8rem;
     margin-right: 1.5rem;
     .colors {
       display: flex;
@@ -113,7 +108,7 @@ const App = () => {
     document.body.style.backgroundColor = currColor.hex;
   }, [currColor]);
   return (
-    <Suspense fallback={<Loading color="#000" size="4" sizeUnit="rem" />}>
+    <Suspense fallback={<Loading color="rgba(57, 47, 65, 0.8)" size="4" sizeUnit="rem" />}>
       <Wrapper>
         <aside className="colorSet">
           <ColorSet sets={sets} currSetName={currSet.name} setCurrSet={updateCurrSet} />

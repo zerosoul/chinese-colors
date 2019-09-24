@@ -8,20 +8,22 @@
 
 ## Features
 
-- Build with react.js
-- PWA supported
+- Build with react.js 👏
+- PWA supported ☕️
 
 <img src="demo/pwa.jpg" alt="PWA Logo" width="300">
 
-- Responsive (Mobile First)
-  
+- Responsive (Mobile First) 📱
+
 <img src="demo/m.png" alt="Mobile UI" width="300">
 
-- Highlight the selected color
-- Classify the colors
-- Copy HEX
-- Add to favorites
-- Wallpaper (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)).   
+- Highlight the selected color ✨
+- Classify the colors 🚥
+- Copy HEX 🖨
+- Add to favorites 😍
+- Poetry aside 😘
+- Wallpaper (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)) 🌸
+
 <img src="demo/screenshot.png" alt="screen shot" width="300">
 
 ## Technology Stack & Thanks
@@ -36,17 +38,24 @@
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): enable copy
 - [iconfont.cn](https://iconfont.cn): icons
 - [https://www.transparenttextures.com/](https://www.transparenttextures.com/): awesome pattern images
+- [今日诗词](https://www.jinrishici.com)
 - Thanks the great Open Source
 
 ## Local Development
 
-`git clone https://github.com/zerosoul/chinese-colors.git`
+clone: `git clone https://github.com/zerosoul/chinese-colors.git`
 
-`cd chinese-colors && npm install`
+init: `cd chinese-colors && npm install`
 
-`npm run start`
+run: `npm run start`
 
 enjoy: `http://localhost:8099/`
+
+## Support
+
+<a href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color" target="_blank">
+  <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark" alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! " />
+</a>
 
 ## Changelog
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useMobile } from '../hooks';
+import { getCorrectTextColor } from '../utils';
 import Logo from '../assets/img/logo.png';
 const Wrapper = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
   .logo {
     width: 2.8rem;
     height: 2.8rem;
@@ -34,7 +36,7 @@ export default function Header({ rgb = [0, 0, 0] }) {
         alt="logo"
         style={{ backgroundColor: `rgba(${rgb.join(',')},.5)` }}
       />
-      <h1>chinese color</h1>
+      <h1 style={{ color: getCorrectTextColor(rgb) }}>chinese color</h1>
     </Wrapper>
   );
 }

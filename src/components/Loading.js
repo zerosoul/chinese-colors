@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import Logo from '../assets/img/logo.png';
+
 const rotate = keyframes`
 0% {
     transform: rotate(0deg);
@@ -69,6 +71,9 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   animation: ${rotate} 3s infinite ease-in;
+  > img {
+    width: 2rem;
+  }
 `;
 
 const Ball = styled.div`
@@ -98,6 +103,7 @@ const Loading = ({ size = 40, color = '#fff', sizeUnit = 'px' }) => {
   const angle = 360 / countBalls;
   return (
     <Wrapper size={size} sizeUnit={sizeUnit}>
+      <img src={Logo} alt="loading logo" />
       {getBalls({
         countBalls,
         radius,

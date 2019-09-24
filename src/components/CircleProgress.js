@@ -4,9 +4,10 @@ const Wrapper = styled.div`
   padding: 0;
 
   margin-bottom: 0.2rem;
+
   .circular-chart {
     display: block;
-    min-width: 2.6rem;
+    max-width: 2.4rem;
     .circle-bg {
       fill: rgba(255, 255, 255, 0.8);
       stroke: #eee;
@@ -25,11 +26,22 @@ const Wrapper = styled.div`
       font-weight: bold;
     }
   }
+  &.percent .circular-chart {
+    min-width: unset;
+    overflow: unset;
+    .circle-bg {
+      stroke: none;
+    }
+    .circle {
+      stroke-width: 8;
+      stroke-linecap: butt;
+    }
+  }
 `;
 
-const Circle = ({ progress = 10, color = '#333' }) => {
+const Circle = ({ progress = 10, color = '#333', type = '' }) => {
   return (
-    <Wrapper className={`p${progress}`} color={color}>
+    <Wrapper className={`${type == 'percent' ? 'percent' : ''}`} color={color}>
       <svg viewBox="0 0 36 36" className="circular-chart orange">
         <path
           className="circle-bg"
@@ -45,9 +57,11 @@ const Circle = ({ progress = 10, color = '#333' }) => {
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
         />
-        <text x="18" y="20.35" style={{ fill: color }} className="percentage">
-          {progress}
-        </text>
+        {type !== 'percent' && (
+          <text x="18" y="22" style={{ fill: color }} className="percentage">
+            {progress}
+          </text>
+        )}
       </svg>
     </Wrapper>
   );
