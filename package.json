@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/zerosoul/chinese-colors/issues"
   },
-  "homepage": "https://works.yangerxiao.com/chinese-colors",
+  "homepage": "https://works.yangerxiao.com/chinese-colors/",
   "dependencies": {
     "@ungap/url-search-params": "^0.1.2",
     "color-convert": "^2.0.1",
