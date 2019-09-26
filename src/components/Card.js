@@ -5,21 +5,21 @@ import Download from './DownloadBtn';
 import Tip from './Tip';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid #fff; */
   box-shadow: -13px 18px 10px rgba(0, 0, 0, 0.2);
-  margin-top: -4rem;
   &.starting {
-    margin: 0 auto;
-    margin-top: -4rem;
     box-shadow: none;
     .title {
       padding-left: 0.3rem;
+      letter-spacing: 0;
     }
   }
   &.img {

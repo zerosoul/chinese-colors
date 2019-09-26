@@ -5,9 +5,7 @@ import { useShareColor } from '../hooks';
 import Card from '../components/Card';
 import IconBack from '../components/IconBack';
 const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   height: 100vh;
   .icon {
     position: fixed;
