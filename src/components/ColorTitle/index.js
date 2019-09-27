@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-const jinrishici = require('jinrishici');
 import IconFav from './IconFav';
-import { useMobile } from '../../hooks';
+import { useMobile, usePoetry } from '../../hooks';
 
 import { getCorrectTextColor } from '../../utils';
 import Poetry from './Poetry';
@@ -63,26 +62,7 @@ const Wrapper = styled.hgroup`
 
 const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
   const { isMobile } = useMobile();
-  const [poetry, setPoetry] = useState(null);
-  useEffect(() => {
-    console.log('jrsc', jinrishici);
-
-    setPoetry(null);
-    jinrishici.load(
-      result => {
-        let obj = {
-          content: result.data.content,
-          author: result.data.origin.author,
-          title: result.data.origin.title
-        };
-        setPoetry(obj);
-      },
-      err => {
-        setPoetry(null);
-        console.log('err', err);
-      }
-    );
-  }, [name]);
+  const { poetry } = usePoetry(name);
 
   return (
     <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: getCorrectTextColor(RGB) }}>

@@ -4,6 +4,7 @@ import { useMobile } from '../../hooks';
 import FadeInDown from '../animates/FadeInDown';
 const Wrapper = styled.div`
   display: flex;
+  align-self: flex-end;
   font-size: 0.6rem;
   line-height: 1.4;
   padding: 0.4rem;
@@ -29,7 +30,6 @@ const Wrapper = styled.div`
 `;
 const Poetry = ({ content = '', author = '', title = '' }) => {
   const { isMobile } = useMobile();
-
   return (
     <Wrapper className={isMobile ? 'mobile' : ''}>
       <h2>

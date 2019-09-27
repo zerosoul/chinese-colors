@@ -71,6 +71,7 @@ const Download = ({
     setGenerating(true);
     await sleep(1);
     html2canvas(ele, {
+      debug: process.env.NODE_ENV !== 'production',
       onclone: document => {
         let tmp = document.querySelector(query);
         tmp.classList.add('starting');
@@ -82,7 +83,7 @@ const Download = ({
         }
         console.log('dommmm', tmp.innerHTML);
       },
-      scale: window.devicePixelRatio * (isWebview ? 2 : 2)
+      scale: window.devicePixelRatio * (isWebview ? 2 : 1)
     }).then(function(canvas) {
       console.log(canvas);
       if (isWebview) {

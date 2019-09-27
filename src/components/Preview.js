@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import URLSearchParams from '@ungap/url-search-params';
+import { getCorrectTextColor } from '../utils';
+
 import Download from './DownloadBtn';
 import Tip from './Tip';
 import IconClose from './IconClose';
@@ -20,9 +22,9 @@ const Wrapper = styled.section`
   z-index: 999;
   background-color: ${({ bgColor }) => bgColor};
   background-image: url(${BodyBg});
+  background-repeat: repeat;
   width: 100%;
   height: 100%;
-  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); */
   animation: ${BounceInDown} 1s;
   animation-fill-mode: both;
   .close {
@@ -33,6 +35,8 @@ const Wrapper = styled.section`
   &.starting {
     animation: none;
     transform: initial;
+    /* html2canvas bug? */
+    /* margin-top: -1rem; */
   }
   &.img {
     .downloadImg {
@@ -47,30 +51,36 @@ const Wrapper = styled.section`
   .name {
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'TChinese', 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi',
+      'Microsoft YaHei';
     z-index: 99;
-    margin-left: 1.2rem;
-    margin-top: 1.4rem;
+  }
+  .poetry {
+    font-family: 'Microsoft YaHei', 微软雅黑, Tahoma, Arial, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 5rem;
+    transform: translateX(-50%);
+    min-width: 6rem;
+    line-height: 1.6;
     display: flex;
-    align-items: flex-end;
-    > h1 {
-      font-family: 'TChinese', 'SimSun', 'FangSong', 'STSong', 'STZhongsong', 'LiSu', 'KaiTi',
-        'Microsoft YaHei';
-      font-size: 6rem;
-      width: 6rem;
-      opacity: 0.8;
-      padding-top: 0.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    .line {
+      font-size: 1.4rem;
+      font-weight: bold;
+      word-break: keep-all;
+      color: inherit;
+      font-family: inherit;
     }
     > h2 {
-      font-size: 2.4rem;
-      text-transform: capitalize;
-      transform-origin: left;
-      transform: rotate(90deg);
-      color: rgba(255, 255, 235, 0.3);
-      margin-bottom: 2.6rem;
-      margin-left: 1rem;
-      font-weight: bold;
-      white-space: nowrap;
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      color: inherit;
+      font-family: inherit;
     }
   }
   .figure {
@@ -82,20 +92,39 @@ const Wrapper = styled.section`
   }
 `;
 
-const Preview = ({ name, pinyin, color, figure = 'default.png?width=8rem', closePreview }) => {
+const Preview = ({ name, color, figure = 'default.png?width=8rem', closePreview }) => {
   console.log('ffff', figure);
+  const oppositeColor = getCorrectTextColor(color);
   const params = new URLSearchParams(figure.split('?')[1] || '');
   const figureW = params.get('width') || '23rem';
   const figureO = +(params.get('o') || 1);
+  const currPoetry = JSON.parse(localStorage.getItem('POETRY'));
+  const { author, title, content } = currPoetry;
+  const lines = content
+    .replace(/[，|。|！|？]/g, ' ')
+    .trim()
+    .split(' ');
   return (
     <Wrapper id="PREVIEW" bgColor={color}>
+      <article style={{ color: oppositeColor }} className={'poetry'}>
+        {lines.map(line => {
+          return (
+            <p key={line} className="line">
+              {line}
+            </p>
+          );
+        })}
+        <h2>
+          {author} ·《{title}》
+        </h2>
+      </article>
+
       <div className="close" data-html2canvas-ignore>
         <IconClose closePreview={closePreview} />
       </div>
-      <hgroup className="name">
-        <h1>{name}</h1>
-        <h2>{pinyin}</h2>
-      </hgroup>
+      <h1 className="name" style={{ color: oppositeColor }}>
+        {name}
+      </h1>
       {figure && (
         <img
           className="figure"

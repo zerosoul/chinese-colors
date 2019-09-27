@@ -1,3 +1,5 @@
+import convert from 'color-convert';
+
 export function shuffle(array) {
   let counter = array.length;
   console.log('shuffle', array);
@@ -29,6 +31,10 @@ export function getCorrectTextColor(rgb = [0, 0, 0]) {
   I know this could be more compact, but I think this is easier to read/explain.
 
   */
+  if ((typeof rgb === 'string' || rgb instanceof String) && rgb.indexOf('#') > -1) {
+    rgb = convert.hex.rgb(rgb);
+  }
+  console.log({ rgb });
 
   const threshold = 130; /* about half of 256. Lower threshold equals more dark text on dark background  */
   const [hRed, hGreen, hBlue] = rgb;
