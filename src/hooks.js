@@ -1,5 +1,7 @@
 import { useState, useReducer, useEffect } from 'react';
 import pinyin from 'pinyin';
+const jinrishici = require('jinrishici');
+
 import convert from 'color-convert';
 import colors from './assets/colors.json';
 
@@ -51,18 +53,6 @@ colors.push({
   name: '',
   colors: JSON.parse(localStorage.getItem('FAV_COLORS') || '[]')
 });
-// let tmp = colors.map((set, sIdx) => {
-//   set.RGB = convert.hex.rgb(set.hex);
-//   set.id = sIdx;
-//   set.colors = set.colors.map((c, cIdx) => {
-//     return {
-//       id: `${sIdx}-${cIdx}`,
-//       ...c
-//     };
-//   });
-//   return set;
-// });
-// console.log('tmp', JSON.stringify(tmp));
 
 const Colors = colors.map(set => {
   set.RGB = convert.hex.rgb(set.hex);
@@ -85,6 +75,32 @@ const Colors = colors.map(set => {
   return set;
 });
 console.log('all', Colors);
+
+const usePoetry = dep => {
+  const [poetry, setPoetry] = useState(null);
+  const fetchPoetry = () => {
+    jinrishici.load(
+      result => {
+        let obj = {
+          content: result.data.content,
+          author: result.data.origin.author,
+          title: result.data.origin.title
+        };
+        setPoetry(obj);
+        localStorage.setItem('POETRY', JSON.stringify(obj));
+      },
+      err => {
+        setPoetry(null);
+        localStorage.setItem('POETRY', null);
+        console.log('err', err);
+      }
+    );
+  };
+  useEffect(() => {
+    fetchPoetry();
+  }, [dep]);
+  return { poetry, fetchPoetry };
+};
 
 const useShareColor = (id = null) => {
   let tmpSet = null;
@@ -156,5 +172,5 @@ const useColor = () => {
   return { ...state, updateCurrColor, updateCurrSet };
 };
 
-export { useModal, usePreview, useShareColor, useColor, useMobile };
+export { useModal, usePreview, useShareColor, useColor, useMobile, usePoetry };
 export default useColor;
