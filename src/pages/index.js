@@ -33,14 +33,14 @@ const Wrapper = styled.section`
   }
   .colorNav {
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 11.8rem;
     margin-right: 1.5rem;
+    overflow-y: scroll;
     .colors {
       display: flex;
       flex-wrap: wrap;
       align-content: flex-start;
-      height: 100vh;
       overflow-y: scroll;
     }
   }
