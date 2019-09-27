@@ -68,11 +68,12 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: flex-start;
     .line {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: bold;
       word-break: keep-all;
       color: inherit;
       font-family: inherit;
+      letter-spacing: 2px;
     }
     > h2 {
       font-size: 0.8rem;
@@ -81,6 +82,7 @@ const Wrapper = styled.section`
       color: inherit;
       font-family: inherit;
       .dot {
+        color: inherit;
         padding: 0 0.4rem;
         font-weight: bold;
       }

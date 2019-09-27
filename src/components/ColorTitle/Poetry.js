@@ -35,7 +35,7 @@ const Poetry = ({ content = '', author = '', title = '' }) => {
       <h2>
         {author} ·《 {title} 》
       </h2>
-      <p className="line">「{content.replace(/[，|。|！|？]/g, ' ').trim()}」</p>
+      <p className="line">「{content.replace(/[，|。|！|？|、]/g, ' ').trim()}」</p>
     </Wrapper>
   );
 };
