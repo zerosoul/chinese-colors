@@ -109,6 +109,9 @@ const useShareColor = (id = null) => {
     let [setId] = id.split('-');
     tmpSet = Colors.find(set => set.id == setId);
     tmpColor = tmpSet.colors.find(c => c.id == id);
+    // 滑动到顶部
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
   console.log('tmp color', tmpSet, tmpColor);
 
@@ -135,6 +138,9 @@ const useColor = () => {
     document.title = arr.length > 1 ? `${obj.name} - ${arr[1]}` : `${obj.name} - ${arr[0]}`;
     let metaThemeColor = document.querySelector('meta[name=theme-color]');
     metaThemeColor.setAttribute('content', obj.hex);
+    // 滑动到顶部
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   };
   const reducer = (state, action) => {
     const { type, payload } = action;

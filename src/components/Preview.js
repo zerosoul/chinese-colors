@@ -35,8 +35,6 @@ const Wrapper = styled.section`
   &.starting {
     animation: none;
     transform: initial;
-    /* html2canvas bug? */
-    /* margin-top: -1rem; */
   }
   &.img {
     .downloadImg {
@@ -77,10 +75,15 @@ const Wrapper = styled.section`
       font-family: inherit;
     }
     > h2 {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
+      word-break: keep-all;
       margin-top: 1rem;
       color: inherit;
       font-family: inherit;
+      .dot {
+        padding: 0 0.4rem;
+        font-weight: bold;
+      }
     }
   }
   .figure {
@@ -115,7 +118,9 @@ const Preview = ({ name, color, figure = 'default.png?width=8rem', closePreview 
           );
         })}
         <h2>
-          {author} ·《{title}》
+          {author}
+          <span className="dot">·</span>
+          {title}
         </h2>
       </article>
 
