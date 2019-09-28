@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     }
   }
   &.expand ul li {
-    margin-right: 0.2rem;
+    margin-right: -0.34rem;
   }
 
   .btn {
