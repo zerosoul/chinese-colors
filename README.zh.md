@@ -24,10 +24,11 @@
 - 可复制 HEX
 - 可收藏喜欢的颜色
 - 搭配显示诗词
-- 可生成壁纸，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
+- 可生成壁纸/图片卡片，屏幕多大，截图就有多大 (暂不稳定，欢迎[反馈](https://github.com/zerosoul/chinese-colors/issues))。
 
-<img src="demo/screenshot.png" alt="screen shot" width="300">
+<img src="demo/wallpaper.png" alt="screen shot" width="300">
 
+<img src="demo/card.png" alt="card image" width="200">
 ## 技术栈
 
 - [create-react-app](https://github.com/facebook/create-react-app): 大家都在用的 react 项目构建架子
@@ -62,6 +63,10 @@
 ## 更新日志
 
 [更新日志](CHANGELOG.md)
+
+## 赞赏
+
+<img src="demo/reward.jpg" alt="打赏二维码" width="200">
 
 ## 参考
 

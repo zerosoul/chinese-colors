@@ -22,9 +22,11 @@
 - Copy HEX 🖨
 - Add to favorites 😍
 - Poetry aside 😘
-- Wallpaper (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)) 🌸
+- Wallpaper/Image Card (not stable, welcome [feedback](https://github.com/zerosoul/chinese-colors/issues)) 🌸
 
-<img src="demo/screenshot.png" alt="screen shot" width="300">
+<img src="demo/wallpaper.png" alt="screen shot" width="300">
+
+<img src="demo/card.png" alt="card image" width="200">
 
 ## Technology Stack & Thanks
 
