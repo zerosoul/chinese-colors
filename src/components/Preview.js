@@ -105,14 +105,11 @@ const Preview = ({ name, color, figure = 'default.png?width=8rem', closePreview 
   const figureO = +(params.get('o') || 1);
   const currPoetry = JSON.parse(localStorage.getItem('POETRY'));
   const { author, title, content } = currPoetry;
-  const lines = content
-    .replace(/[，|。|！|？]/g, ' ')
-    .trim()
-    .split(' ');
+
   return (
     <Wrapper id="PREVIEW" bgColor={color}>
       <article style={{ color: oppositeColor }} className={'poetry'}>
-        {lines.map(line => {
+        {content.map(line => {
           return (
             <p key={line} className="line">
               {line}

@@ -86,6 +86,10 @@ const usePoetry = dep => {
           author: result.data.origin.author,
           title: result.data.origin.title
         };
+        obj.content = obj.content
+          .replace(/[，|。|！|？|、]/g, ' ')
+          .trim()
+          .split(' ');
         setPoetry(obj);
         localStorage.setItem('POETRY', JSON.stringify(obj));
       },
