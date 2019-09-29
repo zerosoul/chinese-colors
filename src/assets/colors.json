@@ -87,11 +87,22 @@
         "name": "洋红",
         "intro": "色橘红（这个色彩方向不太对，通常洋红指的是倾向于M100系列的红色，应该削弱黄色成分。）"
       },
-      { "id": "0-20", "hex": "#ff3300", "name": "炎", "intro": "引申为红色。" },
+      { "id": "0-20", "hex": "#ff3300", "name": "炎", "intro": "引申为红色" },
       { "id": "0-21", "hex": "#c3272b", "name": "赤", "intro": "本义火的颜色，即红色" },
-      { "id": "0-22", "hex": "#a98175", "name": "绾", "intro": "绛色；浅绛色。" },
+      {
+        "id": "0-22",
+        "hex": "#a98175",
+        "name": "绾",
+        "intro": "绛色；浅绛色",
+        "figure": "luohong.png?position=top"
+      },
       { "id": "0-23", "hex": "#c32136", "name": "枣红", "intro": "即深红（色相不变，是深浅变化）" },
-      { "id": "0-24", "hex": "#b36d61", "name": "檀", "intro": "浅红色，浅绛色。" },
+      {
+        "id": "0-24",
+        "hex": "#b36d61",
+        "name": "檀",
+        "intro": "浅红色，浅绛色"
+      },
       { "id": "0-25", "hex": "#be002f", "name": "殷红", "intro": "发黑的红色。" },
       {
         "id": "0-26",
@@ -359,7 +370,8 @@
         "id": "3-22",
         "hex": "#cca4e3",
         "name": "丁香色",
-        "intro": "紫丁香的颜色，浅浅的紫色，很娇柔淡雅的色彩"
+        "intro": "紫丁香的颜色，浅浅的紫色，很娇柔淡雅的色彩",
+        "figure": "huaniao.png"
       },
       {
         "id": "3-23",
@@ -404,7 +416,13 @@
         "intro": "",
         "figure": "guilinshanshui.png"
       },
-      { "id": "4-3", "hex": "#7397ab", "name": "苍青", "intro": "" },
+      {
+        "id": "4-3",
+        "hex": "#7397ab",
+        "name": "苍青",
+        "intro": "",
+        "figure": "liangduohua.png?width=12rem"
+      },
       { "id": "4-4", "hex": "#395260", "name": "苍黑", "intro": "", "figure": "sundown.png" },
       {
         "id": "4-5",
@@ -421,15 +439,33 @@
     "name": "水",
     "hex": "#d2f0f4",
     "colors": [
-      { "id": "5-0", "hex": "#88ada6", "name": "水色", "intro": "" },
-      { "id": "5-1", "hex": "#f3d3e7", "name": "水红", "intro": "" },
-      { "id": "5-2", "hex": "#d4f2e7", "name": "水绿", "intro": "", "figure": "shuanghe.png" },
+      {
+        "id": "5-0",
+        "hex": "#88ada6",
+        "name": "水色",
+        "intro": "",
+        "figure": "hehuayu.png?width=16rem"
+      },
+      {
+        "id": "5-1",
+        "hex": "#f3d3e7",
+        "name": "水红",
+        "intro": "",
+        "figure": "hehua2.png?width=18rem"
+      },
+      {
+        "id": "5-2",
+        "hex": "#d4f2e7",
+        "name": "水绿",
+        "intro": "",
+        "figure": "yu.png?width=17rem"
+      },
       {
         "id": "5-3",
         "hex": "#d2f0f4",
         "name": "水蓝",
         "intro": "",
-        "figure": "yu.png?width=17rem"
+        "figure": "moon.png?width=18rem"
       },
       {
         "id": "5-4",
@@ -438,7 +474,7 @@
         "intro": "",
         "figure": "huaping.png?width=18rem"
       },
-      { "id": "5-5", "hex": "#30dff3", "name": "湖蓝", "intro": "", "figure": "moon.png" },
+      { "id": "5-5", "hex": "#30dff3", "name": "湖蓝", "intro": "", "figure": "shuanghe.png" },
       {
         "id": "5-6",
         "hex": "#25f8cb",
@@ -469,7 +505,12 @@
         "intro": "如雪般洁白",
         "figure": "meihua.pink.png"
       },
-      { "id": "6-3", "hex": "#d6ecf0", "name": "月白", "intro": "淡蓝色" },
+      {
+        "id": "6-3",
+        "hex": "#d6ecf0",
+        "name": "月白",
+        "intro": "淡蓝色"
+      },
       { "id": "6-4", "hex": "#f2ecde", "name": "缟", "intro": "白色", "figure": "meihua.pink.png" },
       {
         "id": "6-5",
@@ -503,7 +544,8 @@
         "id": "6-9",
         "hex": "#fcefe8",
         "name": "鱼肚白",
-        "intro": "似鱼腹部的颜色，多指黎明时东方的天色颜色（M5Y5）"
+        "intro": "似鱼腹部的颜色，多指黎明时东方的天色颜色（M5Y5）",
+        "figure": "zuibaxian.png?width=100%"
       },
       {
         "id": "6-10",
@@ -557,7 +599,13 @@
         "intro": "非常黑的",
         "figure": "flower.moon.png?o=0.6"
       },
-      { "id": "7-5", "hex": "#50616d", "name": "墨色", "intro": "即黑色" },
+      {
+        "id": "7-5",
+        "hex": "#50616d",
+        "name": "墨色",
+        "intro": "即黑色",
+        "figure": "huashan.png?width=18rem"
+      },
       { "id": "7-6", "hex": "#758a99", "name": "墨灰", "intro": "即黑灰" },
       {
         "id": "7-7",
@@ -573,8 +621,20 @@
         "name": "煤黑",
         "intro": "别称：象牙黑。都是黑，不过有冷暖之分。"
       },
-      { "id": "7-10", "hex": "#5d513c", "name": "黧", "intro": "黑中带黄的颜色" },
-      { "id": "7-11", "hex": "#75664d", "name": "黎", "intro": "黑中带黄似黎草色" },
+      {
+        "id": "7-10",
+        "hex": "#5d513c",
+        "name": "黧",
+        "intro": "黑中带黄的颜色",
+        "figure": "denglou1.png?width=14rem&position=top"
+      },
+      {
+        "id": "7-11",
+        "hex": "#75664d",
+        "name": "黎",
+        "intro": "黑中带黄似黎草色",
+        "figure": "denglou2.png?width=14rem&position=top"
+      },
       { "id": "7-12", "hex": "#6b6882", "name": "黝", "intro": "本义为淡黑色或微青黑色。" },
       {
         "id": "7-13",
@@ -582,7 +642,13 @@
         "name": "黝黑",
         "intro": "（皮肤暴露在太阳光下而晒成的）青黑色"
       },
-      { "id": "7-14", "hex": "#41555d", "name": "黯", "intro": "深黑色、泛指黑色" }
+      {
+        "id": "7-14",
+        "hex": "#41555d",
+        "name": "黯",
+        "intro": "深黑色、泛指黑色",
+        "figure": "denglouchuan.png"
+      }
     ],
     "RGB": [0, 0, 0],
     "id": 7
