@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import scrollIntoView from 'scroll-into-view-if-needed';
+import { getCorrectTextColor } from '../utils';
 
 import CirclePercent from './CirclePercent';
-const Wrapper = styled.li.attrs(({ color }) => ({
-  style: { borderTopColor: color }
-}))`
-  color: #fff;
+const Wrapper = styled.li`
+  color: ${({ color }) => color};
   border-top: 0.4rem solid;
   display: flex;
   flex-direction: row;
@@ -26,7 +25,6 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   &.curr {
     opacity: 1;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-    text-shadow: 0 0 10px black;
   }
   .line1 {
     display: flex;
@@ -63,7 +61,7 @@ const Wrapper = styled.li.attrs(({ color }) => ({
     text-transform: uppercase;
     font-size: 0.6rem;
     font-weight: bold;
-    color: #fff;
+    color: ${({ color }) => color};
     .hex {
       font-size: 0.6rem;
     }
@@ -74,15 +72,14 @@ const Wrapper = styled.li.attrs(({ color }) => ({
       display: flex;
       flex-direction: column;
       .line {
-        /* background-image: linear-gradient(180deg, #ddd 45%, #fff 40%); */
         width: 2px;
         height: 6rem;
         margin: 0 1px;
         &.r {
           background-image: linear-gradient(
             180deg,
-            rgba(255, 255, 255) 0%,
-            rgba(255, 255, 255) ${({ rgb }) => 100 * (rgb[0] / 255)}%,
+            ${({ color }) => color} 0%,
+            ${({ color }) => color} ${({ rgb }) => 100 * (rgb[0] / 255)}%,
             rgba(255, 255, 255, 0.3) ${({ rgb }) => 100 * (rgb[0] / 255)}%,
             rgba(255, 255, 255, 0.3) 100%
           );
@@ -90,8 +87,8 @@ const Wrapper = styled.li.attrs(({ color }) => ({
         &.g {
           background-image: linear-gradient(
             180deg,
-            rgba(255, 255, 255) 0%,
-            rgba(255, 255, 255) ${({ rgb }) => 100 * (rgb[1] / 255)}%,
+            ${({ color }) => color} 0%,
+            ${({ color }) => color} ${({ rgb }) => 100 * (rgb[1] / 255)}%,
             rgba(255, 255, 255, 0.3) ${({ rgb }) => 100 * (rgb[1] / 255)}%,
             rgba(255, 255, 255, 0.3) 100%
           );
@@ -99,8 +96,8 @@ const Wrapper = styled.li.attrs(({ color }) => ({
         &.b {
           background-image: linear-gradient(
             180deg,
-            rgba(255, 255, 255) 0%,
-            rgba(255, 255, 255) ${({ rgb }) => 100 * (rgb[2] / 255)}%,
+            ${({ color }) => color} 0%,
+            ${({ color }) => color} ${({ rgb }) => 100 * (rgb[2] / 255)}%,
             rgba(255, 255, 255, 0.3) ${({ rgb }) => 100 * (rgb[2] / 255)}%,
             rgba(255, 255, 255, 0.3) 100%
           );
@@ -110,10 +107,22 @@ const Wrapper = styled.li.attrs(({ color }) => ({
   }
 `;
 
-const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB, intro }) => {
+const Color = ({
+  setCurrColor,
+  seq = 1,
+  isCurr,
+  hex,
+  name,
+  pinyin,
+  CMYK,
+  RGB,
+  intro,
+  currColorRGB
+}) => {
   const [r, g, b] = RGB;
   const [c, m, y, k] = CMYK;
   const colorEle = useRef(null);
+  const oppoColor = getCorrectTextColor(currColorRGB);
   useEffect(() => {
     if (isCurr) {
       scrollIntoView(colorEle.current, {
@@ -129,8 +138,9 @@ const Color = ({ setCurrColor, seq = 1, isCurr, hex, name, pinyin, CMYK, RGB, in
       rgb={RGB}
       className={isCurr && 'curr'}
       onClick={setCurrColor.bind(null, name)}
-      color={hex}
+      color={oppoColor}
       title={intro ? intro : null}
+      style={{ borderTopColor: hex }}
     >
       <div className="line1">
         <div className="cmyk">

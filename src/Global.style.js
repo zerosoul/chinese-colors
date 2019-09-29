@@ -10,7 +10,10 @@ const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     color:#ffffeb;
-    touch-action: manipulation
+    touch-action: manipulation;
+  }
+  span,p,i{
+    color:inherit;
   }
   html{
     -webkit-font-smoothing: antialiased;
@@ -19,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
   *::-webkit-scrollbar {
     width: 0px;
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    background: transparent;
   }
   body{
     -webkit-overflow-scrolling: touch;

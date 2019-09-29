@@ -69,6 +69,7 @@ const Index = () => {
               return (
                 <Color
                   seq={idx + 1}
+                  currColorRGB={currColor.RGB}
                   isCurr={currColor.name == color.name}
                   setCurrColor={updateCurrColor}
                   {...color}
