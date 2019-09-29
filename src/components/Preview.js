@@ -60,13 +60,16 @@ const Wrapper = styled.section`
     font-family: 'Microsoft YaHei', 微软雅黑, Tahoma, Arial, sans-serif;
     position: absolute;
     left: 50%;
-    top: 5rem;
+    top: 10rem;
     transform: translateX(-50%);
     min-width: 6rem;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background: ${({ bgRgb }) => `rgba(${bgRgb.join(',')},.5)`};
+    padding: 1rem 1.4rem;
+    border-radius: 0.6rem;
     .line {
       font-size: 1.6rem;
       font-weight: bold;
@@ -90,24 +93,24 @@ const Wrapper = styled.section`
   }
   .figure {
     position: absolute;
-    bottom: 0;
     right: 0;
     z-index: -1;
     max-height: 100%;
   }
 `;
 
-const Preview = ({ name, color, figure = 'default.png?width=8rem', closePreview }) => {
+const Preview = ({ name, color, rgb, figure = 'default.png?width=8rem', closePreview }) => {
   console.log('ffff', figure);
   const oppositeColor = getCorrectTextColor(color);
   const params = new URLSearchParams(figure.split('?')[1] || '');
   const figureW = params.get('width') || '23rem';
   const figureO = +(params.get('o') || 1);
+  const pos = params.get('position') || 'bottom';
   const currPoetry = JSON.parse(localStorage.getItem('POETRY'));
   const { author, title, content } = currPoetry;
 
   return (
-    <Wrapper id="PREVIEW" bgColor={color}>
+    <Wrapper id="PREVIEW" bgColor={color} bgRgb={rgb}>
       <article style={{ color: oppositeColor }} className={'poetry'}>
         {content.map(line => {
           return (
@@ -132,7 +135,7 @@ const Preview = ({ name, color, figure = 'default.png?width=8rem', closePreview 
       {figure && (
         <img
           className="figure"
-          style={{ width: figureW, opacity: figureO }}
+          style={{ width: figureW, opacity: figureO, [pos]: 0 }}
           src={`figure/${figure}`}
           alt="figure"
         />

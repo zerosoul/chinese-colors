@@ -94,6 +94,7 @@ const Index = () => {
           name={currColor.name}
           pinyin={currColor.pinyin}
           color={currColor.hex}
+          rgb={currColor.RGB}
           figure={currColor.figure}
         />
       )}
