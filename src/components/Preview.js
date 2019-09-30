@@ -60,7 +60,7 @@ const Wrapper = styled.section`
     font-family: 'Microsoft YaHei', 微软雅黑, Tahoma, Arial, sans-serif;
     position: absolute;
     left: 50%;
-    top: 10rem;
+    top: 9rem;
     transform: translateX(-50%);
     min-width: 6rem;
     line-height: 1.6;
@@ -68,8 +68,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: flex-start;
     background: ${({ bgRgb }) => `rgba(${bgRgb.join(',')},.5)`};
-    padding: 1rem 1.4rem;
-    border-radius: 0.6rem;
+    padding: 0.8rem 1.2rem;
     .line {
       font-size: 1.6rem;
       font-weight: bold;
