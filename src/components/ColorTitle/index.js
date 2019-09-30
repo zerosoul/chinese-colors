@@ -5,6 +5,7 @@ import { useMobile, usePoetry } from '../../hooks';
 
 import { getCorrectTextColor } from '../../utils';
 import Poetry from './Poetry';
+import FadeIn from '../animates/FadeIn';
 
 const Wrapper = styled.hgroup`
   color: #333;
@@ -18,7 +19,7 @@ const Wrapper = styled.hgroup`
   position: relative;
   width: 4.6rem;
   cursor: default;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-right: 0.5rem;
   min-height: 18rem;
   &.mobile {
@@ -58,18 +59,28 @@ const Wrapper = styled.hgroup`
     top: -2rem;
     display: flex;
   }
+  .figure {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    animation: ${FadeIn} 1s forwards;
+    animation-delay: 1s;
+  }
 `;
 
-const ColorTitle = ({ name, pinyin, hex, RGB, CMYK }) => {
+const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
   const { isMobile } = useMobile();
   const { poetry } = usePoetry(name);
-
+  const oppoColor = getCorrectTextColor(RGB);
   return (
-    <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: getCorrectTextColor(RGB) }}>
+    <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: oppoColor }}>
       <h1>{name}</h1>
       <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
       <h2>{pinyin}</h2>
-      {poetry && <Poetry {...poetry} />}
+      {poetry && <Poetry bgColor={`rgba(${RGB.join(',')},.5)`} fontColor={oppoColor} {...poetry} />}
+      {figure && <img className="figure" src={`figure/${figure}`} alt="figure" />}
     </Wrapper>
   );
 };
