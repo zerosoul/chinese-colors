@@ -37,11 +37,11 @@ const Wrapper = styled.section`
     width: 11.8rem;
     margin-right: 1.5rem;
     overflow-y: scroll;
+    overscroll-behavior: contain;
     .colors {
       display: flex;
       flex-wrap: wrap;
       align-content: flex-start;
-      overflow-y: scroll;
     }
   }
   .btns {

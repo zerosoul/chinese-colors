@@ -16,12 +16,12 @@ const Wrapper = styled.header`
     padding: 0.5rem;
     border-radius: 50%;
     transition: background-color 1s;
-    transition-delay: 1s;
+    transition-delay: 0.6s;
   }
   > h1 {
     writing-mode: vertical-lr;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: 0.1rem;
   }

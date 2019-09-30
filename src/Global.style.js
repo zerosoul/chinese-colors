@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     margin:0 auto;
     background-image: url(${BodyBg});
     transition:background-color 1.6s;
-
+    overflow:hidden;
   }
 
 
@@ -45,23 +45,23 @@ const GlobalStyle = createGlobalStyle`
   }
   @media screen and (min-width: 480px){
       html {
-          font-size: 20px;
+          font-size: 18px;
       }
   }
   @media screen and (min-width: 768px){
       html {
-          font-size: 24px;
+          font-size: 22px;
       }
   }
   @font-face {
     font-family: "TChinese";
-    src: url("/font/chinese.font.eot"); /* IE9 */
-    src: url("/font/chinese.font.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    src: url("/font/chinese.font.eot");
+    src: url("/font/chinese.font.eot?#iefix") format("embedded-opentype"),
 
-    url("/font/chinese.font.woff") format("woff"), /* chrome、firefox */
-    url("/font/chinese.font.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("/font/chinese.font.woff") format("woff"),
+    url("/font/chinese.font.ttf") format("truetype"),
 
-    url("/font/chinese.font.svg#font/chinese.font") format("svg"); /* iOS 4.1- */
+    url("/font/chinese.font.svg#font/chinese.font") format("svg");
     font-style: normal;
     font-weight: normal;
 }
