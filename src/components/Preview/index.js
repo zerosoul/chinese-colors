@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import URLSearchParams from '@ungap/url-search-params';
-import { getCorrectTextColor } from '../utils';
+import { getCorrectTextColor } from '../../utils';
 
-import Download from './DownloadBtn';
-import Tip from './Tip';
+import Download from '../DownloadBtn';
+import Tip from '../Tip';
 import IconClose from './IconClose';
-import BodyBg from '../assets/img/bg.texture.png';
-import BounceInDown from './animates/BounceInDown';
+import BodyBg from '../../assets/img/bg.texture.png';
+import BounceInDown from '../animates/BounceInDown';
+import Toggle from './Toggle';
+import Poetry from './Poetry';
 const ua = navigator.userAgent;
 const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
 const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
@@ -56,40 +58,7 @@ const Wrapper = styled.section`
       'Microsoft YaHei';
     z-index: 99;
   }
-  .poetry {
-    font-family: 'Microsoft YaHei', 微软雅黑, Tahoma, Arial, sans-serif;
-    position: absolute;
-    left: 50%;
-    top: 9rem;
-    transform: translateX(-50%);
-    min-width: 6rem;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: ${({ bgRgb }) => `rgba(${bgRgb.join(',')},.5)`};
-    padding: 0.8rem 1.2rem;
-    .line {
-      font-size: 1.6rem;
-      font-weight: bold;
-      word-break: keep-all;
-      color: inherit;
-      font-family: inherit;
-      letter-spacing: 2px;
-    }
-    > h2 {
-      font-size: 0.8rem;
-      word-break: keep-all;
-      margin-top: 1rem;
-      color: inherit;
-      font-family: inherit;
-      .dot {
-        color: inherit;
-        padding: 0 0.4rem;
-        font-weight: bold;
-      }
-    }
-  }
+
   .figure {
     position: absolute;
     right: 0;
@@ -100,30 +69,17 @@ const Wrapper = styled.section`
 
 const Preview = ({ name, color, rgb, figure = 'default.png?width=8rem', closePreview }) => {
   console.log('ffff', figure);
+  const [peotryVisible, setPeotryVisible] = useState(true);
   const oppositeColor = getCorrectTextColor(color);
   const params = new URLSearchParams(figure.split('?')[1] || '');
   const figureW = params.get('width') || '23rem';
   const figureO = +(params.get('o') || 1);
   const pos = params.get('position') || 'bottom';
-  const currPoetry = JSON.parse(localStorage.getItem('POETRY'));
-  const { author, title, content } = currPoetry;
 
   return (
     <Wrapper id="PREVIEW" bgColor={color} bgRgb={rgb}>
-      <article style={{ color: oppositeColor }} className={'poetry'}>
-        {content.map(line => {
-          return (
-            <p key={line} className="line">
-              {line}
-            </p>
-          );
-        })}
-        <h2>
-          {author}
-          <span className="dot">·</span>
-          {title}
-        </h2>
-      </article>
+      <Toggle checkVal={peotryVisible} togglePoetry={setPeotryVisible} />
+      {peotryVisible && <Poetry bgColor={oppositeColor} bgRgb={rgb} />}
 
       <div className="close" data-html2canvas-ignore>
         <IconClose closePreview={closePreview} />

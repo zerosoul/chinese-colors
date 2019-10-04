@@ -4,6 +4,7 @@ import { useMobile } from '../../hooks';
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: row-reverse;
   align-items: flex-start;
   font-size: 0.6rem;
   line-height: 1.2;
@@ -47,18 +48,22 @@ const Poetry = ({
       style={{ background: bgColor, color: fontColor }}
       className={isMobile ? 'mobile' : ''}
     >
-      <h2>
-        {author} · {title}
-      </h2>
-      {content.reverse().map(line => {
+      {content.map(line => {
         return (
           <p key={line} className="line">
             {line}
           </p>
         );
       })}
+      <h2>
+        {author} · {title}
+      </h2>
     </Wrapper>
   );
+};
+Poetry.whyDidYouRender = {
+  logOnDifferentValues: true,
+  customName: 'Poetry'
 };
 
 export default Poetry;
