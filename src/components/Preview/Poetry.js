@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.article`
-  font-family: 'Microsoft YaHei', 微软雅黑, Tahoma, Arial, sans-serif;
+  font-family: SimSun, FangSong, STSong, STZhongsong, LiSu, KaiTi, 'Microsoft YaHei';
   position: absolute;
   left: 50%;
   top: 9rem;

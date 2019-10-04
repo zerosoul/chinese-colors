@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   margin: 1rem 0;
   margin-bottom: 2rem;
   cursor: pointer;
+  font-family: SimSun, FangSong, STSong, STZhongsong, LiSu, KaiTi, 'Microsoft YaHei';
   &.mobile {
     font-size: 0.8rem;
   }
