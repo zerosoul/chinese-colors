@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   line-height: 1.2;
   padding: 0.6rem 0.4rem;
   margin: 1rem 0;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+  cursor: pointer;
   &.mobile {
     font-size: 0.8rem;
   }
@@ -28,10 +29,24 @@ const Wrapper = styled.div`
     font-weight: bold;
   }
 `;
-const Poetry = ({ bgColor, fontColor = '#fff', content = '', author = '', title = '' }) => {
+const Poetry = ({
+  bgColor,
+  fontColor = '#fff',
+  content = '',
+  author = '',
+  title = '',
+  refetch
+}) => {
   const { isMobile } = useMobile();
+  const handleClick = () => {
+    refetch();
+  };
   return (
-    <Wrapper style={{ background: bgColor, color: fontColor }} className={isMobile ? 'mobile' : ''}>
+    <Wrapper
+      onClick={handleClick}
+      style={{ background: bgColor, color: fontColor }}
+      className={isMobile ? 'mobile' : ''}
+    >
       <h2>
         {author} · {title}
       </h2>

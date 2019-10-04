@@ -72,14 +72,21 @@ const Wrapper = styled.hgroup`
 
 const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
   const { isMobile } = useMobile();
-  const { poetry } = usePoetry(name);
+  const { poetry, fetchPoetry } = usePoetry(name);
   const oppoColor = getCorrectTextColor(RGB);
   return (
     <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: oppoColor }}>
       <h1>{name}</h1>
       <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
       <h2>{pinyin}</h2>
-      {poetry && <Poetry bgColor={`rgba(${RGB.join(',')},.5)`} fontColor={oppoColor} {...poetry} />}
+      {poetry && (
+        <Poetry
+          refetch={fetchPoetry}
+          bgColor={`rgba(${RGB.join(',')},.5)`}
+          fontColor={oppoColor}
+          {...poetry}
+        />
+      )}
       {figure && <img className="figure" src={`figure/${figure}`} alt="figure" />}
     </Wrapper>
   );
