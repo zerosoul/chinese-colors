@@ -57,6 +57,8 @@ const Index = () => {
   const { visible: modalVisible, showModal, closeModal } = useModal();
   const { preview, showPreview, closePreview } = usePreview();
   const { sets, currSet, currColor, updateCurrColor, updateCurrSet } = useColor();
+  console.log('page index');
+
   return (
     <Suspense fallback={<Loading color="rgba(57, 47, 65, 0.8)" size="4" sizeUnit="rem" />}>
       <Wrapper>
@@ -101,5 +103,9 @@ const Index = () => {
       {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
     </Suspense>
   );
+};
+Index.whyDidYouRender = {
+  logOnDifferentValues: true,
+  customName: 'IndexPage'
 };
 export default Index;

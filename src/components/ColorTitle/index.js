@@ -74,6 +74,9 @@ const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
   const { isMobile } = useMobile();
   const { poetry, fetchPoetry } = usePoetry(name);
   const oppoColor = getCorrectTextColor(RGB);
+
+  console.log('color title');
+
   return (
     <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: oppoColor }}>
       <h1>{name}</h1>
@@ -91,5 +94,8 @@ const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
     </Wrapper>
   );
 };
-
+ColorTitle.whyDidYouRender = {
+  logOnDifferentValues: true,
+  customName: 'ColorTitleComp'
+};
 export default ColorTitle;
