@@ -412,7 +412,13 @@
         "intro": "别名：黛色，黛螺。青黑色的颜料。古代女子用以画眉。绘画或画眉所使用的青黑色颜料，代指女子眉妩。"
       },
       { "id": "3-10", "hex": "#426666", "name": "黛绿", "intro": "墨绿", "figure": "honghua.png" },
-      { "id": "3-11", "hex": "#425066", "name": "黛蓝", "intro": "深蓝色" },
+      {
+        "id": "3-11",
+        "hex": "#425066",
+        "name": "黛蓝",
+        "intro": "深蓝色",
+        "figure": "left.mei.png?position=left"
+      },
       { "id": "3-12", "hex": "#574266", "name": "黛紫", "intro": "深紫色" },
       {
         "id": "3-13",
@@ -427,7 +433,13 @@
       { "id": "3-18", "hex": "#56004f", "name": "紫棠", "intro": "黑红色" },
       { "id": "3-19", "hex": "#801dae", "name": "青莲", "intro": "偏蓝的紫色" },
       { "id": "3-20", "hex": "#4c8dae", "name": "群青", "intro": "深蓝色", "figure": "meihua.png" },
-      { "id": "3-21", "hex": "#b0a4e3", "name": "雪青", "intro": "浅蓝紫色" },
+      {
+        "id": "3-21",
+        "hex": "#b0a4e3",
+        "name": "雪青",
+        "intro": "浅蓝紫色",
+        "figure": "mujin.png"
+      },
       {
         "id": "3-22",
         "hex": "#cca4e3",
