@@ -52,11 +52,8 @@ const Wrapper = styled.div`
     right: 0.6rem;
     bottom: 0.6rem;
     font-size: 1.2rem;
-    letter-spacing: -0.3rem;
-    writing-mode: vertical-lr;
     padding: 0.3rem;
     padding-bottom: 0.6rem;
-    /* background: rgba(0, 0, 0, 0.29); */
     border-radius: 6px;
     border-top-right-radius: unset;
     border-bottom-left-radius: unset;
@@ -69,7 +66,6 @@ const isiOSwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua);
 const isWebview = ua.toLowerCase().indexOf('micromessenger') > -1 || isiOSwebview;
 const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' }) => {
   const theOtherColor = getCorrectTextColor(hex);
-  const titleBgColor = theOtherColor == '#e9f1f6' ? '#50616d' : '#e9f1f6';
   return (
     <Wrapper
       id={'SHARE_CARD'}
@@ -77,10 +73,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
         background: theOtherColor
       }}
     >
-      <h3
-        className="title"
-        style={{ color: `rgba(${RGB.join(',')},.8)`, backgroundColor: titleBgColor }}
-      >
+      <h3 className="title" style={{ color: `rgba(${RGB.join(',')},.8)` }}>
         <span className="set">{setName}</span>
         <span className="dot">·</span>
         <span className="color"> {name}</span>
@@ -97,7 +90,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
       <Download
         isWebview={isWebview}
         full={false}
-        name={`卡片-${name}`}
+        name={`中国色卡片-${name}`}
         query="#SHARE_CARD"
         style={{ bottom: '-5rem' }}
       />
