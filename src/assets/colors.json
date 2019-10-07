@@ -317,8 +317,20 @@
         "intro": "1，在光谱中介于蓝与黄之间的那种颜色。2，本义青中带黄的颜色。3，引申为黑色，如绿鬓乌黑而光亮的鬓发。代指为青春年少的容颜。（现代色彩研究中，把绿色提高到了一个重要的位置，和其它红黄兰三原色并列研究，称做\"心理原色\"之一）"
       },
       { "id": "2-23", "hex": "#9ed048", "name": "豆绿", "intro": "浅黄绿色" },
-      { "id": "2-24", "hex": "#96ce54", "name": "豆青", "intro": "浅青绿色" },
-      { "id": "2-25", "hex": "#7bcfa6", "name": "石青", "intro": "淡灰绿色" },
+      {
+        "id": "2-24",
+        "hex": "#96ce54",
+        "name": "豆青",
+        "intro": "浅青绿色",
+        "figure": "right.bottom.huaping.png?width=8rem&o=0.8"
+      },
+      {
+        "id": "2-25",
+        "hex": "#7bcfa6",
+        "name": "石青",
+        "intro": "淡灰绿色",
+        "figure": "right.bottom.honghehua.png"
+      },
       {
         "id": "2-26",
         "hex": "#2edfa3",
@@ -326,7 +338,13 @@
         "intro": "玉的颜色，高雅的淡绿、淡青色",
         "figure": "jinyu.png"
       },
-      { "id": "2-27", "hex": "#7fecad", "name": "缥", "intro": "绿色而微白" },
+      {
+        "id": "2-27",
+        "hex": "#7fecad",
+        "name": "缥",
+        "intro": "绿色而微白",
+        "figure": "right.bottom.hongmujin.png"
+      },
       {
         "id": "2-28",
         "hex": "#a4e2c6",
@@ -402,7 +420,13 @@
         "name": "宝蓝",
         "intro": "鲜艳明亮的蓝色（英文中为RoyalBlue即皇家蓝色，是皇室选用的色彩，多和小面积纯黄色（金色）配合使用。）"
       },
-      { "id": "3-6", "hex": "#a1afc9", "name": "蓝灰色", "intro": "一种近于灰略带蓝的深灰色" },
+      {
+        "id": "3-6",
+        "hex": "#a1afc9",
+        "name": "蓝灰色",
+        "intro": "一种近于灰略带蓝的深灰色",
+        "figure": "left.bottom.mutong.png"
+      },
       { "id": "3-7", "hex": "#2e4e7e", "name": "藏青", "intro": "蓝而近黑" },
       { "id": "3-8", "hex": "#3b2e7e", "name": "藏蓝", "intro": "蓝里略透红色" },
       {
@@ -424,7 +448,8 @@
         "id": "3-13",
         "hex": "#8d4bbb",
         "name": "紫色",
-        "intro": "蓝和红组成的颜色。古人以紫为祥瑞的颜色。代指与帝王、皇宫有关的事物。"
+        "intro": "蓝和红组成的颜色。古人以紫为祥瑞的颜色。代指与帝王、皇宫有关的事物",
+        "figure": "right.bottom.qunshan.png"
       },
       { "id": "3-14", "hex": "#815463", "name": "紫酱", "intro": "浑浊的紫色" },
       { "id": "3-15", "hex": "#815476", "name": "酱紫", "intro": "紫中略带红的颜色" },
@@ -775,9 +800,21 @@
         "intro": "带银光的白色",
         "figure": "qiangyan.png"
       },
-      { "id": "8-3", "hex": "#bacac6", "name": "老银", "intro": "金属氧化后的色彩" },
+      {
+        "id": "8-3",
+        "hex": "#bacac6",
+        "name": "老银",
+        "intro": "金属氧化后的色彩",
+        "figure": "right.bottom.yesun.png"
+      },
       { "id": "8-4", "hex": "#a78e44", "name": "乌金", "intro": "" },
-      { "id": "8-5", "hex": "#549688", "name": "铜绿", "intro": "" }
+      {
+        "id": "8-5",
+        "hex": "#549688",
+        "name": "铜绿",
+        "intro": "",
+        "figure": "right.bottom.hehua.png"
+      }
     ],
     "RGB": [234, 205, 118],
     "id": 8
