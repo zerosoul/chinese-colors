@@ -1,7 +1,5 @@
 # <img src="demo/logo.png" alt="Logo" width="50"> 中国传统颜色在线手册
 
-## 中国传统颜色手册
-
 [English Version](README.md)
 
 [访问地址](https://colors.ichuantong.cn)
