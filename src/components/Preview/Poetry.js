@@ -8,6 +8,7 @@ const Wrapper = styled.article`
   top: 9rem;
   transform: translateX(-50%);
   min-width: 6rem;
+  white-space: nowrap;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
