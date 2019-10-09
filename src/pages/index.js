@@ -86,8 +86,8 @@ const Index = () => {
         <Header rgb={currColor.RGB} />
         <section className="btns">
           <IconInfo showInfoModal={showModal} />
-          <IconScreenshot showPreview={showPreview} />
           <IconImage path={`share/${currColor.id}`} />
+          <IconScreenshot showPreview={showPreview} />
         </section>
       </Wrapper>
       {preview && (
