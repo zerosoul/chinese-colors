@@ -9,6 +9,8 @@ const Wrapper = styled.section`
   flex-direction: column;
   margin-right: 0.5rem;
   margin-top: 0.6rem;
+  overflow-y: scroll;
+  max-height: 100vh;
   .item {
     border-top: 1px solid rgba(255, 255, 255, 0.6);
     padding: 1rem 0.2rem 0.6rem 0.2rem;
