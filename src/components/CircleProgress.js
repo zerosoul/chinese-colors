@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 const Wrapper = styled.div`
   padding: 0;
-
-  margin-bottom: 0.2rem;
-
   .circular-chart {
     display: block;
     max-width: 2.4rem;
