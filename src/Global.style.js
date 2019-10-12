@@ -53,6 +53,16 @@ const GlobalStyle = createGlobalStyle`
           font-size: 22px;
       }
   }
+  @media screen and (min-width: 1281){
+      html {
+          font-size: 24px;
+      }
+  }
+  @media screen and (min-width: 1379px){
+      html {
+          font-size: 28px;
+      }
+  }
   @font-face {
     font-family: "TChinese";
     src: url("/font/chinese.font.eot");
