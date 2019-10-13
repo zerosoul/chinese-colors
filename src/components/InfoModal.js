@@ -27,7 +27,7 @@ const Wrapper = styled.section`
   }
   .info {
     z-index: 9;
-    padding: 1.4rem 1rem;
+    padding: 1rem;
     width: 22rem;
     box-shadow: 0 0 9px black;
     border-radius: 8px;
@@ -60,7 +60,8 @@ const Wrapper = styled.section`
       font-weight: 800;
     }
     .producthunt {
-      margin: 1rem 0;
+      margin-top: 1rem;
+      margin-bottom: 0.2rem;
       display: block;
       img {
         width: 10rem;
@@ -69,11 +70,12 @@ const Wrapper = styled.section`
     }
     > p {
       font-size: 0.6rem;
-      line-height: 1.4;
+      line-height: 1.2;
       margin-bottom: 0.5rem;
       display: flex;
-      flex-direction: column;
-      a {
+      justify-content: center;
+      a,
+      > span {
         padding: 0 0.4rem;
       }
       &.btns {
@@ -87,7 +89,7 @@ const Wrapper = styled.section`
       }
     }
     .reward {
-      width: 13rem;
+      width: 10rem;
       border-radius: 0.4rem;
     }
   }
@@ -106,36 +108,33 @@ export default function InfoModal({ closeModal, bgColor }) {
 
         <img className="reward" src={RewardImage} alt="reward image" />
 
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <a
-              className="producthunt"
-              href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color"
-              target="_blank"
-            >
-              <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark"
-                alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! "
-              />
-            </a>
-            <p className="btns">
-              <GitHubButton
-                href="https://github.com/zerosoul/chinese-colors"
-                data-show-count="true"
-                aria-label="Star zerosoul/chinese-colors on GitHub"
-              >
-                Star
-              </GitHubButton>
-              <GitHubButton
-                href="https://github.com/zerosoul/chinese-colors/fork"
-                data-show-count="true"
-                aria-label="Fork zerosoul/chinese-colors on GitHub"
-              >
-                Fork
-              </GitHubButton>
-            </p>
-          </>
-        )}
+        <a
+          className="producthunt"
+          href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark"
+            alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! "
+          />
+        </a>
+        <p className="btns">
+          <GitHubButton
+            href="https://github.com/zerosoul/chinese-colors"
+            data-show-count="true"
+            aria-label="Star zerosoul/chinese-colors on GitHub"
+          >
+            Star
+          </GitHubButton>
+          <GitHubButton
+            href="https://github.com/zerosoul/chinese-colors/fork"
+            data-show-count="true"
+            aria-label="Fork zerosoul/chinese-colors on GitHub"
+          >
+            Fork
+          </GitHubButton>
+        </p>
+
         <p>
           <span>
             Inspired by
@@ -143,15 +142,15 @@ export default function InfoModal({ closeModal, bgColor }) {
               Nipponcolors
             </a>
           </span>
-        </p>
-        <p>
+          <span>&</span>
           <span>
             数据来源：
             <a href="http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html" target="_blank">
-              新浪博客：中国传统颜色卡
+              中国传统颜色卡
             </a>
           </span>
         </p>
+
         <p>
           <span>
             Copyright © 2019 by
