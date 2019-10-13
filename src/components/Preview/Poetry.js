@@ -41,7 +41,7 @@ export default function Poetry({ bgColor, bgRgb }) {
   const currPoetry = JSON.parse(localStorage.getItem('POETRY'));
   const { author, title, content } = currPoetry;
   return (
-    <Wrapper style={{ color: bgColor }} bgRgb={bgRgb}>
+    <Wrapper contentEditable={true} style={{ color: bgColor }} bgRgb={bgRgb}>
       {content.map(line => {
         return (
           <p key={line} className="line">
