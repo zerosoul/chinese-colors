@@ -15,6 +15,7 @@ const Wrapper = styled.article`
   align-items: flex-start;
   background: ${({ bgRgb }) => `rgba(${bgRgb.join(',')},.5)`};
   padding: 0.8rem 1.2rem;
+
   .line {
     font-size: 1.6rem;
     font-weight: bold;

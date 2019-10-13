@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHubButton from 'react-github-btn';
 import Logo from '../assets/img/logo.png';
+import BgImage from '../assets/img/bg.modal.png';
+import RewardImage from '../assets/img/reward.jpg';
 import BounceInDown from './animates/BounceInDown';
 
 const Wrapper = styled.section`
@@ -33,14 +35,22 @@ const Wrapper = styled.section`
     background-color: ${({ bgColor }) => {
       return bgColor;
     }};
+    background-image: url(${BgImage});
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
     text-align: center;
     transition: all 0.5s;
     animation: ${BounceInDown} 1s;
 
     > h1 {
-      margin-bottom: 1rem;
+      margin: 1rem;
       img {
         width: 4rem;
+        transition: all 0.8s;
+        &:hover {
+          transform: rotate(180deg);
+        }
       }
     }
     > h2 {
@@ -76,6 +86,10 @@ const Wrapper = styled.section`
         }
       }
     }
+    .reward {
+      width: 13rem;
+      border-radius: 0.4rem;
+    }
   }
 `;
 export default function InfoModal({ closeModal, bgColor }) {
@@ -89,22 +103,8 @@ export default function InfoModal({ closeModal, bgColor }) {
           <img className="logo" src={Logo} alt="logo" />
         </h1>
         <h2>chinese colors</h2>
-        <p>
-          <span>
-            Inspired by
-            <a href="http://nipponcolors.com" target="_blank">
-              Nipponcolors
-            </a>
-          </span>
-        </p>
-        <p>
-          <span>
-            数据来源：
-            <a href="http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html" target="_blank">
-              新浪博客：中国传统颜色卡
-            </a>
-          </span>
-        </p>
+
+        <img className="reward" src={RewardImage} alt="reward image" />
 
         {process.env.NODE_ENV === 'production' && (
           <>
@@ -136,6 +136,22 @@ export default function InfoModal({ closeModal, bgColor }) {
             </p>
           </>
         )}
+        <p>
+          <span>
+            Inspired by
+            <a href="http://nipponcolors.com" target="_blank">
+              Nipponcolors
+            </a>
+          </span>
+        </p>
+        <p>
+          <span>
+            数据来源：
+            <a href="http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html" target="_blank">
+              新浪博客：中国传统颜色卡
+            </a>
+          </span>
+        </p>
         <p>
           <span>
             Copyright © 2019 by

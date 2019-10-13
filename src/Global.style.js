@@ -1,17 +1,28 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
 import reset from 'styled-reset';
 import BodyBg from './assets/img/bg.texture.png';
+import BgTop from './assets/img/bg.top.png';
+const BgAnimate = keyframes`
+from{
+background-position:0 0,0 -30px;
+}
+to{
+background-position:0 0,0 0;
+
+}
+`;
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{
     box-sizing:border-box;
-    user-select:none;
+    /* user-select:none; */
     outline:none;
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     color:#ffffeb;
     touch-action: manipulation;
   }
+
   span,p,i{
     color:inherit;
   }
@@ -27,9 +38,14 @@ const GlobalStyle = createGlobalStyle`
   body{
     -webkit-overflow-scrolling: touch;
     margin:0 auto;
-    background-image: url(${BodyBg});
+    background-image: url(${BodyBg}),url(${BgTop});
+    background-repeat:repeat,repeat-x;
+    background-position:0 0,0 -40px;
+    background-size:auto,auto 1.5rem;
     transition:background-color 1.6s;
     overflow:hidden;
+    animation: ${BgAnimate} .8s ease forwards;
+    animation-delay:2s;
   }
 
 
