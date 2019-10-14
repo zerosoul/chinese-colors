@@ -18,7 +18,7 @@ const Wrapper = styled.section`
   height: 100vh;
   display: flex;
   align-items: flex-start;
-  padding: 1rem 0.5rem;
+  padding: 2rem 0.5rem;
   justify-content: space-evenly;
   transition: all 0.9s;
   .params {
@@ -26,7 +26,7 @@ const Wrapper = styled.section`
   }
   .colorSet {
     position: fixed;
-    bottom: 1rem;
+    bottom: 2rem;
     right: 3rem;
     padding: 0 1rem;
     z-index: 999;
@@ -46,7 +46,7 @@ const Wrapper = styled.section`
   }
   .btns {
     position: fixed;
-    top: 1rem;
+    top: 2rem;
     right: 1rem;
     display: flex;
     flex-direction: column;
