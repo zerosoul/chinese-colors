@@ -19,6 +19,9 @@ const StyledWraper = styled.aside`
   background: #fff;
   padding: 0.3rem;
   box-shadow: 0 0 6px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   audio {
     display: none;
   }
