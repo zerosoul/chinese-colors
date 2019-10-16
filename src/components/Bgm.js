@@ -25,8 +25,9 @@ const StyledWraper = styled.aside`
   audio {
     display: none;
   }
+  animation: ${Rotation} 2s infinite linear forwards;
   &.playing {
-    animation: ${Rotation} 2s infinite linear forwards;
+    animation-play-state: running;
   }
   &.paused {
     animation-play-state: paused;

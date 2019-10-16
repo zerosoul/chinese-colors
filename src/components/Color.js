@@ -18,7 +18,7 @@ const Wrapper = styled.li`
   transition: all 0.5s;
   align-self: flex-start;
   opacity: 0.8;
-  background-color: ${({ rgb }) => `rgba(${rgb.join(',')},.4)`};
+  background-color: ${({ rgb }) => `rgba(${rgb.join(',')},.3)`};
   &:hover {
     opacity: 0.9;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
