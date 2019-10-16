@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import styled from 'styled-components';
 import Loading from '../components/Loading';
+const Bgm = lazy(() => import('../components/Bgm'));
 const ColorTitle = lazy(() => import('../components/ColorTitle'));
 const Color = lazy(() => import('../components/Color'));
 const ColorParam = lazy(() => import('../components/ColorParam'));
@@ -62,6 +63,7 @@ const Index = () => {
   return (
     <Suspense fallback={<Loading color="rgba(57, 47, 65, 0.8)" size="4" sizeUnit="rem" />}>
       <Wrapper>
+        <Bgm />
         <aside className="colorSet">
           <ColorSet sets={sets} currSetName={currSet.name} setCurrSet={updateCurrSet} />
         </aside>

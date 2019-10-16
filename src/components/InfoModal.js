@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import GitHubButton from 'react-github-btn';
 import Logo from '../assets/img/logo.png';
 import BgImage from '../assets/img/bg.modal.png';
+import BgBtmImage from '../assets/img/info.bg.btm.png';
 import RewardImage from '../assets/img/reward.jpg';
 import BounceInDown from './animates/BounceInDown';
 
@@ -35,22 +36,23 @@ const Wrapper = styled.section`
     background-color: ${({ bgColor }) => {
       return bgColor;
     }};
-    background-image: url(${BgImage});
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: contain;
+    background-image: url(${BgImage}), url(${BgBtmImage});
+    background-repeat: no-repeat, repeat-x;
+    background-position: 0 0, bottom;
+    background-size: contain, auto 1.4rem;
+    padding-bottom: 1.5rem;
     text-align: center;
     transition: all 0.5s;
     animation: ${BounceInDown} 1s;
 
     > h1 {
-      margin: 1rem;
+      margin: 1rem 2rem;
       img {
         width: 4rem;
         transition: all 0.8s;
-        &:hover {
-          transform: rotate(180deg);
-        }
+      }
+      &:hover img {
+        transform: translateX(-4rem) rotate(360deg);
       }
     }
     > h2 {
