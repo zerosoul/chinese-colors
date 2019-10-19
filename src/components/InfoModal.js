@@ -3,7 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHubButton from 'react-github-btn';
 import Logo from '../assets/img/logo.png';
-import BgImage from '../assets/img/bg.modal.png';
+import Bird from '../assets/img/bg.bird.png';
+import BgImage from '../assets/img/code.bg.png';
 import BgBtmImage from '../assets/img/info.bg.btm.png';
 import RewardImage from '../assets/img/reward.jpg';
 import BounceInDown from './animates/BounceInDown';
@@ -46,13 +47,26 @@ const Wrapper = styled.section`
     animation: ${BounceInDown} 1s;
 
     > h1 {
+      position: relative;
       margin: 1rem 2rem;
-      img {
+      .logo {
         width: 4rem;
         transition: all 0.8s;
+        padding: 0.4rem;
+        border-radius: 50%;
+        background-color: ${({ bgColor }) => {
+          return bgColor;
+        }};
       }
-      &:hover img {
-        transform: translateX(-4rem) rotate(360deg);
+      &:hover .logo {
+        transform: translateX(4rem) rotate(360deg);
+      }
+      .bird {
+        position: absolute;
+        left: 6.2rem;
+        top: 0;
+        width: 3.8rem;
+        z-index: -1;
       }
     }
     > h2 {
@@ -105,6 +119,7 @@ export default function InfoModal({ closeModal, bgColor }) {
       <div className="info">
         <h1>
           <img className="logo" src={Logo} alt="logo" />
+          <img className="bird" src={Bird} alt="hidden bird" />
         </h1>
         <h2>chinese colors</h2>
 
