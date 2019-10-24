@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import ChineseBorder from '../../assets/img/chinese.circle.border.png';
 
 const Wrapper = styled.li`
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ef7a82;
+  background-color: #ef7a82;
+  background-image: url(${ChineseBorder});
+  background-size: cover;
   position: relative;
   .icon {
     width: 1.4rem;

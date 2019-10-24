@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import styled from 'styled-components';
 import IconCollection from './IconCollection';
+import Yinyang from '../../assets/img/yinyang.svg';
+
 const Wrapper = styled.div`
   ul {
     display: flex;
@@ -37,15 +39,12 @@ const Wrapper = styled.div`
     right: -1.6rem;
     top: 50%;
     transform: translateY(-50%);
+    background-image: url(${Yinyang});
+    background-size: cover;
     width: 3rem;
     height: 3rem;
-    background: #333;
-    border: none;
+    border: 1px solid #000;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
     transition: all 0.6s;
     box-shadow: 1px -1px 6px black;
   }
@@ -92,9 +91,7 @@ const ColorSet = ({ currSetName = '', setCurrSet, sets = [] }) => {
           return null;
         })}
       </ul>
-      <button onClick={handleSetHover} className="btn">
-        巜
-      </button>
+      <button onClick={handleSetHover} className="btn"></button>
     </Wrapper>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Yinyang from '../../assets/img/yinyang.svg';
 const Wrapper = styled.div`
   position: absolute;
   right: 0.8rem;
@@ -27,7 +27,9 @@ const Wrapper = styled.div`
     display: block;
     width: 16px;
     margin: 0;
-    background: #ffffff;
+    background-color: #fff;
+    background-image: url(${Yinyang});
+    background-size: cover;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -45,6 +47,7 @@ const Wrapper = styled.div`
   }
   .onoffswitch-checkbox:checked + .onoffswitch-label:before {
     right: 0;
+    transform: rotate(180deg);
   }
 `;
 export default function Toggle({ checkVal = true, togglePoetry }) {

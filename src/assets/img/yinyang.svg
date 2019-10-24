@@ -1,0 +1,10 @@
+<svg id="yinyang" 
+  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129">
+  <defs>
+    <style>.cls-1,.cls-3{fill:#fff;}.cls-1{stroke:#fff;}.cls-1,.cls-2,.cls-3{stroke-miterlimit:10;}.cls-2,.cls-3{stroke:#000;}</style>
+  </defs>
+  <path id="right-circle" class="cls-1" d="M302,240a32,32,0,0,1,0-64,64,64,0,0,1,0,128,32,32,0,0,0,0-64Z" transform="translate(-237.5 -175.5)" />
+  <circle id="right-dot" class="cls-2" cx="64.29" cy="31.86" r="11.5" />
+  <path id="left-circle" class="cls-2" d="M302,176a64,64,0,0,0,0,128,32,32,0,0,0,0-64,32,32,0,0,1,0-64Z" transform="translate(-237.5 -175.5)" />
+  <circle id="left-dot" class="cls-3" cx="64.29" cy="95.86" r="11.5" />
+</svg>
