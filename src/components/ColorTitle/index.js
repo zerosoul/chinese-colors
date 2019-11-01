@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import IconFav from './IconFav';
-import { useMobile, usePoetry } from '../../hooks';
-
+import IconCode from './IconCode';
+import { useMobile, useCodeModal, usePoetry } from '../../hooks';
 import { getCorrectTextColor } from '../../utils';
 import Poetry from './Poetry';
+import CodeModal from '../CodeModal';
+
 import FadeIn from '../animates/FadeIn';
 
 const Wrapper = styled.hgroup`
@@ -68,19 +70,38 @@ const Wrapper = styled.hgroup`
     animation: ${FadeIn} 1s forwards;
     animation-delay: 1s;
   }
+  .opts {
+    position: absolute;
+    left: 4px;
+    bottom: -2rem;
+    display: flex;
+    width: 4rem;
+    justify-content: space-around;
+    align-items: center;
+    .icon {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
   const { isMobile } = useMobile();
   const { poetry, fetchPoetry } = usePoetry(name);
   const oppoColor = getCorrectTextColor(RGB);
-
+  const {
+    visible: codeModalVisible,
+    showModal: showCodeModal,
+    closeModal: closeCodeModal
+  } = useCodeModal();
   console.log('color title');
 
   return (
     <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: oppoColor }}>
       <h1>{name}</h1>
-      <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
+      <div className="opts">
+        <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
+        <IconCode showModal={showCodeModal} />
+      </div>
       <h2>{pinyin}</h2>
       {poetry && (
         <Poetry
@@ -91,6 +112,7 @@ const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
         />
       )}
       {figure && <img className="figure" src={`figure/${figure}`} alt="figure" />}
+      {codeModalVisible && <CodeModal bgColor={hex} closeModal={closeCodeModal} />}
     </Wrapper>
   );
 };

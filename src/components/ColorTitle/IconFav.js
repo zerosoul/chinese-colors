@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 4px;
-  left: 4px;
   cursor: pointer;
   display: flex;
   justify-content: center;

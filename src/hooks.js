@@ -38,7 +38,18 @@ const usePreview = () => {
   return { preview, closePreview, showPreview };
 };
 
-const useModal = () => {
+const useInfoModal = () => {
+  const [visible, setVisible] = useState(false);
+  const closeModal = () => {
+    setVisible(false);
+  };
+  const showModal = () => {
+    setVisible(true);
+  };
+  return { visible, closeModal, showModal };
+};
+
+const useCodeModal = () => {
   const [visible, setVisible] = useState(false);
   const closeModal = () => {
     setVisible(false);
@@ -182,5 +193,5 @@ const useColor = () => {
   return { ...state, updateCurrColor, updateCurrSet };
 };
 
-export { useModal, usePreview, useShareColor, useColor, useMobile, usePoetry };
+export { useCodeModal, useInfoModal, usePreview, useShareColor, useColor, useMobile, usePoetry };
 export default useColor;
