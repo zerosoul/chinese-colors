@@ -59,7 +59,6 @@ module.exports = merge(commonConfig, {
     new GenerateSW({
       clientsClaim: true,
       exclude: [/\.map$/, /asset-manifest\.json$/, /\.(?:png|jpg|jpeg|svg)$/, /\.js$/],
-      importWorkboxFrom: 'local',
       navigateFallback: 'index.html',
       //定义运行时缓存（可接受多个json对象）
       runtimeCaching: [
@@ -124,7 +123,7 @@ module.exports = merge(commonConfig, {
           }
         }
       ],
-      navigateFallbackBlacklist: [
+      navigateFallbackDenylist: [
         // Exclude URLs starting with /_, as they're likely an API call
         new RegExp('^/_'),
         // Exclude any URLs whose last part seems to be a file extension
