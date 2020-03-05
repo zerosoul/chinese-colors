@@ -122,9 +122,9 @@ const useShareColor = (id = null) => {
   return { set: tmpSet, color: tmpColor };
 };
 const useColor = () => {
-  const SelectedColorSet = JSON.parse(localStorage.getItem('SELECTED_COLOR_SET')) || Colors[4];
+  const SelectedColorSet = JSON.parse(localStorage.getItem('SELECTED_COLOR_SET')) || Colors[2];
   const SelectedColor =
-    JSON.parse(localStorage.getItem('SELECTED_COLOR')) || SelectedColorSet.colors[0];
+    JSON.parse(localStorage.getItem('SELECTED_COLOR')) || SelectedColorSet.colors[16];
   const initialValue = {
     sets: Colors.map(set => {
       const newSet = { ...set };

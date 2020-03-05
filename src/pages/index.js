@@ -10,6 +10,7 @@ const IconImage = lazy(() => import('../components/IconImage'));
 const Header = lazy(() => import('../components/Header'));
 const IconScreenshot = lazy(() => import('../components/IconScreenshot'));
 const ColorSet = lazy(() => import('../components/ColorSet'));
+const ICP = lazy(() => import('../components/ICP'));
 import Preview from '../components/Preview';
 import InfoModal from '../components/InfoModal';
 
@@ -103,6 +104,7 @@ const Index = () => {
         />
       )}
       {modalVisible && <InfoModal bgColor={currColor.hex} closeModal={closeModal} />}
+      <ICP />
     </Suspense>
   );
 };

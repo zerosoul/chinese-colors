@@ -37,20 +37,6 @@ const StyledWraper = styled.aside`
 export default function Bgm() {
   const [playing, setPlaying] = useState(false);
   const bgMusic = useRef(null);
-  const handlCanPlay = () => {
-    const music = bgMusic.current;
-    console.log('onCanPlay', music);
-    // promise?
-    const pr = music.play();
-    if (pr !== undefined) {
-      pr.then(() => {
-        // Autoplay started!
-      }).catch(() => {
-        // Autoplay was prevented.
-        // Show a "Play" button so that user can start playback.
-      });
-    }
-  };
   const handlePause = () => {
     setPlaying(false);
   };
@@ -88,7 +74,6 @@ export default function Bgm() {
         ref={bgMusic}
         autoPlay={true}
         onPlaying={handlePlaying}
-        onCanPlay={handlCanPlay}
         onPause={handlePause}
         loop={true}
         src="./static/bgm.mp3"
