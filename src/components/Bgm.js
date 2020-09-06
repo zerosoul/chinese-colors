@@ -8,6 +8,14 @@ const Rotation = keyframes`
       transform: rotate(359deg);
     }
 `;
+const Swing = keyframes`
+  from {
+      transform: translateX(10px);
+    }
+    to {
+      transform: translateX(0);
+    }
+`;
 const StyledWraper = styled.aside`
   position: fixed;
   left: 0.4rem;
@@ -32,10 +40,21 @@ const StyledWraper = styled.aside`
   &.paused {
     animation-play-state: paused;
   }
+  .tip {
+    position: absolute;
+    font-size: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    background: rgba(2, 2, 2, 0.4);
+    line-height: 1.4;
+    right: -180%;
+    border-radius: 0.5rem;
+    animation: ${Swing} 2s infinite ease-in-out forwards;
+  }
 `;
-
+const MUSIC_PLAYED = !!localStorage.getItem('MUSIC_PLAYED') || false;
 export default function Bgm() {
   const [playing, setPlaying] = useState(false);
+  const [played, setPlayed] = useState(MUSIC_PLAYED);
   const bgMusic = useRef(null);
   const handlePause = () => {
     setPlaying(false);
@@ -44,6 +63,10 @@ export default function Bgm() {
     setPlaying(true);
   };
   const togglePlay = () => {
+    if (!played) {
+      setPlayed(true);
+      localStorage.setItem('MUSIC_PLAYED', true);
+    }
     const bgM = bgMusic.current;
     if (playing) {
       bgM.pause();
@@ -72,12 +95,13 @@ export default function Bgm() {
       </svg>
       <audio
         ref={bgMusic}
-        autoPlay={true}
+        autoPlay={false}
         onPlaying={handlePlaying}
         onPause={handlePause}
         loop={true}
         src="./static/bgm.mp3"
       ></audio>
+      {!played && <div className="tip">👈 点击播放</div>}
     </StyledWraper>
   );
 }
