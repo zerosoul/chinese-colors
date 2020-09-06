@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 const paths = require('./paths');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
 // 为方便配置，以根目录为本地服务器地址
 const publicPath = '/';
@@ -15,7 +15,7 @@ module.exports = merge(commonConfig, {
     // 热更新，并实时显示错误
     'react-dev-utils/webpackHotDevClient',
     // 主要代码，之所以放在最后，是为了程序有错误，修改后还能刷新
-    paths.appIndexJs
+    paths.appIndexJs,
   ],
   output: {
     // Add /* filename */ comments to generated require()s in the output.
@@ -26,7 +26,7 @@ module.exports = merge(commonConfig, {
     // chunk 文件（开启 code splitting 才会有）
     chunkFilename: 'static/js/[name].chunk.js',
     // WebpackDevServer 伺服的根目录：/
-    publicPath
+    publicPath,
   },
 
   module: {
@@ -45,35 +45,35 @@ module.exports = merge(commonConfig, {
               {
                 loader: 'css-loader',
                 options: {
-                  importLoaders: 1
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ]
+                  importLoaders: 1,
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development')
-      }
+        NODE_ENV: JSON.stringify('development'),
+      },
     }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
 
   // Turn off performance hints during development because we don't do any
   // splitting or minification in interest of speed. These warnings become
   // cumbersome.
   performance: {
-    hints: false
+    hints: false,
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
-  }
+      chunks: 'all',
+    },
+  },
 });

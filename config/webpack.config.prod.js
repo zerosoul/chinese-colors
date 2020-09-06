@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
 const paths = require('./paths');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -20,10 +20,10 @@ module.exports = merge(commonConfig, {
     // 主文件以及一个异步加载chunk的文件
     filename: 'static/js/[name].[chunkhash:6].js',
     chunkFilename: 'static/js/[name].[chunkhash:6].chunk.js',
-    publicPath: paths.servedPath
+    publicPath: paths.servedPath,
   },
   resolve: {
-    modules: [__dirname, 'node_modules']
+    modules: [__dirname, 'node_modules'],
   },
   module: {
     rules: [
@@ -31,30 +31,30 @@ module.exports = merge(commonConfig, {
         oneOf: [
           {
             test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader']
-          }
-        ]
-      }
-    ]
+            use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production')
-      }
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
+      },
     }),
     new webpack.NamedChunksPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: '[name].css',
-      chunkFilename: '[name].css'
+      chunkFilename: '[name].css',
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
     new ManifestPlugin({
-      fileName: 'asset-manifest.json'
+      fileName: 'asset-manifest.json',
     }),
     new GenerateSW({
       clientsClaim: true,
@@ -73,14 +73,14 @@ module.exports = merge(commonConfig, {
             //配置 expiration
             expiration: {
               maxEntries: 10,
-              maxAgeSeconds: 60
+              maxAgeSeconds: 60,
             },
 
             //配置哪些响应被认为是可缓存的
             cacheableResponse: {
-              statuses: [0, 200]
-            }
-          }
+              statuses: [0, 200],
+            },
+          },
         },
         {
           urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
@@ -93,14 +93,14 @@ module.exports = merge(commonConfig, {
             //配置 expiration
             expiration: {
               maxEntries: 10,
-              maxAgeSeconds: 3600
+              maxAgeSeconds: 3600,
             },
 
             //配置哪些响应被认为是可缓存的
             cacheableResponse: {
-              statuses: [0, 200]
-            }
-          }
+              statuses: [0, 200],
+            },
+          },
         },
         {
           urlPattern: /\.js$/,
@@ -113,15 +113,15 @@ module.exports = merge(commonConfig, {
             //配置 expiration
             expiration: {
               maxEntries: 10,
-              maxAgeSeconds: 3600
+              maxAgeSeconds: 3600,
             },
 
             //配置哪些响应被认为是可缓存的
             cacheableResponse: {
-              statuses: [0, 200]
-            }
-          }
-        }
+              statuses: [0, 200],
+            },
+          },
+        },
       ],
       navigateFallbackDenylist: [
         // Exclude URLs starting with /_, as they're likely an API call
@@ -130,13 +130,13 @@ module.exports = merge(commonConfig, {
         // as they're likely a resource and not a SPA route.
         // URLs containing a "?" character won't be blacklisted as they're likely
         // a route with query params (e.g. auth callbacks).
-        new RegExp('/[^/?]+\\.[^/]+$')
-      ]
+        new RegExp('/[^/?]+\\.[^/]+$'),
+      ],
     }),
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
-      analyzerMode: 'static'
-    })
+      analyzerMode: 'static',
+    }),
   ],
   optimization: {
     minimizer: [
@@ -145,10 +145,10 @@ module.exports = merge(commonConfig, {
           mangle: true,
           ecma: 8,
           compress: {
-            drop_console: true
-          }
-        }
-      })
-    ]
-  }
+            drop_console: true,
+          },
+        },
+      }),
+    ],
+  },
 });

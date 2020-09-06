@@ -1,7 +1,6 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const HappyPack = require('happypack');
@@ -17,7 +16,7 @@ const env = getClientEnvironment(publicUrl);
 module.exports = {
   resolve: {
     // webpack 能识别的文件扩展名
-    extensions: ['.js', '.jsx', '.json', '.less', '.css']
+    extensions: ['.js', '.jsx', '.json', '.less', '.css'],
     // 针对 npm 中的第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法的文件
     // mainFields: ["jsnext:main", "browser", "main"]
   },
@@ -30,15 +29,15 @@ module.exports = {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
             options: {
-              limit: 10000
-            }
+              limit: 10000,
+            },
           },
           // babel loader
           {
             test: /\.(js|jsx|mjs)$/,
             include: paths.appSrc,
             exclude: /node_modules/,
-            use: 'happypack/loader'
+            use: 'happypack/loader',
           },
           // file-loader将所有静态文件可被WebpackDevServer伺服
           // 生产环境，这些静态文件会被拷贝到build目录
@@ -50,16 +49,16 @@ module.exports = {
               /\.(bmp|gif|jpe?g|png)$/,
               /\.less$/,
               /\.html$/,
-              /\.json$/
+              /\.json$/,
             ],
             loader: 'file-loader',
             options: {
-              name: 'static/assets/[name].[hash:8].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+              name: 'static/assets/[name].[hash:8].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HappyPack({
@@ -67,10 +66,10 @@ module.exports = {
         {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true
-          }
-        }
-      ]
+            cacheDirectory: true,
+          },
+        },
+      ],
     }),
     new HtmlWebpackPlugin({
       inject: true,
@@ -88,8 +87,8 @@ module.exports = {
               keepClosingSlash: true,
               minifyJS: true,
               minifyCSS: true,
-              minifyURLs: true
-            }
+              minifyURLs: true,
+            },
     }),
     new AutoDllPlugin(
       process.env.NODE_ENV === 'development'
@@ -101,11 +100,10 @@ module.exports = {
             filename: '[name]_[hash].dll.js',
             path: './dll',
             entry: {
-              react: ['react', 'react-dom', 'styled-components']
-            }
+              react: ['react', 'react-dom', 'styled-components'],
+            },
           }
     ),
-    new InterpolateHtmlPlugin(env.raw)
   ],
   // node中用到，但是浏览器不用到的类库，给出空对象模拟
   node: {
@@ -113,6 +111,6 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
-    child_process: 'empty'
-  }
+    child_process: 'empty',
+  },
 };
