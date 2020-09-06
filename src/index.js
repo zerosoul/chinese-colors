@@ -5,10 +5,6 @@ import GlobalStyle from './Global.style';
 
 import register from './registerServiceWorker';
 
-if (process.env.NODE_ENV !== 'production') {
-  const whyDidYouRender = require('@welldone-software/why-did-you-render');
-  whyDidYouRender(React);
-}
 ReactDOM.render(
   <>
     <GlobalStyle />

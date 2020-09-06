@@ -37,7 +37,7 @@ const Poetry = ({
   content = '',
   author = '',
   title = '',
-  refetch
+  refetch,
 }) => {
   const { isMobile } = useMobile();
   const handleClick = () => {
@@ -49,7 +49,7 @@ const Poetry = ({
       style={{ background: bgColor, color: fontColor }}
       className={isMobile ? 'mobile' : ''}
     >
-      {content.map(line => {
+      {content.map((line) => {
         return (
           <p key={line} className="line">
             {line}
@@ -61,10 +61,6 @@ const Poetry = ({
       </h2>
     </Wrapper>
   );
-};
-Poetry.whyDidYouRender = {
-  logOnDifferentValues: true,
-  customName: 'Poetry'
 };
 
 export default Poetry;

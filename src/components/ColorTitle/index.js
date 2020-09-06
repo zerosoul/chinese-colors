@@ -94,8 +94,4 @@ const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
     </Wrapper>
   );
 };
-ColorTitle.whyDidYouRender = {
-  logOnDifferentValues: true,
-  customName: 'ColorTitleComp'
-};
 export default ColorTitle;
