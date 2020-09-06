@@ -1,18 +1,7 @@
-const path = require('path');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths');
-const getClientEnvironment = require('./env');
 const HappyPack = require('happypack');
-const AutoDllPlugin = require('autodll-webpack-plugin');
 
-// publicUrl和publicPath类似，
-// 只是这个值会在 index.html中用 %PUBLIC_URL% 引用，
-// 以及js中process.env.PUBLIC_URL引用
-// 省略‘/’，是为了让 %PUBLIC_PATH%/xyz更直观些，总比 %PUBLIC_PATH%xyz 好阅读些
-const publicUrl = process.env.NODE_ENV === 'development' ? '' : paths.servedPath;
-// 需要注入app中的环境变量
-const env = getClientEnvironment(publicUrl);
 module.exports = {
   resolve: {
     // webpack 能识别的文件扩展名
@@ -90,20 +79,6 @@ module.exports = {
               minifyURLs: true,
             },
     }),
-    new AutoDllPlugin(
-      process.env.NODE_ENV === 'development'
-        ? {}
-        : {
-            context: path.join(__dirname, '..'),
-            inject: true, //自动在index.html引入dll
-            debug: true,
-            filename: '[name]_[hash].dll.js',
-            path: './dll',
-            entry: {
-              react: ['react', 'react-dom', 'styled-components'],
-            },
-          }
-    ),
   ],
   // node中用到，但是浏览器不用到的类库，给出空对象模拟
   node: {
