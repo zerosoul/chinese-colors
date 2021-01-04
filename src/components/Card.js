@@ -6,7 +6,7 @@ import Tip from './Tip';
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   padding: 2rem;
@@ -70,7 +70,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
     <Wrapper
       id={'SHARE_CARD'}
       style={{
-        background: theOtherColor
+        background: theOtherColor,
       }}
     >
       <h3 className="title" style={{ color: `rgba(${RGB.join(',')},.8)` }}>
@@ -81,7 +81,7 @@ const Card = ({ color: { hex, name, RGB, figure = 'default.png' }, setName = '' 
       <div
         className="circle"
         style={{
-          background: `linear-gradient(180deg, rgb(${RGB.join(',')}), rgba(${RGB.join(',')},.6))`
+          background: `linear-gradient(180deg, rgb(${RGB.join(',')}), rgba(${RGB.join(',')},.6))`,
         }}
       >
         <img className="img" src={`../figure/${figure}`}></img>

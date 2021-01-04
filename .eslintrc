@@ -8,7 +8,9 @@
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "max-lines": ["warn", 400]
+    "max-lines": ["warn", { "max": 500 }],
+    "react/display-name": 0,
+    "react/react-in-jsx-scope": "off"
   },
   "parser": "babel-eslint",
   "parserOptions": {
@@ -17,6 +19,9 @@
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "globals": {
+    "UE": true
   },
   "env": {
     "browser": true,
