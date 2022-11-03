@@ -99,7 +99,7 @@ export default function Bgm() {
         onPlaying={handlePlaying}
         onPause={handlePause}
         loop={true}
-        src="./static/bgm.mp3"
+        src="/bgm.mp3"
       ></audio>
       {!played && <div className="tip">👈 点击播放</div>}
     </StyledWraper>

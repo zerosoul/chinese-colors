@@ -1,8 +1,8 @@
 import { useState, useReducer, useEffect } from 'react';
 import pinyin from 'pinyin';
-const jinrishici = require('jinrishici');
-
+import * as jinrishici from 'jinrishici';
 import convert from 'color-convert';
+
 import colors from './assets/colors.json';
 
 const useMobile = (width = 750) => {
@@ -51,12 +51,12 @@ const useModal = () => {
 
 colors.push({
   name: '',
-  colors: JSON.parse(localStorage.getItem('FAV_COLORS') || '[]')
+  colors: JSON.parse(localStorage.getItem('FAV_COLORS') || '[]'),
 });
 
-const Colors = colors.map(set => {
+const Colors = colors.map((set) => {
   set.RGB = convert.hex.rgb(set.hex);
-  set.colors = set.colors.map(c => {
+  set.colors = set.colors.map((c) => {
     let heteronymIdx = c.name.indexOf('藏') > -1 ? 1 : 0;
     return {
       ...c,
@@ -64,27 +64,27 @@ const Colors = colors.map(set => {
       CMYK: convert.hex.cmyk(c.hex),
       pinyin: pinyin(c.name, {
         heteronym: true, // 启用多音字模式
-        segment: true // 启用分词，以解决多音字问题。
+        segment: true, // 启用分词，以解决多音字问题。
       })
-        .map(item => {
+        .map((item) => {
           return item.length > 1 ? item[heteronymIdx] : item;
         })
-        .join(' ')
+        .join(' '),
     };
   });
   return set;
 });
 console.log('all', Colors);
 
-const usePoetry = dep => {
+const usePoetry = (dep) => {
   const [poetry, setPoetry] = useState(null);
   const fetchPoetry = () => {
     jinrishici.load(
-      result => {
+      (result) => {
         let obj = {
           content: result.data.content,
           author: result.data.origin.author,
-          title: result.data.origin.title
+          title: result.data.origin.title,
         };
         obj.content = obj.content
           .replace(/[，|。|！|？|、]/g, ' ')
@@ -93,7 +93,7 @@ const usePoetry = dep => {
         setPoetry(obj);
         localStorage.setItem('POETRY', JSON.stringify(obj));
       },
-      err => {
+      (err) => {
         setPoetry(null);
         localStorage.setItem('POETRY', null);
         console.log('err', err);
@@ -111,8 +111,8 @@ const useShareColor = (id = null) => {
   let tmpColor = null;
   if (id) {
     let [setId] = id.split('-');
-    tmpSet = Colors.find(set => set.id == setId);
-    tmpColor = tmpSet.colors.find(c => c.id == id);
+    tmpSet = Colors.find((set) => set.id == setId);
+    tmpColor = tmpSet.colors.find((c) => c.id == id);
     // 滑动到顶部
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -126,15 +126,15 @@ const useColor = () => {
   const SelectedColor =
     JSON.parse(localStorage.getItem('SELECTED_COLOR')) || SelectedColorSet.colors[16];
   const initialValue = {
-    sets: Colors.map(set => {
+    sets: Colors.map((set) => {
       const newSet = { ...set };
       // delete newSet.colors;
       return newSet;
     }),
     currColor: SelectedColor,
-    currSet: SelectedColorSet
+    currSet: SelectedColorSet,
   };
-  const execSideEffect = obj => {
+  const execSideEffect = (obj) => {
     console.log('dddd', obj);
     document.body.style.backgroundColor = obj.hex;
     localStorage.setItem('SELECTED_COLOR', JSON.stringify(obj));
@@ -151,12 +151,12 @@ const useColor = () => {
     const { currSet, sets } = state;
     switch (type) {
       case 'UPDATE_COLOR': {
-        let c = currSet.colors.find(c => c.name === payload.name);
+        let c = currSet.colors.find((c) => c.name === payload.name);
         execSideEffect(c);
         return { ...state, currColor: c };
       }
       case 'UPDATE_COLOR_SET': {
-        let cs = sets.find(cs => cs.name === payload.name);
+        let cs = sets.find((cs) => cs.name === payload.name);
         localStorage.setItem('SELECTED_COLOR_SET', JSON.stringify(cs));
         if (payload.name == '') {
           cs.colors = JSON.parse(localStorage.getItem('FAV_COLORS') || '[]');
@@ -171,10 +171,10 @@ const useColor = () => {
   const { currColor } = initialValue;
   execSideEffect(currColor);
   const [state, dispatch] = useReducer(reducer, initialValue);
-  const updateCurrColor = name => {
+  const updateCurrColor = (name) => {
     dispatch({ type: 'UPDATE_COLOR', payload: { name } });
   };
-  const updateCurrSet = name => {
+  const updateCurrSet = (name) => {
     dispatch({ type: 'UPDATE_COLOR_SET', payload: { name } });
   };
   console.log('useReducer store', state);

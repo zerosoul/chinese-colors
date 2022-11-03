@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import URLSearchParams from '@ungap/url-search-params';
 import { getCorrectTextColor } from '../../utils';
 
 import Download from '../DownloadBtn';
