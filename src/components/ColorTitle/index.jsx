@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+import html2canvas from 'html2canvas';
+import { saveAs } from 'file-saver';
 import IconFav from './IconFav';
+import IconDownload from './IconDownload';
 import { useMobile, usePoetry } from '../../hooks';
 
 import { getCorrectTextColor } from '../../utils';
 import Poetry from './Poetry';
 import FadeIn from '../animates/FadeIn';
+import BodyBg from '../../assets/img/bg.texture.png';
 
 const Wrapper = styled.hgroup`
   color: #333;
@@ -32,7 +36,22 @@ const Wrapper = styled.hgroup`
   &:hover > h1 {
     transform: scale(1.1);
   }
-
+  &:hover .download {
+    visibility: visible;
+  }
+  &.download {
+    border-radius: 0;
+    box-shadow: none;
+    background-color: ${({ bgColor }) => bgColor};
+    background-image: url(${BodyBg});
+    background-repeat: repeat;
+    .fav {
+      display: none;
+    }
+    > h2 {
+      writing-mode: initial;
+    }
+  }
   > h1 {
     color: inherit;
     font-size: 3.2rem;
@@ -71,16 +90,47 @@ const Wrapper = styled.hgroup`
 `;
 
 const ColorTitle = ({ name, pinyin, hex, RGB, CMYK, figure }) => {
+  const cardRef = useRef(null);
   const { isMobile } = useMobile();
   const { poetry, fetchPoetry } = usePoetry(name);
   const oppoColor = getCorrectTextColor(RGB);
 
-  console.log('color title');
+  const handleDownload = () => {
+    if (!cardRef.current) return;
+    cardRef.current.classList.add('download');
+
+    html2canvas(cardRef.current, {
+      debug: process.env.NODE_ENV !== 'production',
+      // onclone: document => {
+      //   let tmp = document.querySelector(query);
+      //   tmp.classList.add('starting');
+      //   if (isWebview) {
+      //     tmp.style.boxShadow = 'none';
+      //   }
+      //   if (full) {
+      //     tmp.style.height = window.innerHeight + 'px';
+      //   }
+      //   console.log('dommmm', tmp.innerHTML);
+      // },
+      scale: window.devicePixelRatio * 2,
+    }).then(function (canvas) {
+      canvas.toBlob((blob) => {
+        saveAs(blob, `card-${name}-${new Date().getTime()}.png`);
+        cardRef.current.classList.remove('download');
+      }, 'image/png');
+    });
+  };
 
   return (
-    <Wrapper className={isMobile ? 'mobile' : ''} style={{ color: oppoColor }}>
+    <Wrapper
+      bgColor={`rgba(${RGB.join(',')})`}
+      ref={cardRef}
+      className={isMobile ? 'mobile' : ''}
+      style={{ color: oppoColor }}
+    >
       <h1>{name}</h1>
       <IconFav currColor={{ hex, name, pinyin, RGB, CMYK }} />
+      <IconDownload handleDownload={handleDownload} />
       <h2>{pinyin}</h2>
       {poetry && (
         <Poetry

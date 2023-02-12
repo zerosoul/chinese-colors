@@ -11,8 +11,8 @@ const Wrapper = styled.div`
   align-items: center;
 
   .icon {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1rem;
+    height: 1rem;
     path {
       transition: all 0.5s ease-in;
     }
@@ -26,7 +26,7 @@ const IconFav = ({ currColor }) => {
     const favs = JSON.parse(localStorage.getItem(FavStoreKey) || '[]');
     console.log('favs e', favs);
 
-    if (favs.some(f => f.name == currColor.name)) {
+    if (favs.some((f) => f.name == currColor.name)) {
       setIsFav(true);
     } else {
       setIsFav(false);
@@ -37,17 +37,17 @@ const IconFav = ({ currColor }) => {
     console.log('favs t', favs);
 
     if (isFav) {
-      favs = favs.filter(color => {
+      favs = favs.filter((color) => {
         return color.name != currColor.name;
       });
     } else {
       favs.push(currColor);
     }
-    setIsFav(prev => !prev);
+    setIsFav((prev) => !prev);
     localStorage.setItem(FavStoreKey, JSON.stringify(favs));
   };
   return (
-    <Wrapper onClick={toggleFav}>
+    <Wrapper className="fav" onClick={toggleFav}>
       <svg
         t="1568172188297"
         className="icon"
