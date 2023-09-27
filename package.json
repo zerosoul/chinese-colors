@@ -1,13 +1,12 @@
 {
   "name": "chinese-colors",
-  "version": "3.0.0",
-  "description": "Chinese Color Cheatsheet",
-  "main": "index.js",
+  "version": "4.0.0",
+  "description": "Chinese color cheat sheet",
+  "main": "src/main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "prepare": "husky install"
+    "serve": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -38,21 +37,19 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-github-btn": "^1.4.0",
-    "react-router-dom": "^6.8.1",
-    "smooth-scroll-into-view-if-needed": "^1.1.33",
-    "styled-components": "^5.3.6",
-    "styled-reset": "^4.4.5"
+    "react-router-dom": "^6.16.0",
+    "smooth-scroll-into-view-if-needed": "^2.0.2",
+    "styled-components": "^6.0.8",
+    "styled-reset": "^4.5.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^3.1.0",
-    "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-react": "^7.32.2",
+    "@vitejs/plugin-react": "^4.1.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.1",
-    "prettier": "^2.8.4",
-    "vite": "^4.1.1"
+    "prettier": "^3.0.3",
+    "vite": "^4.4.9"
   },
   "engines": {
     "node": ">=16.0.0",

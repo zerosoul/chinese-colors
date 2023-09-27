@@ -39,8 +39,12 @@ const Wrapper = styled.section`
     }};
     background-image: url(${BgImage}), url(${BgBtmImage});
     background-repeat: no-repeat, repeat-x;
-    background-position: 0 0, bottom;
-    background-size: contain, auto 1.4rem;
+    background-position:
+      0 0,
+      bottom;
+    background-size:
+      contain,
+      auto 1.4rem;
     padding-bottom: 1.5rem;
     text-align: center;
     transition: all 0.5s;
@@ -102,6 +106,9 @@ const Wrapper = styled.section`
         > span:not(:first-child) {
           padding-left: 0.4rem;
         }
+      }
+      &.ad {
+        font-size: 0.5rem;
       }
     }
     .reward {
@@ -170,9 +177,17 @@ export default function InfoModal({ closeModal, bgColor }) {
 
         <p>
           <span>
-            Copyright © 2019 by
+            Copyright © 2023 by
             <a href="//yangerxiao.com" target="_blank">
               Tristan
+            </a>
+          </span>
+        </p>
+        <p className="ad">
+          <span>
+            经典扫雷小游戏
+            <a href="//ohminesweeper.online" target="_blank">
+              Minesweeper Online
             </a>
           </span>
         </p>

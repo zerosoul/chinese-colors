@@ -33,7 +33,6 @@
 - [react](https://reactjs.org): 最流行的前端 UI 构建语言
 - [styled-components](https://styled-components.com): react 中 css 解决方案，CSS-IN-JS 最佳实践
 - eslint + prettier: 为了更好地编码
-- husky + commitlint: 为了更好地 GIT 提交
 - [html2canvas](http://html2canvas.hertzen.com/)
 - [pinyin](https://github.com/hotoo/pinyin): 汉字转拼音
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): 开启复制功能

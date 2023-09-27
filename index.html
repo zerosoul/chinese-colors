@@ -1,59 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="theme-color" content="#68cdaa" />
 
-<head>
-  <meta charset="utf-8" />
-  <!-- 优先使用 IE 最新版本和 Chrome -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="theme-color" content="#68cdaa" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-  <!-- 启用360浏览器的极速模式(webkit) -->
-  <meta name="renderer" content="webkit" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-
-  <!-- apple splash -->
-  <link href="splash/iphone5_splash.png"
-    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/iphone6_splash.png"
-    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/iphoneplus_splash.png"
-    media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/iphonex_splash.png"
-    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/iphonexr_splash.png"
-    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/iphonexsmax_splash.png"
-    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/ipad_splash.png"
-    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/ipadpro1_splash.png"
-    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/ipadpro3_splash.png"
-    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <link href="splash/ipadpro2_splash.png"
-    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
-    rel="apple-touch-startup-image" />
-  <!--
+    <!-- apple splash -->
+    <link
+      href="splash/iphone5_splash.png"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/iphone6_splash.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/iphoneplus_splash.png"
+      media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/iphonex_splash.png"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/iphonexr_splash.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/iphonexsmax_splash.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/ipad_splash.png"
+      media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/ipadpro1_splash.png"
+      media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/ipadpro3_splash.png"
+      media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="splash/ipadpro2_splash.png"
+      media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image"
+    />
+    <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <!--
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -63,26 +84,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-  <title>中国传统颜色手册 | Chinese Color Cheatsheet</title>
-  <meta name="description" content="中国色，中国风，中国传统颜色，设计，Chinese color cheatsheet online" />
-</head>
+    <title>中国传统颜色手册 | Chinese Color Cheatsheet</title>
+    <meta
+      name="description"
+      content="中国色，中国风，中国传统颜色，设计，Chinese color cheat sheet online"
+    />
+  </head>
 
-<body>
-  <noscript>
-    您需要开启Javascript功能
-  </noscript>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150673549-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+  <body>
+    <noscript> 您需要开启Javascript功能 </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150673549-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-    gtag('config', 'UA-150673549-1');
-  </script>
-</body>
-
+      gtag('config', 'UA-150673549-1');
+    </script>
+  </body>
 </html>

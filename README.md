@@ -34,7 +34,6 @@
 - [react.js](https://reactjs.org)
 - [styled-components](https://styled-components.com): CSS-IN-JS Best Practice
 - eslint + prettier: for better code
-- husky + commitlint: for better git commit format
 - [html2canvas](http://html2canvas.hertzen.com/)
 - [pinyin](https://github.com/hotoo/pinyin): convert Han to pinyin
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard): enable copy
