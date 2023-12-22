@@ -94,7 +94,7 @@ const Wrapper = styled.section`
       margin-bottom: 0.5rem;
       display: flex;
       justify-content: center;
-      a,
+      > a,
       > span {
         padding: 0 0.4rem;
       }
@@ -108,6 +108,9 @@ const Wrapper = styled.section`
         }
       }
       &.ad {
+        display: flex;
+        /* gap: 8px; */
+
         font-size: 0.5rem;
       }
     }
@@ -166,13 +169,6 @@ export default function InfoModal({ closeModal, bgColor }) {
               Nipponcolors
             </a>
           </span>
-          <span>&</span>
-          <span>
-            数据来源：
-            <a href="http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html" target="_blank">
-              中国传统颜色卡
-            </a>
-          </span>
         </p>
 
         <p>
@@ -185,7 +181,13 @@ export default function InfoModal({ closeModal, bgColor }) {
         </p>
         <p className="ad">
           <span>
-            经典扫雷小游戏
+            更多作品：
+            <a href="//sinqi.tools" target="_blank">
+              Sinqi Tools
+            </a>
+          </span>
+          <span>
+            经典扫雷小游戏：
             <a href="//ohminesweeper.online" target="_blank">
               Minesweeper Online
             </a>
