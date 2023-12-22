@@ -164,7 +164,7 @@ export default function InfoModal({ closeModal, bgColor }) {
 
         <p>
           <span>
-            Inspired by
+            Inspired by:
             <a href="http://nipponcolors.com" target="_blank">
               Nipponcolors
             </a>
@@ -173,7 +173,7 @@ export default function InfoModal({ closeModal, bgColor }) {
 
         <p>
           <span>
-            Copyright © 2023 by
+            Copyright © 2023 by:
             <a href="//yangerxiao.com" target="_blank">
               Tristan
             </a>
