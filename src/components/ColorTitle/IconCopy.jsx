@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { IoCopyOutline } from 'react-icons/io5';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 // import FadeInDown from '../animates/FadeInDown';
 const Wrapper = styled.div`
@@ -10,6 +11,7 @@ const Wrapper = styled.div`
   position: relative;
   .icon {
     width: 1.4rem;
+    margin-top: 4px;
   }
   > .hex {
     font-size: 0.6rem;
@@ -17,6 +19,7 @@ const Wrapper = styled.div`
     background: rgba(51, 51, 51, 0.5);
     border-radius: 0.2rem;
     text-transform: uppercase;
+    margin-top: 5px;
   }
   .copyTip {
     position: absolute;
@@ -46,29 +49,9 @@ const IconFav = ({ currColorHex }) => {
       }}
     >
       <Wrapper onClick={handleCopyClick}>
-        <svg
-          t="1568174087144"
-          className="icon"
-          viewBox="0 0 1024 1024"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          p-id="7098"
-          width="36"
-          height="36"
-        >
-          <path
-            d="M220.429 838.029c-18.2 0-32.9-14.7-32.9-32.9v-437c0-18.2 14.7-32.9 32.9-32.9h440c18.2 0 32.9 14.7 32.9 32.9v436.9c0 18.2-14.7 32.9-32.9 32.9h-440z m407-65.9v-371.1h-374.1v371.1h374.1z"
-            fill="#fff"
-            p-id="7099"
-          ></path>
-          <path
-            d="M438.129 254.029c-18.2 0-32.9-14.7-32.9-32.9s14.7-32.9 32.9-32.9h369.6c18.2 0 32.9 14.7 32.9 32.9v363.5c0 18.2-14.7 32.9-32.9 32.9s-32.9-14.7-32.9-32.9v-330.6h-336.7z"
-            fill="#fff"
-            p-id="7100"
-          ></path>
-        </svg>
+        <IoCopyOutline className="icon" />
         <span className="hex">{currColorHex}</span>
-        {copied ? <span className="copyTip">已复制!</span> : null}
+        {copied ? <span className="copyTip">已复制！</span> : null}
       </Wrapper>
     </CopyToClipboard>
   );

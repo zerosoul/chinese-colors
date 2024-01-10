@@ -1,35 +1,8 @@
-import React from 'react';
 import Icon from './Icon';
+import { GoInfo } from 'react-icons/go';
 
 const IconInfo = ({ showInfoModal }) => {
-  return (
-    <Icon
-      handleClick={showInfoModal}
-      icon={
-        <svg
-          t="1568731000727"
-          className="icon"
-          viewBox="0 0 1024 1024"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          p-id="1168"
-          width="32"
-          height="32"
-        >
-          <path
-            d="M873.93304 149.954855A511.943948 511.943948 0 1 0 312.687215 983.626704 512.426118 512.426118 0 0 0 983.626704 711.200681a511.58232 511.58232 0 0 0-109.693664-561.245826z m66.057284 361.627465A428.046376 428.046376 0 1 1 511.943948 84.379742 428.528546 428.528546 0 0 1 940.231409 511.943948z"
-            fill="#ffffff"
-            p-id="1169"
-          ></path>
-          <path
-            d="M511.943948 328.960451A41.948786 41.948786 0 0 0 470.115704 370.909236v423.104134a41.948786 41.948786 0 0 0 84.379742 0v-423.104134a41.948786 41.948786 0 0 0-42.551498-41.948785zM511.943948 164.540497A41.948786 41.948786 0 0 0 470.115704 206.489282v23.505786a41.948786 41.948786 0 0 0 84.379742 0v-23.505786a41.948786 41.948786 0 0 0-42.551498-41.948785z"
-            fill="#ffffff"
-            p-id="1170"
-          ></path>
-        </svg>
-      }
-    ></Icon>
-  );
+  return <Icon handleClick={showInfoModal} icon={<GoInfo size="34" />}></Icon>;
 };
 
 export default IconInfo;

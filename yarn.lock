@@ -2606,6 +2606,11 @@ react-github-btn@^1.4.0:
   dependencies:
     github-buttons "^2.22.0"
 
+react-icons@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmmirror.com/react-icons/-/react-icons-5.0.0.tgz#3a860fac02787984e4c11d9d05bec53226de0dc9"
+  integrity sha512-8gBBjYRrO14BU9RuMEVptG5aB1gwNPAAgsKOuPggx2hg332pTky/r8FidEJW95cL6IG2mYCEHaYuAxw74wLefw==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

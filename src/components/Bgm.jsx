@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { TfiHeadphone } from 'react-icons/tfi';
 import styled, { keyframes } from 'styled-components';
 const Rotation = keyframes`
   from {
@@ -16,7 +17,7 @@ const Swing = keyframes`
       transform: translateX(0);
     }
 `;
-const StyledWraper = styled.aside`
+const StyledWrapper = styled.aside`
   position: fixed;
   left: 0.4rem;
   bottom: 0.4rem;
@@ -25,6 +26,7 @@ const StyledWraper = styled.aside`
   border-radius: 50%;
   cursor: pointer;
   background: #fff;
+  color: #333;
   padding: 0.3rem;
   box-shadow: 0 0 6px black;
   display: flex;
@@ -76,23 +78,8 @@ export default function Bgm() {
   };
 
   return (
-    <StyledWraper onClick={togglePlay} className={playing ? 'playing' : 'paused'}>
-      <svg
-        t="1571192531683"
-        className="icon"
-        viewBox="0 0 1024 1024"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        p-id="9314"
-        width="24"
-        height="24"
-      >
-        <path
-          d="M217.7 928.3c-47.7 0-84.1-36.4-84.1-84.1V619.9c0-47.7 36.4-84.1 84.1-84.1 47.7 0 84.1 36.4 84.1 84.1v224.3c0 47.6-36.5 84.1-84.1 84.1z m672.7-84.1V619.9c0-47.7-39.2-84.1-84.1-84.1-44.9 0-84.1 36.4-84.1 84.1v224.3c0 47.7 39.2 84.1 84.1 84.1 44.9 0 84.1-36.5 84.1-84.1z m70.1-266.3C960.5 320 755.9 95.7 512 95.7S63.5 322.8 63.5 577.9v280.3h42V577.9c0-235.5 185-442.9 406.5-442.9s406.5 207.4 406.5 442.9v280.3h42V577.9z"
-          p-id="9315"
-          fill="#515151"
-        ></path>
-      </svg>
+    <StyledWrapper onClick={togglePlay} className={playing ? 'playing' : 'paused'}>
+      <TfiHeadphone size="28" fill="#333" />
       <audio
         ref={bgMusic}
         autoPlay={false}
@@ -102,6 +89,6 @@ export default function Bgm() {
         src="/bgm.mp3"
       ></audio>
       {!played && <div className="tip">👈 点击播放</div>}
-    </StyledWraper>
+    </StyledWrapper>
   );
 }
