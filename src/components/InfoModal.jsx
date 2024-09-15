@@ -108,9 +108,11 @@ const Wrapper = styled.section`
         }
       }
       &.ad {
+        padding-top: 15px;
         display: flex;
-        /* gap: 8px; */
-
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 15px;
         font-size: 0.5rem;
       }
     }
@@ -190,6 +192,12 @@ export default function InfoModal({ closeModal, bgColor }) {
             经典扫雷小游戏：
             <a href="//ohminesweeper.online" target="_blank">
               Minesweeper Online
+            </a>
+          </span>
+          <span>
+            高清壁纸大图：
+            <a href="//sinqi.tools/zh/unsplash" target="_blank">
+              Unsplash Wanderer
             </a>
           </span>
         </p>
