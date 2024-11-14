@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import scrollIntoView from 'scroll-into-view-if-needed';
+import scrollIntoView from 'smooth-scroll-into-view-if-needed';
 import { getCorrectTextColor } from '../utils';
 
 import CirclePercent from './CirclePercent';
@@ -118,7 +118,7 @@ const Color = ({
   CMYK,
   RGB,
   intro,
-  currColorRGB
+  currColorRGB,
 }) => {
   const [r, g, b] = RGB;
   const [c, m, y, k] = CMYK;
@@ -129,7 +129,7 @@ const Color = ({
       scrollIntoView(colorEle.current, {
         behavior: 'smooth',
         block: 'center',
-        scrollMode: 'if-needed'
+        scrollMode: 'if-needed',
       });
     }
   }, [isCurr]);
