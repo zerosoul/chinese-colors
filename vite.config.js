@@ -4,6 +4,10 @@ import pkg from './package.json';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: new URL(pkg.homepage).pathname,
+  preview: {
+    port: 3000,
+    host: true,
+  },
   server: {
     port: 3006,
   },
