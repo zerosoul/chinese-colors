@@ -113,7 +113,7 @@ const Wrapper = styled.section`
         flex-direction: column;
         flex-wrap: wrap;
         gap: 15px;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
       }
     }
     .reward {
@@ -137,16 +137,6 @@ export default function InfoModal({ closeModal, bgColor }) {
 
         <img className="reward" src={RewardImage} alt="reward image" />
 
-        <a
-          className="producthunt"
-          href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color"
-          target="_blank"
-        >
-          <img
-            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167119&theme=dark"
-            alt="Chinese Traditional Color - Chinese Color Cheatsheet Online! "
-          />
-        </a>
         <p className="btns">
           <GitHubButton
             href="https://github.com/zerosoul/chinese-colors"
@@ -164,23 +154,6 @@ export default function InfoModal({ closeModal, bgColor }) {
           </GitHubButton>
         </p>
 
-        <p>
-          <span>
-            Inspired by:
-            <a href="http://nipponcolors.com" target="_blank">
-              Nipponcolors
-            </a>
-          </span>
-        </p>
-
-        <p>
-          <span>
-            Copyright © 2023 by:
-            <a href="//yangerxiao.com" target="_blank">
-              Tristan
-            </a>
-          </span>
-        </p>
         <p className="ad">
           <span>
             更多作品：
@@ -198,6 +171,22 @@ export default function InfoModal({ closeModal, bgColor }) {
             高清壁纸大图：
             <a href="//sinqi.tools/zh/unsplash" target="_blank">
               Unsplash Wanderer
+            </a>
+          </span>
+        </p>
+        <p>
+          <span>
+            Inspired by:
+            <a href="http://nipponcolors.com" target="_blank">
+              Nipponcolors
+            </a>
+          </span>
+        </p>
+        <p>
+          <span>
+            Copyright © 2023 by:
+            <a href="//yangerxiao.com" target="_blank">
+              Tristan
             </a>
           </span>
         </p>

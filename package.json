@@ -28,29 +28,29 @@
   },
   "homepage": "https://colors.ichuantong.cn",
   "dependencies": {
-    "color-convert": "^2.0.1",
+    "color-convert": "^3.0.1",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
     "jinrishici": "^1.0.6",
     "pinyin": "^3.1.0",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.0.0",
     "react-github-btn": "^1.4.0",
-    "react-icons": "^5.0.0",
-    "react-router-dom": "^6.21.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.4.0",
     "smooth-scroll-into-view-if-needed": "^2.0.2",
-    "styled-components": "^6.1.2",
-    "styled-reset": "^4.5.1"
+    "styled-components": "^6.1.16",
+    "styled-reset": "^4.5.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1",
-    "vite": "^5.0.10"
+    "prettier": "^3.5.3",
+    "vite": "^6.2.2"
   },
   "engines": {
     "node": ">=16.0.0",
