@@ -51,6 +51,13 @@
 
 访问: `http://localhost:8099/`
 
+## Docker 部署
+构建镜像: `docker build -t chinese-colors-node .`
+
+部署docker: `docker run -d -p 58099:3006 --name chinese-colors-node chinese-colors-node `
+
+访问: `http://localhost:58099`
+
 ## 支持
 
 <a href="https://www.producthunt.com/posts/chinese-color?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chinese-color" target="_blank">

@@ -52,6 +52,14 @@ run: `npm run start`
 
 enjoy: `http://localhost:8099/`
 
+## Docker Deployment
+build: `docker build -t chinese-colors-node .`
+
+deployment: `docker run -d -p 58099:3006 --name chinese-colors-node chinese-colors-node `
+
+enjoy: `http://localhost:58099`
+
+
 ## Changelog
 
 [Changelog](CHANGELOG.md)
